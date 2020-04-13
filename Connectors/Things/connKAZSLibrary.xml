@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description="Коннектор для интеграции с КАЗС ЕИПП АСУ СГ&#xA;См. ЧТЗ на интеграцию с КАЗС ЕИПП АСУ СГ"
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="connKAZSLibrary"
+         projectName="Connectors"
+         published="false"
+         tags="Applications:KAZS"
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read>
+                    <Principal
+                     isPermitted="true"
+                     name="KAZS"
+                     type="User"></Principal>
+                </Read>
+                <Update>
+                    <Principal
+                     isPermitted="true"
+                     name="KAZS"
+                     type="User"></Principal>
+                </Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions>
+                <Permissions
+                 resourceName="*">
+                    <PropertyRead>
+                        <Principal
+                         isPermitted="true"
+                         name="KAZS"
+                         type="User"></Principal>
+                    </PropertyRead>
+                    <PropertyWrite>
+                        <Principal
+                         isPermitted="true"
+                         name="KAZS"
+                         type="User"></Principal>
+                    </PropertyWrite>
+                    <ServiceInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="KAZS"
+                         type="User"></Principal>
+                    </ServiceInvoke>
+                    <EventInvoke></EventInvoke>
+                    <EventSubscribe></EventSubscribe>
+                </Permissions>
+            </RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility>
+                    <Principal
+                     isPermitted="true"
+                     name="Everyone"
+                     type="Organization"></Principal>
+                </Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions></PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="Get_Sections_List">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="DATETIME"
+                             description=""
+                             name="Date"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="false"
+                             baseType="STRING"
+                             description=""
+                             name="PlaceOfRepair"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="Get_Sections_Structure">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="section_number"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="section_subnumber"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="serial_number"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category="Mashup"
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="getFilteredKAZSRecordsWithTotals">
+                        <ResultType
+                         aspect.dataShape="KAZS_RecordsWithTotals"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="QUERY"
+                             description=""
+                             name="query"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="LoadMOPZapravka">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Comment"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="JSON"
+                             description=""
+                             name="Data"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="ID устройства измерения"
+                             name="ID_KAZS"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="LONG"
+                             description="Дата + время"
+                             name="mes_time"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="ID секции локомотива"
+                             name="Section_id"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="ID места ремонта"
+                             name="SLD_id"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Тип масла"
+                             name="Type_Oil"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="User_id"
+                             ordinal="7"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetMOPZapravka">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Comment"
+                             ordinal="10"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="MeasurementDevice_ID"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="DATETIME"
+                             description=""
+                             name="Mes_time"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="NumberSection"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Oil_type"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="NUMBER"
+                             description=""
+                             name="Oil_weight"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="PlaceOfRepair"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Position_mop"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="Presence_remark"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="RFID"
+                             ordinal="6"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetMOPZapravkaTest">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="Get_Sections_List">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	"result": true,
+                                            "data": []
+                                        };
+                                        var params = {
+                                        	maxItems: 3000 /* NUMBER */ ,
+                                        	nameMask: undefined /* STRING */ ,
+                                        	query: undefined /* QUERY */ ,
+                                        	thingTemplate: "2050LokoRepair" /* THINGTEMPLATENAME */ ,
+                                        	tags: undefined /* TAGS */
+                                        };
+                                        var repairs = Resources["SearchFunctions"].SearchThingsByTemplate(params);
+                                        if (typeof Date !== "undefined") {
+                                        	var dateTo = Date.getTime() + 259200000;
+                                        }
+                                        
+                                        for (var i = 0; i < repairs.length; i++) {
+                                        	var repair = Things[repairs.getRow(i).name];
+                                            
+                                            if (PlaceOfRepair === repair.МЕСТО_ПРИВЯЗКИ) {
+                                        		var sections = repair.СЕКЦИИ;
+                                                
+                                                for (var j = 0; j < sections.length; j++) {
+                                                	var section = Things[sections.getRow(j).Секция];
+                                                    if (section.НАЗНАЧЕННАЯ_ДАТА_ТО < dateTo && Date < section.НАЗНАЧЕННАЯ_ДАТА_ТО) {
+                                        				var locomotive = Things[repair.ОБОРУДОВАНИЕ];
+                                                        var JSON = new Object();
+                                                        JSON.locSerial = locomotive.НАИМЕНОВАНИЕ;
+                                                        JSON.sectionNumber = section.НАИМЕНОВАНИЕ;
+                                                        JSON.sectionSubnumber = section.НОМЕР;
+                                                        JSON.DK = section.ТЕКУЩАЯ_ДК;
+                                                        JSON.typeOfRepair = repair.ТИП_РЕМОНТА;
+                                                        JSON.date = section.НАЗНАЧЕННАЯ_ДАТА_ТО;
+                                                        result.data.push(JSON);
+                                                	}
+                                                }
+                                            }
+                                        }
+                                        
+                                        
+                                        //a044a70e-f049-11e1-8e8b-001517e6ca10
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="Get_Sections_Structure">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	"result": true,
+                                            "data": {}
+                                        }; 
+                                        
+                                        var query1 = {
+                                        				"filters": {
+                                        					"type": "And",
+                                        					"filters": [ {
+                                        						"type": "Matches",
+                                        						"fieldName": "serial_number",
+                                        						"expression": serial_number
+                                        					},
+                                                            ]
+                                        				}
+                                        			};
+                                        if (section_subnumber) {
+                                        var query1 = {
+                                        				"filters": {
+                                        					"type": "And",
+                                        					"filters": [ {
+                                        						"type": "Matches",
+                                        						"fieldName": "serial_number",
+                                        						"expression": serial_number
+                                        					},
+                                                                        {
+                                        						"type": "Matches",
+                                        						"fieldName": "section_number",
+                                        						"expression": section_subnumber
+                                        					}
+                                                            ]
+                                        				}
+                                        			};
+                                        }
+                                        var params = {
+                                        	maxItems: undefined /* NUMBER */ ,
+                                        	nameMask: undefined /* STRING */ ,
+                                        	query: query1 /* QUERY */ ,
+                                        	thingTemplate: "connRfidDataTemplate" /* THINGTEMPLATENAME */ ,
+                                        	tags: undefined /* TAGS */
+                                        };
+                                            		   	
+                                        var equipmentTable = Resources["SearchFunctions"].SearchThingsByTemplate(params);
+                                        if (equipmentTable.length > 0) {
+                                        	for (var i = 0; i < equipmentTable.length; i++) {
+                                        		var rfid = Things[equipmentTable[i].name];
+                                            	result.data.serial_number = rfid.serial_number;
+                                            	result.data.rfid_place = parseInt(rfid.equipment_place_int);
+                                            	result.data.rfid = rfid.rfid;
+                                            	break;
+                                        	} 
+                                        } else {
+                                            	result.data.serial_number = '';
+                                            	result.data.rfid_place = '';
+                                            	result.data.rfid = '';
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="getFilteredKAZSRecordsWithTotals">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var datasets = Things["KAZS_Stream"].QueryStreamEntriesWithData({
+                                        	maxItems: 1000 /* NUMBER */ ,
+                                        	startDate: undefined /* DATETIME */ ,
+                                        	endDate: undefined /* DATETIME */ ,
+                                        	oldestFirst: undefined /* BOOLEAN */ ,
+                                        	query: query /* QUERY */
+                                        });
+                                        
+                                        var params = {
+                                            infoTableName : "InfoTable",
+                                            dataShapeName : "KAZS_Record"
+                                        };
+                                        
+                                        // CreateInfoTableFromDataShape(infoTableName:STRING("InfoTable"), dataShapeName:STRING):INFOTABLE(WorkMeasurementsRecord)
+                                        var records = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(params);
+                                        var numberOfDatasets = 0;
+                                        var numberOfMeasurements = 0;
+                                        
+                                        for (var x=0; x < datasets.rows.length; x++) {
+                                            var row = datasets.rows[x];
+                                        	var newEntry = new Object();
+                                        
+                                            // KAZS_Record entry object
+                                        	newEntry.timestamp = row.timestamp; // DATETIME
+                                        	newEntry.delivered = row.delivered;
+                                        	newEntry.errors = row.errors;
+                                        	newEntry.Section_id = row.Section_id; // STRING
+                                        	newEntry.SLD_id = row.SLD_id; // STRING
+                                        	newEntry.ID_KAZS = row.ID_KAZS; // STRING
+                                        	newEntry.mes_time = row.mes_time; // DATETIME
+                                        	newEntry.Type_Oil = row.Type_Oil; // STRING
+                                        	newEntry.RFID_ID = row.RFID_ID; // STRING
+                                        	newEntry.N = row.N; // STRING
+                                        	newEntry.Weight_Oil = row.Weight_Oil; // STRING
+                                        	newEntry.MOP_position = row.MOP_position; // STRING
+                                        	newEntry.Remark_ID = row.Remark_ID; // STRING
+                                        	newEntry.Remark_comment = row.Remark_comment; // STRING
+                                        	newEntry.User_id = row.User_id; // STRING
+                                        	newEntry.Comment = row.Comment; // STRING
+                                            
+                                            numberOfDatasets++;
+                                            numberOfMeasurements++;
+                                            records.AddRow(newEntry);
+                                        }
+                                        
+                                        var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape({infoTableName : "InfoTable2", dataShapeName : "KAZS_RecordsWithTotals"});
+                                        var entry = new Object();
+                                        entry.numberOfDatasets = numberOfDatasets;
+                                        entry.numberOfMeasurements = numberOfMeasurements;
+                                        entry.records = records;
+                                        result.AddRow(entry);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="LoadMOPZapravka">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {"result": true};
+                                        
+                                        try {
+                                        	if (Data === undefined || Data.array.length <= 0){
+                                            	throw "An empty Date parameter value is not valid";
+                                        	}
+                                        	if (Section_id === undefined){
+                                            	throw "An empty Section_id parameter value is not valid";
+                                        	}
+                                        
+                                            var section = Things[Section_id];
+                                            if(section === null) {
+                                                throw "Section " + Section_id + " not found";
+                                            }
+                                        	var sectionNumber = section.НОМЕР;
+                                        	for (var i = 0; i < Data.array.length; i++) {       
+                                                var oilWeight = parseInt(Data.array[i].Weight_Oil);
+                                                if (isNaN(oilWeight)){
+                                                    oilWeight = -1;
+                                                }
+                                                
+                                                var params = {
+                                        				NumberSection: sectionNumber,
+                                        				PlaceOfRepair: SLD_id,
+                                        				MeasurementDevice_ID: ID_KAZS,
+                                        				Mes_time: (mes_time * 1000),
+                                        				Oil_type: Type_Oil,
+                                        				RFID: Data.array[i].RFID_ID,
+                                        				Oil_weight: oilWeight,
+                                        				Position_mop: Data.array[i].MOP_position,
+                                        				Presence_remark: Data.array[i].Remark_comment !== "",
+                                        				Comment: Data.array[i].Remark_comment};
+                                                
+                                                var sendDataToAsuSg = me.SetMOPZapravka(params);
+                                        		
+                                                var delivered = false;
+                                                var errors = "The system did not attempt to send data";
+                                                
+                                                if (sendDataToAsuSg.result === true) {
+                                                    delivered = true;
+                                                    errors = "";
+                                                } else {
+                                                    errors = "Error sending date to ASU SG: " + sendDataToAsuSg.Error;
+                                                    result = {"result": false,"Error": errors};
+                                                }
+                                        
+                                                var values = Things["KAZS_Stream"].CreateValues();
+                                        		var date = new Date(mes_time * 1000);
+                                        		values.Section_id = Section_id;
+                                        		values.SLD_id = SLD_id;
+                                        		values.ID_KAZS = ID_KAZS;
+                                        		values.mes_time = date;
+                                        		values.Type_Oil = Type_Oil;
+                                        		values.RFID_ID = Data.array[i].RFID_ID;
+                                            	values.N = Data.array[i].N;
+                                            	values.Weight_Oil = Data.array[i].Weight_Oil;
+                                            	values.MOP_position = Data.array[i].MOP_position;
+                                            	values.Remark_ID = Data.array[i].Remark_ID;
+                                            	values.Remark_comment = Data.array[i].Remark_comment;
+                                        		values.User_id = User_id;
+                                        		values.Comment = Comment;
+                                                values.delivered = delivered;
+                                                values.errors = errors;
+                                            
+                                        		var addEntryParams = {
+                                                	tags : undefined,
+                                            		timestamp :  new Date(),
+                                            		source : me.name,
+                                            		values : values,
+                                            		location : undefined
+                                        		};
+                                        
+                                        		Things["KAZS_Stream"].AddStreamEntry(addEntryParams);
+                                        	}
+                                        } catch (e) {
+                                           	result = {"result": false,"Error": "Error in LoadMOPZapravka: " + e.toString()};
+                                        }
+                                        
+                                        
+                                        //    var headers = {
+                                        //    	"Content-Type": "application/json",
+                                        //		"Accept": "application/json"
+                                        //	};
+                                        //	
+                                        //    var content = {
+                                        //    	"Section": Section_id,
+                                        //    	"PlaceOfRepair": SLD_id,
+                                        //    	"MeasurementDevice_ID": ID_KAZS,
+                                        //    	"mes_time": mes_time,
+                                        //    	"Oil_type": Type_Oil,
+                                        //    	"RFID": Data.array[i].RFID_ID,
+                                        //    	"Oil_weight": Data.array[i].Weight_Oil,
+                                        //    	"position_mop": Data.array[i].MOP_position
+                                        //	};
+                                        //    
+                                        //    if (Data.array[i].Remark_comment !== "") {
+                                        //        content.Presence_remark = true;
+                                        //        content.Comment = Data.array[i].Remark_comment;
+                                        //    } else {
+                                        //    	content.Presence_remark = false;
+                                        //        content.Comment = Data.array[i].Remark_comment;
+                                        //    }
+                                        //    
+                                        //    var requestParams = {
+                                        //    	proxyScheme: undefined,
+                                        //    	headers: headers,
+                                        //    	ignoreSSLErrors: true,
+                                        //    	useNTLM: undefined,
+                                        //    	workstation: undefined,
+                                        //    	useProxy: undefined,
+                                        //    	withCookies: undefined,
+                                        //    	proxyHost: undefined,
+                                        //    	url: 'http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP?wsdl/SetMOPZapravka',
+                                        //    	content: content,
+                                        //    	timeout: undefined,
+                                        //    	proxyPort: undefined,
+                                        //    	password: "11012019",
+                                        //    	domain: undefined,
+                                        //    	contentType: undefined,
+                                        //    	username: "ws_eipp"
+                                        //	};
+                                        //
+                                        //	var response = Resources["ContentLoaderFunctions"].PutText(requestParams);
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        //var content ='<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                        //   <soap:Header/>\
+                                        //   <soap:Body>\
+                                        //      <eipp:SetMOPZapravka>\
+                                        //         <eipp:Parameter>\
+                                        //            <eipp:Section>'+Section_id+'</eipp:Section>\
+                                        //            <eipp:PlaceOfRepair>'+SLD_id+'</eipp:PlaceOfRepair>\
+                                        //            <eipp:MeasurementDevice_ID>'+ID_KAZS+'</eipp:MeasurementDevice_ID>\
+                                        //            <eipp:mes_time>'+mes_time+'</eipp:mes_time>\
+                                        //            <eipp:Oil_type>'+Type_Oil+'</eipp:Oil_type>\
+                                        //            <eipp:RFID>'+Data.array[0].RFID_ID+'</eipp:RFID>\
+                                        //			<eipp:Oil_weight>'+parseInt(Data.array[0].Weight_Oil)+'</eipp:Oil_weight>\
+                                        //			<eipp:position_mop>'+Data.array[0].MOP_position+'</eipp:position_mop>\
+                                        //			<eipp:Presence_remark>'+false+'</eipp:Presence_remark>\
+                                        //			<eipp:Comment>'+Data.array[0].Remark_comment+'</eipp:Comment>\
+                                        //         </eipp:Parameter>\
+                                        //      </eipp:SetMOPZapravka>\
+                                        //   </soap:Body>\
+                                        //</soap:Envelope>';
+                                        //
+                                        //<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">
+                                        //   <soap:Header/>
+                                        //   <soap:Body>
+                                        //      <eipp:SetMOPZapravka>
+                                        //         <eipp:Parameters>
+                                        //            <eipp:NumberSection>?</eipp:NumberSection>
+                                        //            <eipp:PlaceOfRepair>?</eipp:PlaceOfRepair>
+                                        //            <eipp:RFID>?</eipp:RFID>
+                                        //            <eipp:MeasurementDevice_ID>?</eipp:MeasurementDevice_ID>
+                                        //            <eipp:Mes_time>?</eipp:Mes_time>
+                                        //            <eipp:Oil_type>?</eipp:Oil_type>
+                                        //            <eipp:Oil_weight>?</eipp:Oil_weight>
+                                        //            <eipp:Position_mop>?</eipp:Position_mop>
+                                        //            <eipp:Presence_remark>?</eipp:Presence_remark>
+                                        //            <eipp:Comment>?</eipp:Comment>
+                                        //         </eipp:Parameters>
+                                        //      </eipp:SetMOPZapravka>
+                                        //   </soap:Body>
+                                        //</soap:Envelope>
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetMOPZapravka">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var date = dateFormat(Mes_time, "yyyy-MM-dd");
+                                        var content ='<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:SetMOPZapravka>\
+                                                 <eipp:Parameters>\
+                                                    <eipp:NumberSection>' + NumberSection + '</eipp:NumberSection>\
+                                                    <eipp:PlaceOfRepair>' + PlaceOfRepair + '</eipp:PlaceOfRepair>\
+                                                    <eipp:RFID>' + RFID + '</eipp:RFID>\
+                                                    <eipp:MeasurementDevice_ID>' + MeasurementDevice_ID + '</eipp:MeasurementDevice_ID>\
+                                                    <eipp:Mes_time>' + date + '</eipp:Mes_time>\
+                                                    <eipp:Oil_type>' + Oil_type + '</eipp:Oil_type>\
+                                                    <eipp:Oil_weight>' + Oil_weight + '</eipp:Oil_weight>\
+                                                    <eipp:Position_mop>' + Position_mop + '</eipp:Position_mop>\
+                                                    <eipp:Presence_remark>' + Presence_remark + '</eipp:Presence_remark>\
+                                                    <eipp:Comment>' + Comment + '</eipp:Comment>\
+                                                 </eipp:Parameters>\
+                                              </eipp:SetMOPZapravka>\
+                                           </soap:Body>\
+                                        </soap:Envelope>';
+                                            
+                                        var params = {
+                                        	proxyScheme: undefined /* STRING */,
+                                        	headers: undefined /* JSON */,
+                                        	ignoreSSLErrors: undefined /* BOOLEAN */,
+                                        	useNTLM: undefined /* BOOLEAN */,
+                                        	workstation: undefined /* STRING */,
+                                        	useProxy: undefined /* BOOLEAN */,
+                                        	withCookies: undefined /* BOOLEAN */,
+                                        	proxyHost: undefined /* STRING */,
+                                        	url: 'http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP' /* STRING */,
+                                        	content: content /* STRING */,
+                                        	timeout: 5000 /* NUMBER */,
+                                        	proxyPort: undefined /* INTEGER */,
+                                        	password: "11012019" /* STRING */,
+                                        	domain: undefined /* STRING */,
+                                        	contentType: undefined /* STRING */,
+                                        	username: "ws_eipp" /* STRING */
+                                        };
+                                        
+                                        var soapResponse = Resources["ContentLoaderFunctions"].PostXML(params);
+                                        var soapResponseStr = soapResponse.toString();
+                                        soapResponse = new XML(soapResponseStr.split("m:return").join("Return"));
+                                        var reason = soapResponse.*::Body.*::Fault.*::Reason.*::Text.toString();
+                                        var answer = soapResponse.*::Body.*::SetMOPZapravkaResponse.Return.*::Answer.toString();
+                                        
+                                        var result = {"result": false, "Error": "Unexpected behavior"};
+                                        if(answer === "true") {
+                                            result = {"result": true};
+                                        } else if(answer !== "") {
+                                            result = {"result": false, "Error": "Unexpected ASU SG answer: " + answer};
+                                        } else if (reason !== "") {
+                                            result = {"result": false, "Error": "Error in SetMOPZapravka: " + reason};
+                                        } else {
+                                            result = {"result": false, "Error": "Can't parse an ASU SG response: " + soapResponseStr};
+                                        }
+                                        
+                                        
+                                        //var content ='<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                        //   <soap:Header/>\
+                                        //   <soap:Body>\
+                                        //      <eipp:SetMOPZapravka>\
+                                        //         <eipp:Parameter>\
+                                        //            <eipp:NumberSection>'+NumberSection+'</eipp:NumberSection>\
+                                        //            <eipp:PlaceOfRepair>'+PlaceOfRepair+'</eipp:PlaceOfRepair>\
+                                        //            <eipp:MeasurementDevice_ID>'+MeasurementDevice_ID+'</eipp:MeasurementDevice_ID>\
+                                        //            <eipp:Mes_time>'+Mes_time+'</eipp:Mes_time>\
+                                        //            <eipp:Oil_type>'+Oil_type+'</eipp:Oil_type>\
+                                        //            <eipp:RFID>'+RFID+'</eipp:RFID>\
+                                        //			<eipp:Oil_weight>'+Oil_weight+'</eipp:Oil_weight>\
+                                        //			<eipp:Position_mop>'+Position_mop+'</eipp:position_mop>\
+                                        //			<eipp:Presence_remark>'+Presence_remark+'</eipp:Presence_remark>\
+                                        //			<eipp:Comment>'+Comment+'</eipp:Comment>\
+                                        //         </eipp:Parameter>\
+                                        //      </eipp:SetMOPZapravka>\
+                                        //   </soap:Body>\
+                                        //</soap:Envelope>';
+                                        
+                                        
+                                        
+                                        // http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP?wsdl
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetMOPZapravkaTest">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var content ='<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:SetMOPZapravka>\
+                                                 <eipp:Parameters>\
+                                                    <eipp:NumberSection>11600012</eipp:NumberSection>\
+                                                    <eipp:PlaceOfRepair>a84d0a15-08ec-11e5-829d-00155d6cab05</eipp:PlaceOfRepair>\
+                                                    <eipp:RFID>test RFID</eipp:RFID>\
+                                                    <eipp:MeasurementDevice_ID>test device</eipp:MeasurementDevice_ID>\
+                                                    <eipp:Mes_time>2010-09-02T07:12:01.000-00:00</eipp:Mes_time>\
+                                                    <eipp:Oil_type>test oil</eipp:Oil_type>\
+                                                    <eipp:Oil_weight>777</eipp:Oil_weight>\
+                                                    <eipp:Position_mop>test position</eipp:Position_mop>\
+                                                    <eipp:Presence_remark>true</eipp:Presence_remark>\
+                                                    <eipp:Comment>test comment</eipp:Comment>\
+                                                 </eipp:Parameters>\
+                                              </eipp:SetMOPZapravka>\
+                                           </soap:Body>\
+                                        </soap:Envelope>';
+                                            
+                                        var params = {
+                                        	proxyScheme: undefined /* STRING */,
+                                        	headers: undefined /* JSON */,
+                                        	ignoreSSLErrors: undefined /* BOOLEAN */,
+                                        	useNTLM: undefined /* BOOLEAN */,
+                                        	workstation: undefined /* STRING */,
+                                        	useProxy: undefined /* BOOLEAN */,
+                                        	withCookies: undefined /* BOOLEAN */,
+                                        	proxyHost: undefined /* STRING */,
+                                        	url: 'http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP' /* STRING */,
+                                        	content: content /* STRING */,
+                                        	timeout: 5000 /* NUMBER */,
+                                        	proxyPort: undefined /* INTEGER */,
+                                        	password: "11012019" /* STRING */,
+                                        	domain: undefined /* STRING */,
+                                        	contentType: undefined /* STRING */,
+                                        	username: "ws_eipp" /* STRING */
+                                        };
+                                        
+                                        var soapResponse = Resources["ContentLoaderFunctions"].PostXML(params);
+                                        var soapResponseStr = soapResponse.toString();
+                                        soapResponse = new XML(soapResponseStr.split("m:return").join("Return"));
+                                        var reason = soapResponse.*::Body.*::Fault.*::Reason.*::Text.toString();
+                                        var answer = soapResponse.*::Body.*::SetMOPZapravkaResponse.Return.*::Answer.toString();
+                                        
+                                        var result = "none";
+                                        if(answer !== "") {
+                                            result = answer;
+                                        } else if (reason !== "") {
+                                            result = reason;
+                                        } else {
+                                            result = "Can't parse response: " + soapResponseStr;
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations></AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties></ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

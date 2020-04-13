@@ -1,0 +1,2139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description="Библиотека для коннекторов BI"
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="connBILibrary"
+         projectName="Connectors"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP"
+                     aspect.isPersistent="true"
+                     aspect.isReadOnly="false"
+                     baseType="STRING"
+                     category=""
+                     description="адрес сервера АСУ СГ"
+                     isLocalOnly="false"
+                     name="ASU_URL"
+                     ordinal="2"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="bi_getExamBySection">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="endDate"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sectionId"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="startDate"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получить список секций с депо приписки"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="bi_GetKGEHomeDepot">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="endDate"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="endSection"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="HomeDepot"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="startDate"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="startSection"
+                             ordinal="4"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получить список секций с депо приписки"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="bi_GetSections">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sld"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="common_getFilial">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="common_getPoligon">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="common_getSLDName">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="FilialSeries"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="TypeSld"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="get_filial">
+                        <ResultType
+                         baseType="TEXT"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="get_poligon">
+                        <ResultType
+                         baseType="TEXT"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="get_serial_loco">
+                        <ResultType
+                         baseType="TEXT"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="get_sld_list">
+                        <ResultType
+                         baseType="TEXT"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="getExamBySection">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="endDate"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sectionId"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="startDate"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetLocomotiveSerieName">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetRegistrationDepo">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetRepairSites">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получить список секций с депо приписки"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSections">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sld"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSerieName">
+                        <ResultType
+                         baseType="TEXT"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="ParseXMLResponse">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="lineFieldName"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="responseFieldName"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="xmlResponse"
+                             ordinal="3"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="PostXMLString">
+                        <ResultType
+                         baseType="XML"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="xmlString"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="receiveNEPBySection">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="endDate"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sectionId"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="startDate"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="uploadExamBySection">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="fact"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="homeDepot"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="locomotiveSeries"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="placeOfRepair"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="plan"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sectionId"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="uploadNEPBySection">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="endDate"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="equipmentHours"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="homeDepot"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="locomotiveCalendar"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="locomotiveSeries"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="plannedRepairHours"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="reclamationHours"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sectionId"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="serviceWaitingHoursRZD"
+                             ordinal="13"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="serviceWaitingHoursTMH"
+                             ordinal="12"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="startDate"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="unplannedRepairHoursRZD"
+                             ordinal="10"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="unplannedRepairHoursTMH"
+                             ordinal="9"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="bi_getExamBySection">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	"array": []
+                                        };
+                                        
+                                        function parseXMLResponse(xmlResponse) {
+                                        	var resultXML = xmlResponse.*::Body.*::GetExamBySectionResponse.*[1];
+                                        	var containsExamLine = resultXML.*::GetExamBySectionLine.length() !== 0;
+                                        	if (containsExamLine) {
+                                        		var result = [];
+                                        		for (var i = 0; i < resultXML.*::GetExamBySectionLine.length(); i++) {
+                                        			var node = resultXML.*::GetExamBySectionLine[i];
+                                        
+                                        			result.push({
+                                        				Section: node.*::Section.toString(),
+                                        				LocomotiveSeries: node.*::LocomotiveSeries.toString(),
+                                        				HomeDepot: node.*::HomeDepot.toString(),
+                                        				PlaceOfRepair: node.*::PlaceOfRepair.toString(),
+                                        				PlanKGE: node.*::PlanKGE.toString(),
+                                        				FaktKGE: node.*::FaktKGE.toString()
+                                        			});
+                                        		}
+                                        		return result;
+                                        	} else throw new Error('Нет данных на АСУ СГ');
+                                        }
+                                        
+                                        try {
+                                        	if (!sectionId || !startDate || !endDate) throw new Error('Проверьте параметры');
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:GetExamBySection>\
+                                                     <eipp:Parameter>\
+                                                        <eipp:Section>' + sectionId + '</eipp:Section>\
+                                                        <eipp:PeriodStartDate>' + startDate + '</eipp:PeriodStartDate>\
+                                                        <eipp:PeriodEndDate>' + endDate + '</eipp:PeriodEndDate>\
+                                                     </eipp:Parameter>\
+                                                  </eipp:GetExamBySection>\
+                                               </soap:Body>\
+                                            </soap:Envelope>';
+                                        	var xmlResponse = Resources['ContentLoaderFunctions'].PostXML({
+                                        		proxyScheme: undefined /* STRING */ ,
+                                        		headers: undefined /* JSON */ ,
+                                        		ignoreSSLErrors: undefined /* BOOLEAN */ ,
+                                        		useNTLM: undefined /* BOOLEAN */ ,
+                                        		workstation: undefined /* STRING */ ,
+                                        		useProxy: undefined /* BOOLEAN */ ,
+                                        		withCookies: undefined /* BOOLEAN */ ,
+                                        		proxyHost: undefined /* STRING */ ,
+                                        		url: me.ASU_URL /* STRING */ ,
+                                        		content: content /* STRING */ ,
+                                        		timeout: 0 /* NUMBER */ ,
+                                        		proxyPort: undefined /* INTEGER */ ,
+                                        		password: "11012019" /* STRING */ ,
+                                        		domain: undefined /* STRING */ ,
+                                        		contentType: undefined /* STRING */ ,
+                                        		username: "ws_eipp" /* STRING */
+                                        	});
+                                        	var response = parseXMLResponse(xmlResponse);
+                                        	result = response;
+                                        
+                                        	/*for (var x = 0; x < info.array.length; x++) {
+                                        		var row = info.array[x];
+                                        		var obj = {
+                                        			"Kod": row.Kod,
+                                        			"Number": row.Number,
+                                        			"HomeDepot": row.HomeDepot,
+                                        			"ID": row.ID,
+                                        			"LocomotiveSeries": row.LocomotiveSeries,
+                                        			"LocomotiveSeriesName": '',
+                                        			"Name": row.Name
+                                        		}; 
+                                        	//	result.array.push(obj);
+                                        	}*/
+                                        
+                                        
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="bi_GetKGEHomeDepot">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	"array": []
+                                        };
+                                        //var startDate = '2019-09-01';
+                                        //var endDate = '2019-09-30';
+                                        
+                                        try {
+                                        	if (!HomeDepot) throw new Error('Укажите СЛД');
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:GetKGEHomeDepot>\
+                                                 <eipp:Parameters>\
+                                                    <eipp:HomeDepot>' + HomeDepot + '</eipp:HomeDepot>\
+                                                    <eipp:StartDate>' + startDate + '</eipp:StartDate>\
+                                                    <eipp:EndDate>' + endDate + '</eipp:EndDate>\
+                                                    <eipp:Start>'+startSection+'</eipp:Start>\
+                                                    <eipp:End>'+endSection+'</eipp:End>\
+                                                 </eipp:Parameters>\
+                                              </eipp:GetKGEHomeDepot>\
+                                           </soap:Body>\
+                                        </soap:Envelope>';
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                        
+                                        	info = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetKGEHomeDepotResponse' /* STRING */ ,
+                                        		lineFieldName: 'GetKGEHomeDepotLine' /* STRING */
+                                        	});
+                                        	//logger.info("JSON "+JSON.stringify(info));
+                                        
+                                        	var locoSerName = me.GetLocomotiveSerieName();
+                                        	for (var x = 0; x < info.array.length; x++) {
+                                        		var ser_name = "";
+                                        		var row = info.array[x];
+                                        
+                                        		for (var y = 0; y < locoSerName.array.length; y++) {
+                                        			var ser = locoSerName.array[y];
+                                        			if (row.LocomotiveSeries === ser.ID) {
+                                        				ser_name = ser.Name;
+                                        				break;
+                                        			}
+                                        		}
+                                        		var obj = {
+                                        			"Section": row.Section,
+                                                    "SectionName": row.Section_name,
+                                        			"HomeDepot": row.HomeDepot,
+                                        			"LocomotiveSeries": row.LocomotiveSeries,
+                                        			"LocomotiveSeriesName": ser_name,
+                                        			"PlanKGE": row.PlanKGE,
+                                        			"FaktKGE": row.FaktKGE
+                                        		};
+                                        		result.array.push(obj);
+                                        	}
+                                        
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="bi_GetSections">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	"array": []
+                                        };
+                                        try {
+                                        	if (!sld) throw new Error('Укажите СЛД');
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                                <soap:Header/>\
+                                                <soap:Body>\
+                                                <eipp:GetSections>\
+                                                    <eipp:Guid>\
+                                                        <eipp:HomeDepot>' + sld + '</eipp:HomeDepot>\
+                                                    </eipp:Guid>\
+                                                </eipp:GetSections>\
+                                                </soap:Body>\
+                                            </soap:Envelope>';
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                            
+                                        	info = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetSectionsResponse' /* STRING */ ,
+                                        		lineFieldName: 'SectionsLine' /* STRING */
+                                        	});
+                                            //logger.info("JSON "+JSON.stringify(info));
+                                        
+                                        	var locoSerName = me.GetLocomotiveSerieName();
+                                        	for (var x = 0; x < info.array.length; x++) {
+                                                var ser_name = "";
+                                        		var row = info.array[x];
+                                        		
+                                        		for (var y = 0; y < locoSerName.array.length; y++) {
+                                        			var ser = locoSerName.array[y];
+                                        			if (row.LocomotiveSeries === ser.ID) {
+                                        				ser_name = ser.Name;
+                                        				break;
+                                        			}
+                                        		}
+                                        		var obj = {
+                                        			"Kod": row.Kod,
+                                        			"Number": row.Number,
+                                        			"HomeDepot": row.HomeDepot,
+                                        			"ID": row.ID,
+                                        			"LocomotiveSeries": row.LocomotiveSeries,
+                                        			"LocomotiveSeriesName": ser_name,
+                                        			"Name": row.Name
+                                        		};
+                                        		result.array.push(obj);
+                                        	}
+                                        
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="common_getFilial">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	"array": []
+                                        };
+                                        try {
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:GetOrganizations>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetOrganizations>\
+                                           </soap:Body>\
+                                        </soap:Envelope>'
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                        	info = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetOrganizationsResponse' /* STRING */ ,
+                                        		lineFieldName: 'OrganizationsLine' /* STRING */
+                                        	});
+                                            	for (var x = 0; x < info.array.length; x++) {
+                                        		var row = info.array[x];
+                                        		var obj = {
+                                        			"Kod": row.Kod,
+                                        			"FullName": row.FullName,
+                                        			"INN": row.INN,
+                                                    "KPP": row.KPP,
+                                                    "FilialSeries": row.ID,
+                                                    "FilialSeriesName": row.Name,
+                                                    "PoligonSeries": ''
+                                        		};
+                                        		result.array.push(obj);
+                                        	}
+                                            
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="common_getPoligon">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	"array": []
+                                        };
+                                        try {
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:GetPolygon>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetPolygon>\
+                                           </soap:Body>\
+                                        </soap:Envelope>'
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                        	info = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetPolygonResponse' /* STRING */ ,
+                                        		lineFieldName: 'GetPolygonLine' /* STRING */
+                                        	});
+                                        	for (var x = 0; x < info.array.length; x++) {
+                                        		var row = info.array[x];
+                                        		var obj = {
+                                        			"Kod": row.Kod,
+                                        			"PoligonSeries": row.ID,
+                                        			"PoligonSeriesName": row.Name
+                                        		};
+                                        		result.array.push(obj);
+                                        	}
+                                        
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="common_getSLDName">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	"array": []
+                                        };
+                                        
+                                        try {
+                                        	var content = '';
+                                        	if (TypeSld === "S") {
+                                        		var uids = "";
+                                        		var repairSites = me.GetRepairSites();
+                                        		//logger.info("repairSites "+JSON.stringify(repairSites));
+                                        
+                                        		for (var z = 0; z < repairSites.array.length; z++) {
+                                        			var siterow = repairSites.array[z];
+                                        			if (siterow.Organization === FilialSeries) {
+                                        				// logger.info("z "+z+" "+siterow.SLD+" "+siterow.ID);
+                                        				if (uids.indexOf(siterow.SLD) < 0 && siterow.SLD !== "00000000-0000-0000-0000-000000000000") {
+                                        					uids = uids + "<eipp:GuidLine>" + siterow.SLD + "</eipp:GuidLine>";
+                                        				}
+                                        
+                                        			}
+                                        		}
+                                        		if (uids !== "") {
+                                        			content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                        			<soap:Header/>\
+                                        			<soap:Body>\
+                                        			<eipp:GetSLD>\
+                                        			<eipp:Guid>' + uids + '</eipp:Guid>\
+                                        			</eipp:GetSLD>\
+                                        			</soap:Body>\
+                                        			</soap:Envelope>';
+                                        		} else {
+                                        			result = {
+                                        				error: "Не найдены СЛД"
+                                        			};
+                                        		}
+                                        		logger.info("XML " + content);
+                                        		if (content !== '') {
+                                        			var xmlResponse = me.PostXMLString({
+                                        				xmlString: content /* STRING */
+                                        			});
+                                        			//logger.info("XML 2" + xmlResponse);
+                                        			info = me.ParseXMLResponse({
+                                        				xmlResponse: xmlResponse,
+                                        				responseFieldName: 'GetSLDResponse',
+                                        				lineFieldName: 'GetSLDLine'
+                                        			});
+                                        			for (var x = 0; x < info.array.length; x++) {
+                                        				var row = info.array[x];
+                                        				var obj = {
+                                        					"Kod": row.Kod,
+                                        					"TypeSld": TypeSld,
+                                        					"sld": row.ID,
+                                        					"sldName": row.Name,
+                                        					"FilialSeries": FilialSeries
+                                        				};
+                                        				result.array.push(obj);
+                                        			}
+                                        		} else {
+                                        			result = {
+                                        				error: "Не найдены СЛД"
+                                        			};
+                                        		}
+                                        	} else if (TypeSld === "D") {
+                                        		var uids = "";
+                                        		var regDepo = me.GetRegistrationDepo();
+                                        		//for (var z1 = 0; z1 < regDepo.array.length; z1++) {
+                                        		//var siterow = regDepo.array[z1];
+                                        		//if (siterow.Organization === FilialSeries) {
+                                        		//logger.info("z " + z + " " + siterow.SLD + " " + siterow.ID);
+                                        		//if (uids.indexOf(siterow.SLD) < 0 && siterow.SLD !== "00000000-0000-0000-0000-000000000000") {
+                                        		//	uids = uids + "<eipp:GuidLine>" + siterow.SLD + "</eipp:GuidLine>";
+                                        		//}
+                                        		//}
+                                        		//}
+                                        		/*if (uids !== "") {
+                                        			content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                        			<soap:Header/>\
+                                        			<soap:Body>\
+                                        			<eipp:GetSLD>\
+                                        			<eipp:Guid>' + uids + '</eipp:Guid>\
+                                        			</eipp:GetSLD>\
+                                        			</soap:Body>\
+                                        			</soap:Envelope>';
+                                        			/*content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                        			<soap:Header/>\
+                                        			<soap:Body>\
+                                        			<eipp:GetSLD>\
+                                        			<eipp:Guid></eipp:Guid>\
+                                        			</eipp:GetSLD>\
+                                        					</soap:Body>\
+                                        				</soap:Envelope>' 
+                                        		} else {
+                                        			result = {
+                                        				error: "Не найдены СЛД"
+                                        			};
+                                        		}*/
+                                        		for (var x = 0; x < regDepo.array.length; x++) {
+                                        			var row = regDepo.array[x];
+                                        			var obj = {
+                                        				"Kod": row.Kod,
+                                        				"TypeSld": TypeSld,
+                                        				"sld": row.ID,
+                                        				"sldName": row.Name,
+                                        				"FilialSeries": FilialSeries
+                                        			};
+                                        			result.array.push(obj);
+                                        		}
+                                        	} else {
+                                        		result = {
+                                        			error: "Проверьте параметр TypeSld"
+                                        		};
+                                        	}
+                                        
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="get_filial">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        try {
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:GetOrganizations>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetOrganizations>\
+                                           </soap:Body>\
+                                        </soap:Envelope>'
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                        	result = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetOrganizationsResponse' /* STRING */ ,
+                                        		lineFieldName: 'OrganizationsLine' /* STRING */
+                                        	});
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="get_poligon">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        try {
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:GetPolygon>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetPolygon>\
+                                           </soap:Body>\
+                                        </soap:Envelope>'
+                                           // logger.info("XML 1" + content);
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                        	//logger.info("XML 2" + xmlResponse);
+                                        	result = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetPolygonResponse' /* STRING */ ,
+                                        		lineFieldName: 'GetPolygonLine' /* STRING */
+                                        	});
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="get_serial_loco">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        try {
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                        <soap:Header/>\
+                                        <soap:Body>\
+                                              <eipp:GetLocomotiveSeries>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetLocomotiveSeries>\
+                                        </soap:Body>\
+                                        </soap:Envelope>'
+                                            logger.info("XML 1" + content);
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                        	logger.info("XML 2" + xmlResponse);
+                                        	result = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetLocomotiveSeriesResponse' /* STRING */ ,
+                                        		lineFieldName: 'LocomotiveSeriesLine' /* STRING */
+                                        	});
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="get_sld_list">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        try {
+                                        	// Сборка тела soap запроса для АСУ СГ
+                                        	var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                            <soap:Header/>\
+                                            <soap:Body>\
+                                              <eipp:GetSLD>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetSLD>\
+                                            </soap:Body>\
+                                            </soap:Envelope>';
+                                        	logger.info("XML 1" + content);
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                        	logger.info("XML 2" + xmlResponse);
+                                        	result = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetSLDResponse' /* STRING */ ,
+                                        		lineFieldName: 'GetSLDLine' /* STRING */
+                                        	});
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="getExamBySection">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*:: GetExamBySectionResponse.*[1];
+                                            var containsExamLine = resultXML.* ::GetExamBySectionLine.length() !== 0;
+                                            if (containsExamLine) {
+                                                var result = [];
+                                                for (var i = 0; i < resultXML.*:: GetExamBySectionLine.length(); i++) {
+                                                     var node = resultXML.*:: GetExamBySectionLine[i];
+                                                
+                                                    result.push({
+                                                        Section: node.*:: Section.toString(),
+                                                        LocomotiveSeries: node.*:: LocomotiveSeries.toString(),
+                                                        HomeDepot: node.*:: HomeDepot.toString(),
+                                                        PlaceOfRepair: node.*:: PlaceOfRepair.toString(),
+                                                        PlanKGE: node.*:: PlanKGE.toString(),
+                                                        FaktKGE: node.*:: FaktKGE.toString()
+                                                    });
+                                                }
+                                                return result;
+                                            } else throw new Error('Нет данных на АСУ СГ');
+                                        }
+                                        
+                                        try {
+                                            if (!sectionId || !startDate || !endDate) throw new Error('Проверьте параметры');
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:GetExamBySection>\
+                                                     <eipp:Parameter>\
+                                                        <eipp:Section>' + sectionId + '</eipp:Section>\
+                                                        <eipp:PeriodStartDate>' + startDate + '</eipp:PeriodStartDate>\
+                                                        <eipp:PeriodEndDate>' + endDate + '</eipp:PeriodEndDate>\
+                                                     </eipp:Parameter>\
+                                                  </eipp:GetExamBySection>\
+                                               </soap:Body>\
+                                            </soap:Envelope>';
+                                            var xmlResponse = Resources['ContentLoaderFunctions'].PostXML({
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            });
+                                            var response = parseXMLResponse(xmlResponse);
+                                            result = response;
+                                        } catch (err) {
+                                            result = {
+                                                error: err.message
+                                            };    
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetLocomotiveSerieName">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        try {
+                                        var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                        <soap:Header/>\
+                                        <soap:Body>\
+                                              <eipp:GetLocomotiveSeries>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetLocomotiveSeries>\
+                                        </soap:Body>\
+                                        </soap:Envelope>'
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                        	result = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetLocomotiveSeriesResponse' /* STRING */ ,
+                                        		lineFieldName: 'LocomotiveSeriesLine' /* STRING */
+                                        	});
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetRegistrationDepo">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        try {
+                                        var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:GetRegistrationDepo>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetRegistrationDepo>\
+                                           </soap:Body>\
+                                        </soap:Envelope>'
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                            
+                                        
+                                        	result = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetRegistrationDepoResponse' /* STRING */ ,
+                                        		lineFieldName: 'RegistrationDepoLine' /* STRING */
+                                        	});
+                                            
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetRepairSites">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        try {
+                                        var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                           <soap:Header/>\
+                                           <soap:Body>\
+                                              <eipp:GetRepairSites>\
+                                                 <eipp:Guid>\
+                                                 </eipp:Guid>\
+                                              </eipp:GetRepairSites>\
+                                           </soap:Body>\
+                                        </soap:Envelope>'
+                                        	var xmlResponse = me.PostXMLString({
+                                        		xmlString: content /* STRING */
+                                        	});
+                                            
+                                        
+                                        	result = me.ParseXMLResponse({
+                                        		xmlResponse: xmlResponse /* STRING */ ,
+                                        		responseFieldName: 'GetRepairSitesResponse' /* STRING */ ,
+                                        		lineFieldName: 'RepairSitesLine' /* STRING */
+                                        	});
+                                            
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSections">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        function parseXMLResponse(xmlResponse) {
+                                            var response = xmlResponse.toString();
+                                            if (response && response.indexOf('<m:ErrorDescription>') === -1) {
+                                                var arr1 = response.replace(/\b/g, '').replace(/\r/g, '').replace(/\t/g, '').replace(/\n/g, '').replace('</m:return>', '').replace('</m:GetSectionsResponse>', '').replace('</soap:Body>', '').replace('</soap:Envelope>', '').split('<m:SectionsLine>');
+                                                var arr = [];
+                                                var regex = /<([a-zA-Z]+)>(.*?)<\/[a-zA-Z]+>/gm;
+                                                if (arr1.length > 0) {
+                                                    for (var j = 1; j < arr1.length; j++) {
+                                                        if (arr1[j].length) {
+                                                            var el = arr1[j].replace(/(\<m\:)/g, '<').replace(/(\<\/m\:)/g, '</').replace('</SectionsLine>', '');
+                                                            var m;
+                                                            var dataObj = {};
+                                                            while ((m = regex.exec(el)) !== null) {
+                                                                if (m.index === regex.lastIndex) {
+                                                                    regex.lastIndex++;
+                                                                }
+                                                                var lastKey = "";
+                                                                m.forEach(function (match, groupIndex, i) {
+                                                                    if (parseInt(groupIndex) > 0) {
+                                                                        if (groupIndex == 1) {
+                                                                            lastKey = match;
+                                                                            dataObj[lastKey] = null;
+                                                                        } else if (groupIndex == 2) {
+                                                                            dataObj[lastKey] = match;
+                                                                        }
+                                                                    }
+                                                                });
+                                                            }
+                                                            arr.push(dataObj);
+                                                        }
+                                                    }
+                                                }
+                                                return arr;
+                                            } else throw new Error('Нет данных в АСУ СГ');
+                                        }
+                                        
+                                        try {
+                                            if (!sld) throw new Error('Укажите СЛД');
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                                <soap:Header/>\
+                                                <soap:Body>\
+                                                <eipp:GetSections>\
+                                                    <eipp:Guid>\
+                                                        <!--Optional:-->\
+                                                        <eipp:PlaceOfRepair></eipp:PlaceOfRepair>\
+                                                        <!--Optional:-->\
+                                                        <eipp:Start></eipp:Start>\
+                                                        <!--Optional:-->\
+                                                        <eipp:End></eipp:End>\
+                                                        <!--Optional:-->\
+                                                        <eipp:SLD>' + sld + '</eipp:SLD>\
+                                                    </eipp:Guid>\
+                                                </eipp:GetSections>\
+                                                </soap:Body>\
+                                            </soap:Envelope>';
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML({
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 5000 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            });
+                                        
+                                            var response = parseXMLResponse(xmlResponse);
+                                            result = response;
+                                        } catch (err) {
+                                            result = {
+                                                error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSerieName">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code></code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="ParseXMLResponse">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                                      
+                                        if (xmlResponse && (xmlResponse.indexOf("</soap:Envelope>") >= 0) && xmlResponse.indexOf("<m:ErrorDescription>") === -1 && xmlResponse.indexOf("<soap:Fault>") === -1) {
+                                                var formattedText = xmlResponse.replace(/\b/g,'')
+                                                    .replace(/\r/g,'')
+                                                    .replace(/\t/g,'')
+                                                    .replace(/\n/g,'')
+                                                    .replace('</m:return>', '')
+                                                    .replace('</soap:Body>', '')
+                                                    .replace('</soap:Envelope>', '')
+                                                    .replace('</m:' + responseFieldName + '>', '');
+                                        
+                                                var arr = [];
+                                                var arr1 = formattedText.split('<m:' + lineFieldName + '>');
+                                                var regex = /<([a-zA-Z0-9_-]+)>(.*?)<\/[a-zA-Z0-9_-]+>/gm;
+                                                if (formattedText.length > 0) {
+                                                    for (var j = 1; j < arr1.length; j++) {
+                                                        if (arr1[j].length) {
+                                                            arr1[j] = arr1[j].replace(/(\<m\:)/g, '<')
+                                                                .replace(/(\<\/m\:)/g, '</')
+                                                                .replace('</' + lineFieldName + '>', '');
+                                                            var m;
+                                                            var dataObj = {};
+                                                            while ((m = regex.exec(arr1[j])) !== null) {
+                                                                if (m.index === regex.lastIndex) {
+                                                                    regex.lastIndex++;
+                                                                }    
+                                                                var lastKey = "";
+                                                                m.forEach(function (match, groupIndex, i) {
+                                                                  if (parseInt(groupIndex) > 0) {
+                                                                    if (groupIndex == 1) {
+                                                                      lastKey = match;
+                                                                      dataObj[lastKey] = null;
+                                                                    } else if (groupIndex == 2) {
+                                                                      dataObj[lastKey] = match;
+                                                                    }
+                                                                  }
+                                                                });
+                                                            }
+                                                            arr.push(dataObj);
+                                                        }
+                                                     }
+                                                } 
+                                                result = arr;
+                                            } else {
+                                                result = { Error: 'Нет данных в АСУ СГ' };
+                                            };
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="PostXMLString">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        if (!xmlString) throw new Error('Xml string has to be provided!');
+                                        var result = Resources["ContentLoaderFunctions"].PostXML({
+                                                url: me.ASU_URL /* STRING */,
+                                                content: xmlString /* XML */,
+                                                username: 'ws_eipp' /* STRING */,
+                                                password: '11012019' /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                timeout: me.TIMEOUT /* NUMBER */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                proxyScheme: undefined /* STRING */
+                                            });
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="receiveNEPBySection">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        function parseXMLResponse(xmlResponse) {
+                                            try {
+                                                var resultXML = xmlResponse.*:: Body.*:: ReceiveNEPBySectionResponse .*[1];
+                                                var containsNepLine = resultXML.* ::ReceiveNEPBySectionLine.length() !== 0;
+                                                if (containsNepLine) {
+                                                    var result = [];
+                                                    for (var i = 0; i < resultXML.*:: ReceiveNEPBySectionLine.length(); i++) {
+                                                        var node = resultXML.*:: ReceiveNEPBySectionLine[i];
+                                        
+                                                        result.push({
+                                                            Section: node.*:: Section.toString(),
+                                                            LocomotiveSeries: node.*:: LocomotiveSeries.toString(),
+                                                            HomeDepot: node.*:: HomeDepot.toString(),
+                                                            LocomotiveCalendarFund: node.*:: LocomotiveCalendarFund.toString(),
+                                                            NumberOfhoursForScheduledMaintenance: node.*:: NumberOfhoursForScheduledMaintenance.toString(),
+                                                            NumberOfhoursForEquipment: node.*:: NumberOfhoursForEquipment.toString(),
+                                                            NumberOfHoursForUnscheduledRepairsTMH: node.*:: NumberOfHoursForUnscheduledRepairsTMH.toString(),
+                                                            NumberOfHoursForUnscheduledRepairsRJD: node.*:: NumberOfHoursForUnscheduledRepairsRJD.toString(),
+                                                            NumberOfHoursPerComplaint: node.*:: NumberOfHoursPerComplaint.toString(),
+                                                            NumberOfHoursToWaitForServiceTMH: node.*:: NumberOfHoursToWaitForServiceTMH.toString(),
+                                                            NumberOfHoursToWaitForServiceRJD: node.*:: NumberOfHoursToWaitForServiceRJD.toString()
+                                                        });
+                                                    }
+                                                    return result;
+                                                } else throw new Error('Нет данных на АСУ СГ');
+                                            } catch (err) { throw new Error('Нет данных на АСУ СГ'); }
+                                        }
+                                        
+                                        try {
+                                            if (!sectionId || !startDate || !endDate) throw new Error('Проверьте параметры');
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:ReceiveNEPBySection>\
+                                                     <eipp:Parameter>\
+                                                        <eipp:Section>' + sectionId + '</eipp:Section>\
+                                                        <eipp:PeriodStartDate>' + startDate + '</eipp:PeriodStartDate>\
+                                                        <eipp:PeriodEndDate>' + endDate + '</eipp:PeriodEndDate>\
+                                                     </eipp:Parameter>\
+                                                  </eipp:ReceiveNEPBySection>\
+                                               </soap:Body>\
+                                            </soap:Envelope>';
+                                            var xmlResponse = Resources['ContentLoaderFunctions'].PostXML({
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            });
+                                            var response = parseXMLResponse(xmlResponse);
+                                            result = response;
+                                        } catch (err) {
+                                            result = {
+                                                error: err.message
+                                            };    
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="uploadExamBySection">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        var status = 'Данные успешно переданы';
+                                        
+                                        try {
+                                            if (!sectionId || !locomotiveSeries || !homeDepot || !placeOfRepair || !plan || !fact) throw new Error('Проверьте параметры');
+                                            else result = { status: status };
+                                        } catch (err) {
+                                            result = {
+                                                error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="uploadNEPBySection">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        var status = 'Данные успешно переданы';
+                                        try {
+                                            if (!sectionId || !startDate || !endDate || !locomotiveSeries || !homeDepot || 
+                                                !locomotiveCalendar || !plannedRepairHours || !equipmentHours || !unplannedRepairHoursTMH || 
+                                                !unplannedRepairHoursRZD || !reclamationHours || !serviceWaitingHoursTMH || !serviceWaitingHoursRZD) throw new Error('Проверьте параметры');
+                                            else {
+                                                result = { status: status };
+                                            }
+                                        } catch (err) {
+                                            result = {
+                                                error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="ASU_URL"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <ASU_URL>
+                    <Value>
+                    <![CDATA[
+                    http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-08-02T13:20:11.517+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_URL>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

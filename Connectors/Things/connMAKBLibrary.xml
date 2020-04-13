@@ -1,0 +1,1032 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description="Коннектор для интеграции с системой ИС «Мониторинг АКБ»"
+         documentationContent="&lt;p&gt;&lt;strong&gt;См. Частное техническое задание&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Проект «Цифровое&#xA;депо»&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Этап: «Разработка&#xA;программного решения единой интеграционной&#xA;программной платформы»&amp;nbsp;&lt;/strong&gt;&lt;strong&gt;Интеграция с ИС&#xA;«Мониторинг АКБ».&lt;/strong&gt;&lt;/p&gt;"
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="connMAKBLibrary"
+         projectName="Connectors"
+         published="false"
+         tags="Applications:MAKB"
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read>
+                    <Principal
+                     isPermitted="true"
+                     name="TestUsers"
+                     type="Group"></Principal>
+                </Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions>
+                <Permissions
+                 resourceName="*">
+                    <PropertyRead>
+                        <Principal
+                         isPermitted="true"
+                         name="MAKB"
+                         type="Group"></Principal>
+                    </PropertyRead>
+                    <PropertyWrite></PropertyWrite>
+                    <ServiceInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="MAKB"
+                         type="Group"></Principal>
+                    </ServiceInvoke>
+                    <EventInvoke></EventInvoke>
+                    <EventSubscribe></EventSubscribe>
+                </Permissions>
+            </RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility>
+                    <Principal
+                     isPermitted="true"
+                     name="ЛокоТех"
+                     type="Organization"></Principal>
+                </Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_SG_LOGIN"
+                     ordinal="3"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.isPersistent="true"
+                     baseType="PASSWORD"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_SG_PASSWORD"
+                     ordinal="4"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="30000.0"
+                     aspect.isPersistent="true"
+                     baseType="NUMBER"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_SG_TIMEOUT"
+                     ordinal="5"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_SG_URL"
+                     ordinal="2"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.isPersistent="true"
+                     baseType="PASSWORD"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="MAKB_API_KEY"
+                     ordinal="7"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="MAKB_URL"
+                     ordinal="6"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category="Public"
+                     description="Метод предназначен для передачи данных телеметрии по АКБ из МКАБ в ЕИПП"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="LoadDataAccumulator">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="А"
+                             baseType="NUMBER"
+                             description="Ток"
+                             name="accumulator_A"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="град. C"
+                             baseType="NUMBER"
+                             description="Температура"
+                             name="accumulator_C"
+                             ordinal="10"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="л."
+                             baseType="NUMBER"
+                             description="Уровень электролита"
+                             name="accumulator_EL"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Уровень риска испарения электролита"
+                             name="accumulator_EL_ALARM"
+                             ordinal="10"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор устройства МАКБ"
+                             name="accumulator_id"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор АКБ на секции"
+                             name="accumulator_section_id"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="В"
+                             baseType="NUMBER"
+                             description="Среднее Напряжение"
+                             name="accumulator_VA"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="В"
+                             baseType="NUMBER"
+                             description="Полное Напряжение"
+                             name="accumulator_VF"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="DATETIME"
+                             description="Дата и время проведения замера"
+                             name="mes_time"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор субномера секции"
+                             name="subnum_section"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category="Public"
+                     description="Метод предназначен для передачи данных сбоя (АЛАРМ) по АКБ из МКАБ в ЕИПП "
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="LoadDataALARM">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="А"
+                             baseType="NUMBER"
+                             description="Ток"
+                             name="accumulator_A"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="град. C"
+                             baseType="NUMBER"
+                             description="Температура"
+                             name="accumulator_C"
+                             ordinal="12"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="л."
+                             baseType="NUMBER"
+                             description="Уровень электролита"
+                             name="accumulator_EL"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Уровень риска испарения электролита"
+                             name="accumulator_EL_ALARM"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор устройства МАКБ"
+                             name="accumulator_id"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор АКБ на секции"
+                             name="accumulator_section_id"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="В"
+                             baseType="NUMBER"
+                             description="Среднее Напряжение"
+                             name="accumulator_VA"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             aspect.units="В"
+                             baseType="NUMBER"
+                             description="Полное Напряжение"
+                             name="accumulator_VF"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Описание замечания в МАКБ"
+                             name="macb_issue_desc"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор замечания  в МАКБ"
+                             name="macb_issue_id"
+                             ordinal="10"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="DATETIME"
+                             description="Дата и время проведения замера"
+                             name="mes_time"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор субномера секции"
+                             name="subnum_section"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category="Private"
+                     description="Преобразует DATETIME в строку в часом поясе Москвы"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="mskDateFormat">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="DATETIME"
+                             description=""
+                             name="date"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category="Helper"
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="purgeAll">
+                        <ResultType
+                         baseType="NOTHING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category="Test"
+                     description="Тестирование запроса к АСУ СГ"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetAKBInfoTest">
+                        <ResultType
+                         baseType="XML"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category="Test"
+                     description="Тестирование запроса к АСУ СГ"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="WorkCompleteAKBTest">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category="Public"
+                     description="Метод передачи отчета об устранении замечания из АСУ СГ в ЕИПП"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="WorkCompleteASU">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор замечания  в МАКБ"
+                             name="macb_issue_id"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Идентификатор замечания  в АСУ СГ"
+                             name="remark_id"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="STRING"
+                             description="Статус отработки замечания"
+                             name="remark_Status"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="true"
+                             baseType="JSON"
+                             description="Описание выполненных работ"
+                             name="work_description"
+                             ordinal="3"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="LoadDataAccumulator">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {"result":"true"};
+                                        var errCode = "9999";
+                                        try {
+                                        	if (accumulator_id === undefined || accumulator_id.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_id value is not allowed";
+                                        	}
+                                        	if (subnum_section === undefined || subnum_section.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty subnum_section value is not allowed";
+                                        	}
+                                        	if (accumulator_section_id === undefined || accumulator_section_id.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_section_id value is not allowed";
+                                        	}
+                                        	if (mes_time === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty mes_time value is not allowed";
+                                        	}
+                                        	if (accumulator_C === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_C value is not allowed";
+                                        	}
+                                        	if (accumulator_VF === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_VF value is not allowed";
+                                        	}
+                                        	if (accumulator_VA === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_VA value is not allowed";
+                                        	}
+                                        	if (accumulator_A === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_A value is not allowed";
+                                        	}
+                                        	if (accumulator_EL === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_EL value is not allowed";
+                                        	}
+                                        	if (accumulator_EL_ALARM === undefined || accumulator_EL_ALARM.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_EL_ALARM value is not allowed";
+                                        	}
+                                            
+                                        	// values:INFOTABLE(Datashape:MAKB_DataShape)
+                                        	var values = Things["MAKB_Stream"].CreateValues();
+                                        	values.accumulator_id = accumulator_id; //STRING
+                                        	values.subnum_section = subnum_section; //STRING
+                                        	values.accumulator_section_id = accumulator_section_id; //STRING
+                                        	values.mes_time = mes_time; //DATETIME
+                                        	values.mes_time_formated = dateFormat(mes_time, "dd.MM.yyyy HH:mm:ss Z"); //STRING
+                                        	values.accumulator_C = accumulator_C; //NUMBER
+                                        	values.accumulator_VF = accumulator_VF; //NUMBER
+                                        	values.accumulator_VA = accumulator_VA; //NUMBER
+                                        	values.accumulator_A = accumulator_A; //NUMBER
+                                        	values.accumulator_EL = accumulator_EL; //NUMBER
+                                        	values.accumulator_EL_ALARM = accumulator_EL_ALARM; //STRING
+                                        	values.macb_issue_id = ""; //STRING
+                                        	values.macb_issue_desc = ""; //STRING
+                                        
+                                        	var params = {
+                                            	tags : undefined,
+                                            	timestamp :  new Date(),
+                                            	source : me.name,
+                                            	values : values,
+                                            	location : undefined
+                                        	};
+                                        	// AddStreamEntry(tags:TAGS, timestamp:DATETIME, source:STRING("me.name"), values:INFOTABLE(MAKB_DataShape), location:LOCATION):NOTHING
+                                        	Things["MAKB_Stream"].AddStreamEntry(params);    
+                                            
+                                        } catch (e) {
+                                        	result = {"result":"false","Error": {"code": errCode, "description": e.toString()}};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="LoadDataALARM">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {"result":"true"};
+                                        var errCode = "9999";
+                                        
+                                        try {
+                                        	if (accumulator_id === undefined || accumulator_id.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_id value is not allowed";
+                                        	}
+                                        	if (subnum_section === undefined || subnum_section.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty subnum_section value is not allowed";
+                                        	}
+                                        	if (accumulator_section_id === undefined || accumulator_section_id.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_section_id value is not allowed";
+                                        	}
+                                        	if (mes_time === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty mes_time value is not allowed";
+                                        	}
+                                        	if (accumulator_C === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_C value is not allowed";
+                                        	}
+                                        	if (accumulator_VF === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_VF value is not allowed";
+                                        	}
+                                        	if (accumulator_VA === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_VA value is not allowed";
+                                        	}
+                                        	if (accumulator_A === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_A value is not allowed";
+                                        	}
+                                        	if (accumulator_EL === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_EL value is not allowed";
+                                        	}
+                                        	if (accumulator_EL_ALARM === undefined || accumulator_EL_ALARM.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty accumulator_EL_ALARM value is not allowed";
+                                        	}
+                                        	if (macb_issue_id === undefined || macb_issue_id.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty macb_issue_id value is not allowed";
+                                        	}
+                                        	if (macb_issue_desc === undefined || macb_issue_desc.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty macb_issue_desc value is not allowed";
+                                        	}
+                                            
+                                        	// values:INFOTABLE(Datashape:MAKB_DataShape)
+                                        	var values = Things["MAKB_Stream"].CreateValues();
+                                        	values.accumulator_id = accumulator_id; //STRING
+                                        	values.subnum_section = subnum_section; //STRING
+                                        	values.accumulator_section_id = accumulator_section_id; //STRING
+                                        	values.mes_time = mes_time; //DATETIME
+                                        	values.mes_time_formated = dateFormat(mes_time, "dd.MM.yyyy HH:mm:ss Z"); //STRING    
+                                        	values.accumulator_C = accumulator_C; //NUMBER
+                                        	values.accumulator_VF = accumulator_VF; //NUMBER
+                                        	values.accumulator_VA = accumulator_VA; //NUMBER
+                                        	values.accumulator_A = accumulator_A; //NUMBER
+                                        	values.accumulator_EL = accumulator_EL; //NUMBER
+                                        	values.accumulator_EL_ALARM = accumulator_EL_ALARM; //STRING
+                                        	values.macb_issue_id = macb_issue_id; //STRING
+                                        	values.macb_issue_desc = macb_issue_desc; //STRING
+                                        
+                                        	var addEntryParams = {
+                                            	tags : undefined,
+                                            	timestamp :  new Date(),
+                                            	source : me.name,
+                                            	values : values,
+                                            	location : undefined
+                                        	};
+                                            
+                                        	// AddStreamEntry(tags:TAGS, timestamp:DATETIME, source:STRING("me.name"), values:INFOTABLE(MAKB_DataShape), location:LOCATION):NOTHING
+                                        	Things["MAKB_Stream"].AddStreamEntry(addEntryParams);    
+                                        	
+                                            var mskDate = me.mskDateFormat({date: mes_time});
+                                            var soapRequest = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org"><soap:Header/><soap:Body>'+ 
+                                        		'<eipp:SetAKBInfo><eipp:Parameters>' +
+                                            		'<eipp:NumberSection>' + subnum_section + '</eipp:NumberSection>'+
+                                            		'<eipp:BatteryIdentifier>' + accumulator_section_id + '</eipp:BatteryIdentifier>'+
+                                            		'<eipp:MeasurementDevice_ID>' + accumulator_id + '</eipp:MeasurementDevice_ID>'+
+                                            		'<eipp:Mes_time>' + mskDate + '</eipp:Mes_time>'+
+                                            		'<eipp:Temperature>' + accumulator_C + '</eipp:Temperature>'+
+                                            		'<eipp:Voltage>' + accumulator_VF + '</eipp:Voltage>'+
+                                            		'<eipp:Resistance>' + accumulator_A + '</eipp:Resistance>'+
+                                            		'<eipp:Capacitance>' + accumulator_EL + '</eipp:Capacitance>'+
+                                            		'<eipp:ID_CommentsBattery>' + macb_issue_id + '</eipp:ID_CommentsBattery>'+
+                                            		'<eipp:DescriptionCommentsBattery>' + macb_issue_desc + '</eipp:DescriptionCommentsBattery>'+
+                                            		'<eipp:Criticality></eipp:Criticality>'+
+                                            		'<eipp:AverageVoltage>' + accumulator_VA + '</eipp:AverageVoltage>'+
+                                            		'<eipp:RiskOfEvaporation>' + accumulator_EL_ALARM + '</eipp:RiskOfEvaporation>'+
+                                            	'</eipp:Parameters></eipp:SetAKBInfo>' +
+                                        	'</soap:Body></soap:Envelope>';
+                                            
+                                        	var requestParams = {
+                                        		headers: undefined /* JSON */,
+                                        		url: me.ASU_SG_URL/* STRING */,
+                                        		content: soapRequest /* XML */,
+                                        		timeout: me.ASU_SG_TIMEOUT/* NUMBER */,
+                                        		password: me.ASU_SG_PASSWORD /* STRING */,
+                                        		username: me.ASU_SG_LOGIN /* STRING */
+                                        	};
+                                        
+                                        	// result: XML
+                                        	var soapResponse = Resources["ContentLoaderFunctions"].PostXML(requestParams);
+                                        	soapResponse = new XML(soapResponse.toString().split("m:return").join("Return"));
+                                        
+                                            var descr = soapResponse.descr;
+                                            if(descr && descr.toString() !== ''){
+                                                errCode = "0002";
+                                                throw "ASU SG is not responding: " + descr.toString();    
+                                            }    
+                                            var fault = soapResponse.*::Body.*::Fault;
+                                            var answer = soapResponse.*::Body.*::SetAKBInfoResponse.Return.*::Answer;
+                                            if(fault && fault.toString() !== ''){
+                                                var reason = soapResponse.*::Body.*::Fault.*::Reason.*::Text;
+                                                errCode = "0003";
+                                                throw "ASU SG return Fault: " + reason.toString();    
+                                            } else if(!answer || answer.toString() == ''){
+                                                errCode = "9999";
+                                          		throw "Unexpected ASU SG response: " + soapResponse;    
+                                            }
+                                        	if(answer != 'true'){
+                                                errCode = "0004";
+                                            	var errDescr = soapResponse.*::Body.*::SetAKBInfoResponse.Return.*::ErrorDescription;
+                                        		throw "ASU SG return False: " + errDescr;    
+                                        	}
+                                        
+                                        } catch (e) {
+                                        	result = {"result":"false","Error": {"code": errCode, "description": e.toString()}};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="mskDateFormat">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var dateStr = date.toString();
+                                        var endStr = dateStr.indexOf("GMT");
+                                        var adjustedDate = dateStr.substr(0, endStr+3) + "+0300";
+                                        var modDate = new Date(adjustedDate);
+                                        var diff = dateDifference(date, modDate);
+                                        var resultDate = new Date (date.getTime() + diff);
+                                        result = dateFormat(resultDate, "yyyy-MM-dd HH:mm:ss");
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="purgeAll">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        Things["MAKB_Stream"].PurgeStreamEntries({
+                                        	startDate: "0000-01-01T00:00:00.000-00:00" /* DATETIME */,
+                                        	endDate: new Date() /* DATETIME */,
+                                        	immediate: true /* BOOLEAN */
+                                        });
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetAKBInfoTest">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org"><soap:Header/><soap:Body>'+ 
+                                        		'<eipp:SetAKBInfo><eipp:Parameters>' +
+                                            		'<eipp:NumberSection>11600012</eipp:NumberSection>'+
+                                            		'<eipp:BatteryIdentifier>Идентификатор№1</eipp:BatteryIdentifier>'+
+                                            		'<eipp:MeasurementDevice_ID>test2</eipp:MeasurementDevice_ID>'+
+                                            		'<eipp:Mes_time>2010-09-02T07:12:01.000-00:00</eipp:Mes_time>'+
+                                            		'<eipp:Temperature>1</eipp:Temperature>'+
+                                            		'<eipp:Voltage>1</eipp:Voltage>'+
+                                            		'<eipp:Resistance>1</eipp:Resistance>'+
+                                            		'<eipp:Capacitance>1</eipp:Capacitance>'+
+                                            		'<eipp:ID_CommentsBattery>74d104b7</eipp:ID_CommentsBattery>'+
+                                            		'<eipp:DescriptionCommentsBattery>test2</eipp:DescriptionCommentsBattery>'+
+                                            		'<eipp:Criticality>test2</eipp:Criticality>'+
+                                            		'<eipp:AverageVoltage>1</eipp:AverageVoltage>'+
+                                            		'<eipp:RiskOfEvaporation>1</eipp:RiskOfEvaporation>'+
+                                            	'</eipp:Parameters></eipp:SetAKBInfo>' +
+                                        	'</soap:Body></soap:Envelope>';
+                                        
+                                        var params = {
+                                        	headers: undefined /* JSON */,
+                                        	url: me.ASU_SG_URL/* STRING */,
+                                        	content: content /* XML */,
+                                        	timeout: me.ASU_SG_TIMEOUT /* NUMBER */,
+                                        	password: me.ASU_SG_PASSWORD /* STRING */,
+                                        	username: me.ASU_SG_LOGIN/* STRING */
+                                        };
+                                        
+                                        // result: XML
+                                        var result = Resources["ContentLoaderFunctions"].PostXML(params);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="WorkCompleteAKBTest">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var content = {"macb_issue_id": "xxx", "remark_id": "xxx", "work_description": ["АКБ восстановлен"]};
+                                        
+                                        var headers = {
+                                            "Content-Type": "application/json",
+                                            "Accept": "application/json",
+                                            "x-api-key": me.MAKB_API_KEY
+                                        }; 
+                                        
+                                        var params = {
+                                        	headers: headers /* JSON */,
+                                        	url: me.MAKB_URL/* STRING */,
+                                        	content: content /* JSON */,
+                                        	timeout: me.ASU_SG_TIMEOUT/* NUMBER */,
+                                        };
+                                        
+                                        // result: JSON
+                                        var result = Resources["ContentLoaderFunctions"].PostJSON(params);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="WorkCompleteASU">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {"result":"true"};
+                                        var errCode = "9999";
+                                        
+                                        //logger.info("WorkCompleteASU inputs: macb_issue_id=" + macb_issue_id + ", remark_id=" + remark_id + ", remark_Status=" + remark_Status + ", work_description=" + work_description);
+                                        
+                                        try {
+                                        	if (!macb_issue_id || macb_issue_id.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty macb_issue_id value is not allowed";
+                                        	}
+                                        	if (!remark_id || remark_id.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty remark_id value is not allowed";
+                                        	}
+                                        	if (!remark_Status || remark_Status.trim() === ''){
+                                                errCode = "0001";
+                                            	throw "Empty remark_Status value is not allowed";
+                                        	}
+                                        	if (work_description === undefined){
+                                                errCode = "0001";
+                                            	throw "Empty work_description value is not allowed";
+                                        	}
+                                        	if (work_description.array === undefined){
+                                                errCode = "0001";
+                                            	throw "Unexpected work_description format. JSON array expected";
+                                        	}
+                                            
+                                        	var content = {"macb_issue_id": macb_issue_id, "remark_id": remark_id, "remark_Status" : remark_Status, "work_description": work_description.array};
+                                            
+                                        	var headers = {
+                                            	"Content-Type": "application/json",
+                                            	"Accept": "application/json",
+                                            	"x-api-key": me.MAKB_API_KEY
+                                        	}; 
+                                        
+                                        	var params = {
+                                        		headers: headers /* JSON */,
+                                        		url: me.MAKB_URL/* STRING */,
+                                        		content: content /* JSON */,
+                                        		timeout: me.ASU_SG_TIMEOUT/* NUMBER */,
+                                        	};
+                                        
+                                        	// result: JSON
+                                        	var makbResponse = Resources["ContentLoaderFunctions"].PostJSON(params);
+                                        
+                                            if(makbResponse.message){
+                                                errCode = "0002";
+                                                throw "MAKB return the Error: " + makbResponse.message;    
+                                        	}
+                                        
+                                        	if(!makbResponse.status){
+                                                errCode = "0003";
+                                                throw "MAKB return an unexpected response " + makbResponse;
+                                        	} 
+                                        
+                                            if(makbResponse.status != "success"){
+                                                errCode = "0004";
+                                                throw "MAKB return an unexpected status: " + makbResponse.status;    
+                                            }    
+                                            
+                                        } catch (e) {
+                                        	result = {"result":"false","Error": {"code": errCode, "description": e.toString()}};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="ASU_SG_LOGIN"></AlertDefinitions>
+                <AlertDefinitions
+                 name="ASU_SG_PASSWORD"></AlertDefinitions>
+                <AlertDefinitions
+                 name="ASU_SG_TIMEOUT"></AlertDefinitions>
+                <AlertDefinitions
+                 name="ASU_SG_URL"></AlertDefinitions>
+                <AlertDefinitions
+                 name="MAKB_API_KEY"></AlertDefinitions>
+                <AlertDefinitions
+                 name="MAKB_URL"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <ASU_SG_URL>
+                    <Value>
+                    <![CDATA[
+                    http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-12-13T17:21:46.647+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_SG_URL>
+                <MAKB_URL>
+                    <Value>
+                    <![CDATA[
+                    https://qnqb9slifl.execute-api.eu-central-1.amazonaws.com/dev/rzd/WorkCompleteAKB
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-10-11T16:42:55.205+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </MAKB_URL>
+                <MAKB_API_KEY>
+                    <Value></Value>
+                    <Timestamp>2019-10-11T16:43:16.781+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </MAKB_API_KEY>
+                <ASU_SG_TIMEOUT>
+                    <Value>30000.0</Value>
+                    <Timestamp>2019-10-09T07:57:48.260+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_SG_TIMEOUT>
+                <ASU_SG_LOGIN>
+                    <Value>
+                    <![CDATA[
+                    ws_eipp
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-10-09T07:54:45.918+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_SG_LOGIN>
+                <ASU_SG_PASSWORD>
+                    <Value></Value>
+                    <Timestamp>2019-10-09T07:55:01.812+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_SG_PASSWORD>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

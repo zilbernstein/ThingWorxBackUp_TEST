@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <DataShapes>
+        <DataShape
+         baseDataShape=""
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="MAKB_DataShape"
+         projectName="Connectors"
+         tags="Applications:MAKB">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <FieldDefinitions>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 aspect.units="А"
+                 baseType="NUMBER"
+                 description="Ток"
+                 name="accumulator_A"
+                 ordinal="9"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 aspect.units="град. C"
+                 baseType="NUMBER"
+                 description="Температура"
+                 name="accumulator_C"
+                 ordinal="6"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="NUMBER"
+                 description="Уровень электролита"
+                 name="accumulator_EL"
+                 ordinal="10"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description="Уровень риска испарения электролита"
+                 name="accumulator_EL_ALARM"
+                 ordinal="11"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description="Идентификатор устройства МАКБ"
+                 name="accumulator_id"
+                 ordinal="1"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description="Идентификатор АКБ на секции"
+                 name="accumulator_section_id"
+                 ordinal="3"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 aspect.units="В"
+                 baseType="NUMBER"
+                 description="Среднее Напряжение"
+                 name="accumulator_VA"
+                 ordinal="8"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 aspect.units="В"
+                 baseType="NUMBER"
+                 description="Полное Напряжение"
+                 name="accumulator_VF"
+                 ordinal="7"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description="Описание замечания в МАКБ"
+                 name="macb_issue_desc"
+                 ordinal="13"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description="Идентификатор замечания  в МАКБ"
+                 name="macb_issue_id"
+                 ordinal="12"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="DATETIME"
+                 description="Дата и время проведения замера"
+                 name="mes_time"
+                 ordinal="4"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description="Дата и время проведения замера (поле для отображения часового пояса в машапе)"
+                 name="mes_time_formated"
+                 ordinal="5"></FieldDefinition>
+                <FieldDefinition
+                 aspect.isPrimaryKey="false"
+                 baseType="STRING"
+                 description="Идентификатор субномера секции"
+                 name="subnum_section"
+                 ordinal="2"></FieldDefinition>
+            </FieldDefinitions>
+        </DataShape>
+    </DataShapes>
+</Entities>

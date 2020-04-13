@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description=""
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="handlerTime"
+         projectName="Connectors"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                    <Principal
+                     isPermitted="true"
+                     name="Тестовая_группа"
+                     type="Group"></Principal>
+                </Read>
+                <Update>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                    <Principal
+                     isPermitted="true"
+                     name="Тестовая_группа"
+                     type="Group"></Principal>
+                </Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions>
+                <Permissions
+                 resourceName="*">
+                    <PropertyRead>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </PropertyRead>
+                    <PropertyWrite>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </PropertyWrite>
+                    <ServiceInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </ServiceInvoke>
+                    <EventInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </EventInvoke>
+                    <EventSubscribe>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </EventSubscribe>
+                </Permissions>
+            </RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility>
+                    <Principal
+                     isPermitted="true"
+                     name="Тесты"
+                     type="Organization"></Principal>
+                </Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions></PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="Generate">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="DATETIME"
+                             description=""
+                             name="date"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="timezone"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="Parse">
+                        <ResultType
+                         baseType="DATETIME"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="dateString"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="ParseRiftecFormat">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="dateString"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="Generate">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var dateParam = date ? date : new Date();
+                                        dateParam.setHours(dateParam.getHours() + dateParam.getTimezoneOffset() / -60); //Fix UTC Timestamp
+                                        var formattedDate = dateParam.toISOString().match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/i)[0];
+                                        
+                                        var formatTimezone = function(timezoneOffset) {
+                                            var timezone = timezoneOffset / -60;
+                                            var timezoneMintes = timezoneOffset % -60;
+                                            return (timezone < 10 ? '0' + timezone : timezone) + ':' + (timezoneMintes < 10 ? '0' + timezoneMintes : timezoneMintes);
+                                        };
+                                        
+                                        if (timezone) { formattedDate += '+' + formatTimezone(dateParam.getTimezoneOffset()); }
+                                        var result = formattedDate;
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="Parse">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = new Date();
+                                        var dateRegEx = /^\d{4}-\d{2}-\d{2}((T|\s+)?\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/i;
+                                        
+                                        if (dateString && dateRegEx.test(dateString)) {
+                                            var datePart = dateString.match(/^\d{4}-\d{2}-\d{2}/)[0].split('-');
+                                            result.setFullYear(datePart[0], datePart[1] - 1, datePart[2]);
+                                            var timePart = dateString.match(/\d{2}:\d{2}:\d{2}/);
+                                            if (timePart) {
+                                                timePart = timePart[0].split(':');
+                                                var timeZone = dateString.match(/\+\d{2}:\d{2}$/);
+                                                if (timeZone) {
+                                                    timeZone = timeZone[0].substring(1).split(':');
+                                                    result.setHours(timePart[0], timePart[1], timePart[2]); //todo fix this moment
+                                                } else {
+                                                    result.setHours(timePart[0], timePart[1], timePart[2]);
+                                                }
+                                            }
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="ParseRiftecFormat">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                            dateTimeMsk: new Date(),
+                                            timeZone: 3
+                                        };
+                                        var dateRegEx = /^\d{2}\.\d{2}\.\d{2}((T|\s+)?\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/i;
+                                        
+                                        if (dateString && dateRegEx.test(dateString)) {
+                                            var datePart = dateString.match(/^\d{2}\.\d{2}\.\d{2}/)[0].split('.');
+                                            var year = datePart[2].length === 2 ? '20' + datePart[2] : datePart[2];
+                                            result.dateTimeMsk.setFullYear(year, datePart[1] - 1, datePart[0]);
+                                            var timePart = dateString.match(/\d{2}:\d{2}:\d{2}/);
+                                            if (timePart) {
+                                                timePart = timePart[0].split(':');
+                                                var timeZone = dateString.match(/\+\d{2}:\d{2}$/);
+                                                if (timeZone) {
+                                                    timeZone = timeZone[0].substring(1).split(':');
+                                                    result.timeZone = parseInt(timeZone[0]);
+                                                    result.dateTimeMsk.setHours(timePart[0], timePart[1], timePart[2]); //todo fix this moment
+                                                } else {
+                                                    result.dateTimeMsk.setHours(timePart[0], timePart[1], timePart[2]);
+                                                }
+                                            }
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations></AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties></ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Mashups>
+        <Mashup
+         aspect.isFlex="true"
+         aspect.isResponsive="true"
+         aspect.mashupType="mashup"
+         columns="0.0"
+         description="Мэшап - Таблицы 1"
+         documentationContent=""
+         homeMashup=""
+         name="connDevicePlaces"
+         projectName="Connectors"
+         rows="0.0"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ParameterDefinitions></ParameterDefinitions>
+            <Things>
+                <Thing>connBiotekLibrary</Thing>
+            </Things>
+            <ThingShapes></ThingShapes>
+            <ThingTemplates></ThingTemplates>
+            <mashupContent>
+            <![CDATA[
+            {
+              "CustomMashupCss" : "",
+              "Data" : {
+                "Session" : {
+                  "DataName" : "Session",
+                  "EntityName" : "",
+                  "EntityType" : "Session",
+                  "Id" : "session",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "SessionInterface",
+                    "Name" : "GetGlobalSessionValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetGlobalSessionValues"
+                  } ]
+                },
+                "Things_connBiotekLibrary" : {
+                  "DataName" : "Things_connBiotekLibrary",
+                  "EntityName" : "connBiotekLibrary",
+                  "EntityType" : "Things",
+                  "Id" : "6f589721-1f80-448a-a4e2-e2e5a9928648",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "39610267-6c58-4d33-8914-cc0070f73e9a",
+                    "Name" : "GetDevicesPlaces",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetDevicesPlaces"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "e3560f02-d22e-4274-ae84-e2dae262aa7b",
+                    "Name" : "RemoveDevicesPlaces",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "RemoveDevicesPlaces"
+                  } ]
+                },
+                "UserExtensions" : {
+                  "DataName" : "UserExtensions",
+                  "EntityName" : "",
+                  "EntityType" : "UserExtensions",
+                  "Id" : "UserExtensions",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "UserExtensionInterface",
+                    "Name" : "GetCurrentUserExtensionProperties",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetCurrentUserExtensionProperties"
+                  } ]
+                }
+              },
+              "DataBindings" : [ {
+                "Id" : "475adfb1-9f5c-4e3e-8242-9ce5f85b62b1",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "ID",
+                  "SourcePropertyBaseType" : "STRING",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "deviceID",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "SelectedRows",
+                "SourceId" : "GetDevicesPlaces",
+                "SourceSection" : "Things_connBiotekLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "navigation-7",
+                "TargetSection" : ""
+              }, {
+                "Id" : "f5c488ca-98d5-4616-a35e-f4ba274c13e7",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "ID",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "id",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "SelectedRows",
+                "SourceId" : "GetDevicesPlaces",
+                "SourceSection" : "Things_connBiotekLibrary",
+                "TargetArea" : "Data",
+                "TargetId" : "RemoveDevicesPlaces",
+                "TargetSection" : "Things_connBiotekLibrary"
+              }, {
+                "Id" : "17d0310d-0e43-4fb7-ab03-636403b02669",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "InfoTable",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetDevicesPlaces",
+                "SourceSection" : "Things_connBiotekLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxgrid-6",
+                "TargetSection" : ""
+              } ],
+              "DesignTimePermissions" : {
+                "Create" : [ ],
+                "Delete" : [ ],
+                "Metadata" : [ ],
+                "Read" : [ ],
+                "Update" : [ ]
+              },
+              "Events" : [ {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connBiotekLibrary",
+                "EventHandlerService" : "GetDevicesPlaces",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "8c25e9c9-95d4-44bc-87e8-044ea31b98a3"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connBiotekLibrary",
+                "EventHandlerService" : "RemoveDevicesPlaces",
+                "EventTriggerArea" : "UI",
+                "EventTriggerEvent" : "Clicked",
+                "EventTriggerId" : "button-9",
+                "EventTriggerSection" : "",
+                "Id" : "12c6d60f-8b1c-4e9e-a23f-ac6f5979e914"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connBiotekLibrary",
+                "EventHandlerService" : "GetDevicesPlaces",
+                "EventTriggerArea" : "Data",
+                "EventTriggerEvent" : "ServiceInvokeCompleted",
+                "EventTriggerId" : "RemoveDevicesPlaces",
+                "EventTriggerSection" : "Things_connBiotekLibrary",
+                "Id" : "83932115-bcc1-435f-b00d-99adfb6e6b15"
+              } ],
+              "RunTimePermissions" : {
+                "permissions" : [ ]
+              },
+              "UI" : {
+                "Properties" : {
+                  "AddToDashboardButton" : "SimplePlus",
+                  "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+                  "Area" : "Mashup",
+                  "BGImage" : "",
+                  "BGImageRepeat" : "no-repeat",
+                  "BGImageSize" : "auto",
+                  "Columns" : 0,
+                  "ConfigureGadgetButton" : "SimpleGear",
+                  "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+                  "DisplayName" : "Mashup",
+                  "EnableParameterEditing" : false,
+                  "Height" : 618,
+                  "Id" : "mashup-root",
+                  "IgnoreWarningsInViewMashup" : false,
+                  "IsPrintLayout" : false,
+                  "Left" : 0,
+                  "MashupToEditGadget" : "DefaultMashupToEditGadget",
+                  "MinHeight" : 0,
+                  "MinWidth" : 0,
+                  "ResponsiveLayout" : true,
+                  "Rows" : 0,
+                  "ShowDataLoading" : true,
+                  "Style" : "DefaultMashupStyle",
+                  "StyleTheme" : "Base Theme",
+                  "Title" : "",
+                  "TitleBar" : false,
+                  "TitleBarStyle" : "DefaultTitleBarStyle",
+                  "TitleBarText" : "Gadget Title Here",
+                  "Top" : 0,
+                  "Type" : "mashup",
+                  "UseTheme" : false,
+                  "UseThemeForHybrids" : false,
+                  "Visible" : true,
+                  "Width" : 1024,
+                  "Z-index" : 10,
+                  "__TypeDisplayName" : "Mashup",
+                  "flex-grow" : 0,
+                  "id_index" : 10,
+                  "supportsAutoResize" : true
+                },
+                "Widgets" : [ {
+                  "Properties" : {
+                    "Area" : "UI",
+                    "DisplayName" : "flexcontainer-2",
+                    "Id" : "flexcontainer-2",
+                    "ResponsiveLayout" : true,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultContainerStyle",
+                    "Type" : "flexcontainer",
+                    "UseTheme" : false,
+                    "Visible" : true,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Flex Container",
+                    "align-content" : "flex-start",
+                    "align-items" : "flex-start",
+                    "flex-basis" : "auto",
+                    "flex-direction" : "column",
+                    "flex-grow" : 1,
+                    "flex-height" : 0,
+                    "flex-shrink" : 0,
+                    "flex-width" : 0,
+                    "flex-wrap" : "nowrap",
+                    "iconClass" : "widgets-flexcontainer",
+                    "justify-content" : "flex-start",
+                    "userCannotRemove" : true
+                  },
+                  "Widgets" : [ {
+                    "Properties" : {
+                      "Area" : "UI",
+                      "DisplayName" : "Header",
+                      "Id" : "flexcontainer-4",
+                      "ResponsiveLayout" : true,
+                      "ShowDataLoading" : true,
+                      "Style" : "DefaultContainerStyle",
+                      "Type" : "flexcontainer",
+                      "UseTheme" : false,
+                      "Visible" : true,
+                      "Z-index" : 10,
+                      "__TypeDisplayName" : "Flex Container",
+                      "align-content" : "flex-start",
+                      "align-items" : "flex-start",
+                      "flex-basis" : "auto",
+                      "flex-direction" : "row",
+                      "flex-grow" : 1,
+                      "flex-height" : 71,
+                      "flex-shrink" : 0,
+                      "flex-width" : 0,
+                      "flex-wrap" : "nowrap",
+                      "iconClass" : "widgets-flexcontainer-fixed",
+                      "isLocked" : false,
+                      "justify-content" : "flex-start",
+                      "userCannotRemove" : false
+                    },
+                    "Widgets" : [ {
+                      "Properties" : {
+                        "Alignment" : "center",
+                        "Area" : "UI",
+                        "ClickOutsideToClose" : false,
+                        "DisplayName" : "navigation-8",
+                        "FixedPopupHeight" : 0,
+                        "FixedPopupWidth" : 0,
+                        "Height" : 30,
+                        "Icon" : "",
+                        "IconAlignment" : "left",
+                        "Id" : "navigation-8",
+                        "Left" : 260,
+                        "Margin" : "5",
+                        "MashupName" : "connDevicePlacesEdit",
+                        "MashupParameters" : [ {
+                          "BaseType" : "STRING",
+                          "Description" : "",
+                          "ParameterName" : "deviceID",
+                          "ParmDef" : {
+                            "aspects" : {
+                              "bindingDirection" : "IN",
+                              "isMandatory" : "false",
+                              "ordinal" : "0"
+                            },
+                            "baseType" : "STRING",
+                            "description" : "",
+                            "name" : "deviceID",
+                            "ordinal" : 0
+                          }
+                        } ],
+                        "MessageToShow" : "Mashup must be selected",
+                        "ModalPopupOpacity" : 0.5,
+                        "NavigationActiveStyle" : "DefaultNavigationActiveStyle",
+                        "NavigationFocusStyle" : "DefaultNavigationFocusStyle",
+                        "NavigationHoverStyle" : "DefaultNavigationHoverStyle",
+                        "PopupScrolling" : "auto",
+                        "PopupTitle" : "",
+                        "PopupTitleStyle" : "DefaultPopupTitleStyle",
+                        "ReloadOnReplace" : false,
+                        "ResponsiveLayout" : false,
+                        "RoundedCorners" : true,
+                        "ShowCloseButton" : true,
+                        "ShowDataLoading" : true,
+                        "ShowMessageIfNoMashup" : false,
+                        "SingleClickSelectOnTablets" : true,
+                        "Style" : "DefaultNavigationStyle",
+                        "TabSequence" : 0,
+                        "TargetWindow" : "replace",
+                        "Text" : "&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100;",
+                        "ToolTipField" : "",
+                        "ToolTipStyle" : "DefaultTooltipStyle",
+                        "Top" : 15,
+                        "Transparent" : false,
+                        "Type" : "navigation",
+                        "UseTheme" : false,
+                        "Visible" : true,
+                        "Width" : 200,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Navigation",
+                        "__supportsTooltip" : true
+                      },
+                      "Widgets" : [ ]
+                    }, {
+                      "Properties" : {
+                        "Alignment" : "center",
+                        "Area" : "UI",
+                        "ClickOutsideToClose" : false,
+                        "CustomClass" : "",
+                        "Description" : "",
+                        "DisplayName" : "navigation-7",
+                        "FixedPopupHeight" : 0,
+                        "FixedPopupWidth" : 0,
+                        "Height" : 30,
+                        "Icon" : "",
+                        "IconAlignment" : "left",
+                        "Id" : "navigation-7",
+                        "Left" : 45,
+                        "Margin" : "5",
+                        "MashupName" : "connDevicePlacesEdit",
+                        "MashupParameters" : [ {
+                          "BaseType" : "STRING",
+                          "Description" : "",
+                          "ParameterName" : "deviceID",
+                          "ParmDef" : {
+                            "aspects" : {
+                              "bindingDirection" : "IN",
+                              "isMandatory" : "false",
+                              "ordinal" : "0"
+                            },
+                            "baseType" : "STRING",
+                            "description" : "",
+                            "name" : "deviceID",
+                            "ordinal" : 0
+                          }
+                        } ],
+                        "MessageToShow" : "Mashup must be selected",
+                        "ModalPopupOpacity" : 0.5,
+                        "NavigationActiveStyle" : "DefaultNavigationActiveStyle",
+                        "NavigationFocusStyle" : "DefaultNavigationFocusStyle",
+                        "NavigationHoverStyle" : "DefaultNavigationHoverStyle",
+                        "PopupScrolling" : "auto",
+                        "PopupTitle" : "",
+                        "PopupTitleStyle" : "DefaultPopupTitleStyle",
+                        "ReloadOnReplace" : false,
+                        "ResponsiveLayout" : false,
+                        "RoundedCorners" : true,
+                        "ShowCloseButton" : true,
+                        "ShowDataLoading" : true,
+                        "ShowMessageIfNoMashup" : false,
+                        "SingleClickSelectOnTablets" : true,
+                        "Style" : "DefaultNavigationStyle",
+                        "TabSequence" : 0,
+                        "TargetWindow" : "replace",
+                        "Text" : "&#1056;&#1077;&#1076;&#1072;&#1082;&#1090;&#1080;&#1088;&#1086;&#1074;&#1072;&#1090;&#1100;",
+                        "ToolTipField" : "",
+                        "ToolTipStyle" : "DefaultTooltipStyle",
+                        "Top" : 25,
+                        "Transparent" : false,
+                        "Type" : "navigation",
+                        "UseTheme" : false,
+                        "Visible" : true,
+                        "Width" : 200,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Navigation",
+                        "__supportsTooltip" : true
+                      },
+                      "Widgets" : [ ]
+                    }, {
+                      "Properties" : {
+                        "ActiveStyle" : "DefaultButtonActiveStyle",
+                        "Area" : "UI",
+                        "CancelConfirmationButton" : "button2",
+                        "ConfirmationButton1Label" : "Yes",
+                        "ConfirmationButton2Label" : "No",
+                        "ConfirmationPrompt" : "Do Action?",
+                        "ConfirmationRequired" : false,
+                        "ConfirmationTitle" : "Confirm Action",
+                        "ContextId" : "",
+                        "DefaultConfirmationButton" : "button1",
+                        "Disabled" : false,
+                        "DisabledStyle" : "DefaultButtonDisabledStyle",
+                        "DisplayName" : "button-9",
+                        "FocusStyle" : "DefaultButtonFocusStyle",
+                        "Height" : 30,
+                        "HoverStyle" : "DefaultButtonHoverStyle",
+                        "IconAlignment" : "left",
+                        "Id" : "button-9",
+                        "Label" : "Удалить",
+                        "Left" : 485,
+                        "Margin" : "5",
+                        "ResponsiveLayout" : false,
+                        "RoundedCorners" : true,
+                        "ShowDataLoading" : true,
+                        "SingleClickSelectOnTablets" : true,
+                        "Style" : "DefaultButtonStyle",
+                        "TabSequence" : 0,
+                        "ToolTipField" : "",
+                        "ToolTipStyle" : "DefaultTooltipStyle",
+                        "Top" : 15,
+                        "Type" : "button",
+                        "Visible" : true,
+                        "Width" : 200,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Button",
+                        "__supportsTooltip" : true
+                      },
+                      "Widgets" : [ ]
+                    }, {
+                      "Properties" : {
+                        "Alignment" : "center",
+                        "Area" : "UI",
+                        "ClickOutsideToClose" : false,
+                        "DisplayName" : "navigation-10",
+                        "FixedPopupHeight" : 0,
+                        "FixedPopupWidth" : 0,
+                        "Height" : 30,
+                        "Icon" : "",
+                        "IconAlignment" : "left",
+                        "Id" : "navigation-10",
+                        "Left" : 650,
+                        "Margin" : "5",
+                        "MashupName" : "connTerminals",
+                        "MashupParameters" : [ ],
+                        "MessageToShow" : "Mashup must be selected",
+                        "ModalPopupOpacity" : 0.5,
+                        "NavigationActiveStyle" : "DefaultNavigationActiveStyle",
+                        "NavigationFocusStyle" : "DefaultNavigationFocusStyle",
+                        "NavigationHoverStyle" : "DefaultNavigationHoverStyle",
+                        "PopupScrolling" : "auto",
+                        "PopupTitle" : "",
+                        "PopupTitleStyle" : "DefaultPopupTitleStyle",
+                        "ReloadOnReplace" : false,
+                        "ResponsiveLayout" : false,
+                        "RoundedCorners" : true,
+                        "ShowCloseButton" : true,
+                        "ShowDataLoading" : true,
+                        "ShowMessageIfNoMashup" : false,
+                        "SingleClickSelectOnTablets" : true,
+                        "Style" : "DefaultNavigationStyle",
+                        "TabSequence" : 0,
+                        "TargetWindow" : "replace",
+                        "Text" : "&#1082; &#1052;&#1101;&#1096;&#1072;&#1087;&#1091; 2 &gt;&gt;",
+                        "ToolTipField" : "",
+                        "ToolTipStyle" : "DefaultTooltipStyle",
+                        "Top" : 10,
+                        "Transparent" : false,
+                        "Type" : "navigation",
+                        "UseTheme" : false,
+                        "Visible" : true,
+                        "Width" : 200,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Navigation",
+                        "__supportsTooltip" : true
+                      },
+                      "Widgets" : [ ]
+                    } ]
+                  }, {
+                    "Properties" : {
+                      "Area" : "UI",
+                      "DisplayName" : "Body",
+                      "Id" : "flexcontainer-3",
+                      "ResponsiveLayout" : true,
+                      "ShowDataLoading" : true,
+                      "Style" : "DefaultContainerStyle",
+                      "Type" : "flexcontainer",
+                      "UseTheme" : false,
+                      "Visible" : true,
+                      "Z-index" : 10,
+                      "__TypeDisplayName" : "Flex Container",
+                      "align-content" : "flex-start",
+                      "align-items" : "flex-start",
+                      "flex-basis" : "auto",
+                      "flex-direction" : "row",
+                      "flex-grow" : 1,
+                      "flex-height" : 0,
+                      "flex-shrink" : 0,
+                      "flex-width" : 0,
+                      "flex-wrap" : "nowrap",
+                      "iconClass" : "widgets-flexcontainer",
+                      "isLocked" : true,
+                      "justify-content" : "flex-start",
+                      "userCannotRemove" : false
+                    },
+                    "Widgets" : [ {
+                      "Properties" : {
+                        "AlignHeader" : false,
+                        "Area" : "UI",
+                        "AutoSelectFirstRow" : false,
+                        "CellTextWrapping" : false,
+                        "ColumnFormat" : {
+                          "formatInfo" : [ {
+                            "Align" : "left",
+                            "AllowEdit" : false,
+                            "FieldName" : "ID",
+                            "FormatOptions" : {
+                              "FormatString" : "full",
+                              "renderer" : "STRING"
+                            },
+                            "Title" : "ID",
+                            "ValidationExpression" : "",
+                            "ValidationMessage" : "",
+                            "Width" : "auto"
+                          }, {
+                            "Align" : "left",
+                            "AllowEdit" : false,
+                            "FieldName" : "УСТРОЙСТВО",
+                            "FormatOptions" : {
+                              "FormatString" : "full",
+                              "renderer" : "STRING"
+                            },
+                            "Title" : "УСТРОЙСТВО",
+                            "ValidationExpression" : "",
+                            "ValidationMessage" : "",
+                            "Width" : "auto"
+                          }, {
+                            "Align" : "left",
+                            "AllowEdit" : false,
+                            "FieldName" : "МЕСТО_УСТАНОВКИ_ID",
+                            "FormatOptions" : {
+                              "FormatString" : "full",
+                              "renderer" : "STRING"
+                            },
+                            "Title" : "МЕСТО_УСТАНОВКИ_ID",
+                            "ValidationExpression" : "",
+                            "ValidationMessage" : "",
+                            "Width" : "auto"
+                          }, {
+                            "Align" : "left",
+                            "AllowEdit" : false,
+                            "FieldName" : "МЕСТО_УСТАНОВКИ_НАИМЕНОВАНИЕ",
+                            "FormatOptions" : {
+                              "FormatString" : "full",
+                              "renderer" : "STRING"
+                            },
+                            "Title" : "МЕСТО_УСТАНОВКИ_НАИМЕНОВАНИЕ",
+                            "ValidationExpression" : "",
+                            "ValidationMessage" : "",
+                            "Width" : "auto"
+                          }, {
+                            "Align" : "left",
+                            "AllowEdit" : false,
+                            "FieldName" : "НАЗНАЧЕНИЕ_ТЕРМИНАЛА",
+                            "FormatOptions" : {
+                              "FormatString" : "full",
+                              "renderer" : "STRING"
+                            },
+                            "Title" : "НАЗНАЧЕНИЕ_ТЕРМИНАЛА",
+                            "ValidationExpression" : "",
+                            "ValidationMessage" : "",
+                            "Width" : "auto"
+                          }, {
+                            "Align" : "left",
+                            "AllowEdit" : false,
+                            "FieldName" : "ДАТА_ВРЕМЯ_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ",
+                            "FormatOptions" : {
+                              "FormatString" : "full",
+                              "renderer" : "STRING"
+                            },
+                            "Title" : "ДАТА_ВРЕМЯ_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ",
+                            "ValidationExpression" : "",
+                            "ValidationMessage" : "",
+                            "Width" : "auto"
+                          }, {
+                            "Align" : "left",
+                            "AllowEdit" : false,
+                            "FieldName" : "ФИО_АВТОРА_ИЗМЕНЕНИЯ",
+                            "FormatOptions" : {
+                              "FormatString" : "full",
+                              "renderer" : "STRING"
+                            },
+                            "Title" : "ФИО_АВТОРА_ИЗМЕНЕНИЯ",
+                            "ValidationExpression" : "",
+                            "ValidationMessage" : "",
+                            "Width" : "auto"
+                          } ]
+                        },
+                        "CurrentScrollTop" : 0,
+                        "DisplayName" : "dhxgrid-6",
+                        "FocusStyle" : "DefaultFocusStyle",
+                        "GridBackgroundStyle" : "DefaultGridBackgroundStyle",
+                        "GridEditableFieldStyle" : "DefaultGridEditableFieldStyle",
+                        "GridHeaderStyle" : "DefaultGridHeaderStyle",
+                        "GridHeaderTextCase" : "capitalize",
+                        "GridInvalidFieldStyle" : "DefaultGridInvalidFieldStyle",
+                        "Height" : 200,
+                        "Id" : "dhxgrid-6",
+                        "IsEditable" : false,
+                        "IsPrintLayout" : false,
+                        "Left" : 35,
+                        "MultiSelect" : false,
+                        "ResponsiveLayout" : true,
+                        "RowAlternateBackgroundStyle" : "DefaultRowAlternateBackgroundStyle",
+                        "RowBackgroundStyle" : "DefaultRowBackgroundStyle",
+                        "RowFormat_StateParameters" : [ ],
+                        "RowHeight" : 30,
+                        "RowHoverStyle" : "DefaultRowHoverStyle",
+                        "RowSelectedStyle" : "DefaultRowSelectedStyle",
+                        "ScrollTop" : 0,
+                        "ShowAllColumns" : false,
+                        "ShowDataLoading" : true,
+                        "TabSequence" : 0,
+                        "Top" : 40,
+                        "Type" : "dhxgrid",
+                        "Visible" : true,
+                        "Width" : 400,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Grid"
+                      },
+                      "Widgets" : [ ]
+                    } ]
+                  } ]
+                } ]
+              },
+              "mashupType" : "mashup"
+            }
+            ]]>
+            </mashupContent>
+            <preview></preview>
+        </Mashup>
+    </Mashups>
+</Entities>

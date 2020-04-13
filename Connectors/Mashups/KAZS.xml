@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Mashups>
+        <Mashup
+         aspect.isResponsive="false"
+         aspect.mashupType="mashup"
+         columns="0.0"
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="KAZS"
+         projectName="Connectors"
+         rows="0.0"
+         tags="Applications:KAZS">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ParameterDefinitions></ParameterDefinitions>
+            <Things>
+                <Thing>KAZS_Stream</Thing>
+            </Things>
+            <ThingShapes></ThingShapes>
+            <ThingTemplates></ThingTemplates>
+            <mashupContent>
+            <![CDATA[
+            {
+              "CustomMashupCss" : "",
+              "Data" : {
+                "Session" : {
+                  "DataName" : "Session",
+                  "EntityName" : "",
+                  "EntityType" : "Session",
+                  "Id" : "session",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "SessionInterface",
+                    "Name" : "GetGlobalSessionValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetGlobalSessionValues"
+                  } ]
+                },
+                "Things_KAZS_Stream" : {
+                  "DataName" : "Things_KAZS_Stream",
+                  "EntityName" : "KAZS_Stream",
+                  "EntityType" : "Things",
+                  "Id" : "8d6f601f-3ce6-46fe-aa0b-b342b3155756",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "c041e6ba-c332-400c-b416-e658a6ca8440",
+                    "Name" : "GetStreamData",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetStreamData"
+                  } ]
+                },
+                "UserExtensions" : {
+                  "DataName" : "UserExtensions",
+                  "EntityName" : "",
+                  "EntityType" : "UserExtensions",
+                  "Id" : "UserExtensions",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "UserExtensionInterface",
+                    "Name" : "GetCurrentUserExtensionProperties",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetCurrentUserExtensionProperties"
+                  } ]
+                }
+              },
+              "DataBindings" : [ {
+                "Id" : "5a8f665d-96a6-44d5-94ee-89c8086f44f4",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "InfoTable",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetStreamData",
+                "SourceSection" : "Things_KAZS_Stream",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxgrid-6",
+                "TargetSection" : ""
+              } ],
+              "DesignTimePermissions" : {
+                "Create" : [ ],
+                "Delete" : [ ],
+                "Metadata" : [ ],
+                "Read" : [ ],
+                "Update" : [ ]
+              },
+              "Events" : [ {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_KAZS_Stream",
+                "EventHandlerService" : "GetStreamData",
+                "EventTriggerArea" : "UI",
+                "EventTriggerEvent" : "Clicked",
+                "EventTriggerId" : "button-4",
+                "EventTriggerSection" : "",
+                "Id" : "acd029c5-2c0b-4124-beb5-c03288c7d8bf"
+              } ],
+              "RunTimePermissions" : {
+                "permissions" : [ ]
+              },
+              "UI" : {
+                "Properties" : {
+                  "AddToDashboardButton" : "SimplePlus",
+                  "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+                  "Area" : "Mashup",
+                  "BGImage" : "",
+                  "BGImageRepeat" : "no-repeat",
+                  "BGImageSize" : "auto",
+                  "Columns" : 0,
+                  "ConfigureGadgetButton" : "SimpleGear",
+                  "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+                  "DisplayName" : "Mashup",
+                  "EnableParameterEditing" : false,
+                  "Height" : 618,
+                  "Id" : "mashup-root",
+                  "IgnoreWarningsInViewMashup" : false,
+                  "IsPrintLayout" : false,
+                  "Left" : 0,
+                  "MashupToEditGadget" : "DefaultMashupToEditGadget",
+                  "MinHeight" : 0,
+                  "MinWidth" : 0,
+                  "ResponsiveLayout" : false,
+                  "Rows" : 0,
+                  "ShowDataLoading" : true,
+                  "Style" : "DefaultMashupStyle",
+                  "StyleTheme" : "Base Theme",
+                  "Title" : "",
+                  "TitleBar" : false,
+                  "TitleBarStyle" : "DefaultTitleBarStyle",
+                  "TitleBarText" : "Gadget Title Here",
+                  "Top" : 0,
+                  "Type" : "mashup",
+                  "UseTheme" : false,
+                  "UseThemeForHybrids" : false,
+                  "Visible" : true,
+                  "Width" : 1024,
+                  "Z-index" : 10,
+                  "__TypeDisplayName" : "Mashup",
+                  "id_index" : 6,
+                  "supportsAutoResize" : true
+                },
+                "Widgets" : [ {
+                  "Properties" : {
+                    "Alignment" : "left",
+                    "AllowEllipsis" : false,
+                    "Area" : "UI",
+                    "DisplayName" : "label-2",
+                    "Height" : 22,
+                    "Id" : "label-2",
+                    "Left" : 35,
+                    "ResponsiveLayout" : false,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultLabelStyle",
+                    "Text" : "&#1044;&#1072;&#1085;&#1085;&#1099;&#1077;, &#1087;&#1086;&#1083;&#1091;&#1095;&#1077;&#1085;&#1085;&#1099;&#1077; &#1089; &#1050;&#1040;&#1047;&#1057;",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 25,
+                    "Type" : "label",
+                    "Visible" : true,
+                    "Width" : 245,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Label",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "ActiveStyle" : "DefaultButtonActiveStyle",
+                    "Area" : "UI",
+                    "CancelConfirmationButton" : "button2",
+                    "ConfirmationButton1Label" : "Yes",
+                    "ConfirmationButton2Label" : "No",
+                    "ConfirmationPrompt" : "Do Action?",
+                    "ConfirmationRequired" : false,
+                    "ConfirmationTitle" : "Confirm Action",
+                    "ContextId" : "",
+                    "DefaultConfirmationButton" : "button1",
+                    "Disabled" : false,
+                    "DisabledStyle" : "DefaultButtonDisabledStyle",
+                    "DisplayName" : "button-4",
+                    "FocusStyle" : "DefaultButtonFocusStyle",
+                    "Height" : 30,
+                    "HoverStyle" : "DefaultButtonHoverStyle",
+                    "IconAlignment" : "left",
+                    "Id" : "button-4",
+                    "Label" : "Обновить",
+                    "Left" : 30,
+                    "ResponsiveLayout" : false,
+                    "RoundedCorners" : true,
+                    "ShowDataLoading" : true,
+                    "SingleClickSelectOnTablets" : true,
+                    "Style" : "DefaultButtonStyle",
+                    "TabSequence" : 0,
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 385,
+                    "Type" : "button",
+                    "Visible" : true,
+                    "Width" : 200,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Button",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "AlignHeader" : false,
+                    "Area" : "UI",
+                    "AutoSelectFirstRow" : false,
+                    "CellTextWrapping" : false,
+                    "ColumnFormat" : {
+                      "formatInfo" : [ {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Section_id",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Section_id",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "SLD_id",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "SLD_id",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "ID_KAZS",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "ID_KAZS",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "mes_time",
+                        "FormatOptions" : {
+                          "FormatString" : "[[dateTimeFormat_Default]]",
+                          "renderer" : "DATETIME"
+                        },
+                        "Title" : "mes_time",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Type_Oil",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Type_Oil",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "RFID_ID",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "RFID_ID",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "N",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "N",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Weight_Oil",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Weight_Oil",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "MOP_position",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "MOP_position",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Remark_ID",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Remark_ID",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Remark_comment",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Remark_comment",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "User_id",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "User_id",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Comment",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Comment",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      } ]
+                    },
+                    "CurrentScrollTop" : 0,
+                    "DisplayName" : "dhxgrid-6",
+                    "FocusStyle" : "DefaultFocusStyle",
+                    "GridBackgroundStyle" : "DefaultGridBackgroundStyle",
+                    "GridEditableFieldStyle" : "DefaultGridEditableFieldStyle",
+                    "GridHeaderStyle" : "DefaultGridHeaderStyle",
+                    "GridHeaderTextCase" : "capitalize",
+                    "GridInvalidFieldStyle" : "DefaultGridInvalidFieldStyle",
+                    "Height" : 320,
+                    "Id" : "dhxgrid-6",
+                    "IsEditable" : false,
+                    "IsPrintLayout" : false,
+                    "Left" : 35,
+                    "MultiSelect" : false,
+                    "ResponsiveLayout" : false,
+                    "RowAlternateBackgroundStyle" : "DefaultRowAlternateBackgroundStyle",
+                    "RowBackgroundStyle" : "DefaultRowBackgroundStyle",
+                    "RowHeight" : 30,
+                    "RowHoverStyle" : "DefaultRowHoverStyle",
+                    "RowSelectedStyle" : "DefaultRowSelectedStyle",
+                    "ScrollTop" : 0,
+                    "ShowAllColumns" : false,
+                    "ShowDataLoading" : true,
+                    "TabSequence" : 0,
+                    "Top" : 50,
+                    "Type" : "dhxgrid",
+                    "Visible" : true,
+                    "Width" : 955,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Grid"
+                  },
+                  "Widgets" : [ ]
+                } ]
+              },
+              "mashupType" : "mashup"
+            }
+            ]]>
+            </mashupContent>
+            <preview></preview>
+        </Mashup>
+    </Mashups>
+</Entities>

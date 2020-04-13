@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description=""
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="connRVLibrary"
+         projectName="Connectors"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_URL"
+                     ordinal="2"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="ConvertDate">
+                        <ResultType
+                         baseType="NOTHING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="date"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="get_sha_1">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="A"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получение Словарей номеров секций"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSectionsID">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="date"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Идентификатор Депо приписки"
+                             name="depo_id"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Тип справочника [1-RFID; 2-Plan; 3-Poligon]"
+                             name="dict_type"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получение номеров секций из БД локомотивов полигона"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSectionsIDPoligon">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="date"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Идентификатор Депо приписки (Строка UUID)"
+                             name="depo_id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetVideoData">
+                        <ResultType
+                         aspect.dataShape="connVideoDataDataShape"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получения данных видеоаналитики из системы видеоаналитики"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetVideoData">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="image"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="Is_In_Plan"
+                             ordinal="10"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="Is_In_Poligon"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="Is_In_RFID"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="mes_time"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="route_number"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sec_number"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_id"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_name"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Video_id"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Video_place"
+                             ordinal="4"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Передачи данных видеоаналитики из ЕИПП в АСУ СГ"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetVideoDataASU">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="image"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="mes_time"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="route_number"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sec_number"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_id"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_name"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Video_id"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Video_place"
+                             ordinal="4"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получения факта видеофиксации из АСУ СГ"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="VideoFact">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="ID секции"
+                             name="section_number"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="ID СЛД"
+                             name="SLD_id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="ConvertDate">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Метод конвертации времени
+                                        var result = {};
+                                        var digidRegEx = /^[\d]+$/i;
+                                        var dateRegEx = /\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}/i;
+                                        if (!date) {
+                                            this.result = new Date();
+                                        } else if (digidRegEx.test(date)) {
+                                            this.result = date;
+                                        } else if (dateRegEx.test(date)) {
+                                            var dateChunks = date.split('T');
+                                            var datePart = dateChunks[0].split('-');
+                                            var timePart = dateChunks[1].split(':');
+                                            var day = parseInt(datePart[2].substring(0, 1) === '0' ? datePart[2].substring(1) : datePart[2]);
+                                            var month = parseInt(datePart[1].substring(0, 1) === '0' ? datePart[1].substring(1) : datePart[1]);
+                                            var year = parseInt(datePart[0]);
+                                            var hours = parseInt(timePart[0].substring(0, 1) === '0' ? timePart[0].substring(1) : timePart[0]);
+                                            var minutes = parseInt(timePart[1].substring(0, 1) === '0' ? timePart[1].substring(1) : timePart[1]);
+                                            var seconds = parseInt(timePart[2].substring(0, 1) === '0' ? timePart[2].substring(1) : timePart[2]);
+                                            this.result = new Date(year, month - 1, day, hours, minutes, seconds);
+                                        } else throw new Error('Неверный формат даты и времени');
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="get_sha_1">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Метод используется для генерации хеша при создании идентификаторов сущностей
+                                        /*
+                                         * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
+                                         * in FIPS PUB 180-1
+                                         * Version 2.1a Copyright Paul Johnston 2000 - 2002.
+                                         * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+                                         * Distributed under the BSD License
+                                         * See http://pajhome.org.uk/crypt/md5 for details.
+                                         */
+                                        
+                                        /*
+                                         * Configurable variables. You may need to tweak these to be compatible with
+                                         * the server-side, but the defaults work in most cases.
+                                         */
+                                        var hexcase = 0;  /* hex output format. 0 - lowercase; 1 - uppercase        */
+                                        var b64pad = ""; /* base-64 pad character. "=" for strict RFC compliance   */
+                                        var chrsz = 8;  /* bits per input character. 8 - ASCII; 16 - Unicode      */
+                                        
+                                        /*
+                                         * These are the functions you'll usually want to call
+                                         * They take string arguments and return either hex or base-64 encoded strings
+                                         */
+                                        function hex_sha1(s) { return binb2hex(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        
+                                        function b64_sha1(s) { return binb2b64(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        function str_sha1(s) { return binb2str(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        function hex_hmac_sha1(key, data) { return binb2hex(core_hmac_sha1(key, data)); }
+                                        function b64_hmac_sha1(key, data) { return binb2b64(core_hmac_sha1(key, data)); }
+                                        function str_hmac_sha1(key, data) { return binb2str(core_hmac_sha1(key, data)); }
+                                        
+                                        /*
+                                         * Perform a simple self-test to see if the VM is working
+                                         */
+                                        function sha1_vm_test() {
+                                            return hex_sha1("abc") == "a9993e364706816aba3e25717850c26c9cd0d89d";
+                                        }
+                                        
+                                        /*
+                                         * Calculate the SHA-1 of an array of big-endian words, and a bit length
+                                         */
+                                        function core_sha1(x, len) {
+                                            /* append padding */
+                                            x[len >> 5] |= 0x80 << (24 - len % 32);
+                                            x[((len + 64 >> 9) << 4) + 15] = len;
+                                        
+                                            var w = Array(80);
+                                            var a = 1732584193;
+                                            var b = -271733879;
+                                            var c = -1732584194;
+                                            var d = 271733878;
+                                            var e = -1009589776;
+                                        
+                                            for (var i = 0; i < x.length; i += 16) {
+                                                var olda = a;
+                                                var oldb = b;
+                                                var oldc = c;
+                                                var oldd = d;
+                                                var olde = e;
+                                        
+                                                for (var j = 0; j < 80; j++) {
+                                                    if (j < 16) w[j] = x[i + j];
+                                                    else w[j] = rol(w[j - 3] ^ w[j - 8] ^ w[j - 14] ^ w[j - 16], 1);
+                                                    var t = safe_add(safe_add(rol(a, 5), sha1_ft(j, b, c, d)),
+                                                        safe_add(safe_add(e, w[j]), sha1_kt(j)));
+                                                    e = d;
+                                                    d = c;
+                                                    c = rol(b, 30);
+                                                    b = a;
+                                                    a = t;
+                                                }
+                                        
+                                                a = safe_add(a, olda);
+                                                b = safe_add(b, oldb);
+                                                c = safe_add(c, oldc);
+                                                d = safe_add(d, oldd);
+                                                e = safe_add(e, olde);
+                                            }
+                                            return Array(a, b, c, d, e);
+                                        
+                                        }
+                                        
+                                        /*
+                                         * Perform the appropriate triplet combination function for the current
+                                         * iteration
+                                         */
+                                        function sha1_ft(t, b, c, d) {
+                                            if (t < 20) return (b & c) | ((~b) & d);
+                                            if (t < 40) return b ^ c ^ d;
+                                            if (t < 60) return (b & c) | (b & d) | (c & d);
+                                            return b ^ c ^ d;
+                                        }
+                                        
+                                        /*
+                                         * Determine the appropriate additive constant for the current iteration
+                                         */
+                                        function sha1_kt(t) {
+                                            return (t < 20) ? 1518500249 : (t < 40) ? 1859775393 :
+                                                (t < 60) ? -1894007588 : -899497514;
+                                        }
+                                        
+                                        /*
+                                         * Calculate the HMAC-SHA1 of a key and some data
+                                         */
+                                        function core_hmac_sha1(key, data) {
+                                            var bkey = str2binb(key);
+                                            if (bkey.length > 16) bkey = core_sha1(bkey, key.length * chrsz);
+                                        
+                                            var ipad = Array(16), opad = Array(16);
+                                            for (var i = 0; i < 16; i++) {
+                                                ipad[i] = bkey[i] ^ 0x36363636;
+                                                opad[i] = bkey[i] ^ 0x5C5C5C5C;
+                                            }
+                                        
+                                            var hash = core_sha1(ipad.concat(str2binb(data)), 512 + data.length * chrsz);
+                                            return core_sha1(opad.concat(hash), 512 + 160);
+                                        }
+                                        
+                                        /*
+                                         * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+                                         * to work around bugs in some JS interpreters.
+                                         */
+                                        function safe_add(x, y) {
+                                            var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+                                            var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+                                            return (msw << 16) | (lsw & 0xFFFF);
+                                        }
+                                        
+                                        /*
+                                         * Bitwise rotate a 32-bit number to the left.
+                                         */
+                                        function rol(num, cnt) {
+                                            return (num << cnt) | (num >>> (32 - cnt));
+                                        }
+                                        
+                                        /*
+                                         * Convert an 8-bit or 16-bit string to an array of big-endian words
+                                         * In 8-bit function, characters >255 have their hi-byte silently ignored.
+                                         */
+                                        function str2binb(str) {
+                                            var bin = Array();
+                                            var mask = (1 << chrsz) - 1;
+                                            for (var i = 0; i < str.length * chrsz; i += chrsz)
+                                                bin[i >> 5] |= (str.charCodeAt(i / chrsz) & mask) << (32 - chrsz - i % 32);
+                                            return bin;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a string
+                                         */
+                                        function binb2str(bin) {
+                                            var str = "";
+                                            var mask = (1 << chrsz) - 1;
+                                            for (var i = 0; i < bin.length * 32; i += chrsz)
+                                                str += String.fromCharCode((bin[i >> 5] >>> (32 - chrsz - i % 32)) & mask);
+                                            return str;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a hex string.
+                                         */
+                                        function binb2hex(binarray) {
+                                            var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+                                            var str = "";
+                                            for (var i = 0; i < binarray.length * 4; i++) {
+                                                str += hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8 + 4)) & 0xF) +
+                                                    hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8)) & 0xF);
+                                            }
+                                            return str;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a base-64 string
+                                         */
+                                        function binb2b64(binarray) {
+                                            var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+                                            var str = "";
+                                            for (var i = 0; i < binarray.length * 4; i += 3) {
+                                                var triplet = (((binarray[i >> 2] >> 8 * (3 - i % 4)) & 0xFF) << 16)
+                                                    | (((binarray[i + 1 >> 2] >> 8 * (3 - (i + 1) % 4)) & 0xFF) << 8)
+                                                    | ((binarray[i + 2 >> 2] >> 8 * (3 - (i + 2) % 4)) & 0xFF);
+                                                for (var j = 0; j < 4; j++) {
+                                                    if (i * 8 + j * 6 > binarray.length * 32) str += b64pad;
+                                                    else str += tab.charAt((triplet >> 6 * (3 - j)) & 0x3F);
+                                                }
+                                            }
+                                            return str;
+                                        }
+                                        
+                                        var result = hex_sha1(A);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSectionsID">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        logger.info('V'); 
+                                        var result = {};
+                                        var timeHandler = Things['handlerTime'];
+                                        var connAsuSgThing = Things['connAsuSg'];
+                                        
+                                        // Метод для валидации строки даты и времени
+                                        function validateDate() {
+                                            return date && /^\d{4}-\d{2}-\d{2}(\s+\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/i.test(date);
+                                        }
+                                        
+                                        // Метод для получения номера секции по субномеру на стороне АСУ СГ
+                                        function getSectionName(dateParam, sectionNumber) {
+                                            var sectionName = '';
+                                            // Получам данные с АСУ СГ
+                                            var locoInfoResult = connAsuSgThing.GetCompositionLocomotiveSectionDate({
+                                                ParDate: dateParam /* STRING */,
+                                                SectionNumber: sectionNumber /* STRING */
+                                            }); //Берем первое значение
+                                            if (!locoInfoResult.Error) {
+                                                var locoInfo = locoInfoResult.array[0];
+                                                // С локомотивом приходит 3 секции, собираем их в массив и итерируем по нему
+                                                var sections = [locoInfo.Section1, locoInfo.Section2, locoInfo.Section3];
+                                                for (var i = 0; i < sections.length; i++) {
+                                                    // Запрашиваем информацию по секции
+                                                    var sectionInfoResult = connAsuSgThing.GetSection({
+                                                        SectionGUID: sections[i] /* STRING */
+                                                    }); //take first value
+                                                    if (sectionInfoResult.Error) continue;
+                                                    var sectionInfo = sectionInfoResult.array[0];
+                                                    // Если субномер секции совпал с входным субномером, то возвращаем номер секции
+                                                    if (sectionInfo.Number === sectionNumber) {
+                                                        sectionName = sectionInfo.Name;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                            return sectionName;
+                                        }
+                                        
+                                        // Метод для получения секций Rfid на стороне ЕИПП
+                                        function getSectionsRfid(dateParam, depo) {
+                                            var sectionsRfid = connAsuSgThing.GetSectionsRFID({
+                                                ParDate: dateParam,
+                                                PlaceOfRepair: depo
+                                            });
+                                            if (sectionsRfid.Error) {
+                                                throw new Error(sectionsRfid.Error);
+                                            } else {
+                                                return sectionsRfid.array.map(function (item) {
+                                                    return {
+                                                        kp_number: '4',
+                                                        section_subnumber: item.section_number,
+                                                        section_number: getSectionName(dateParam, item.section_number)
+                                                    };
+                                                });
+                                            }
+                                        }
+                                        
+                                        // Метод для получения списка секций на стороне АСУ СГ
+                                        function getSectionsPlan(dateParam, depo) {
+                                            var sectionPlan = connAsuSgThing.GetSectionPlan({
+                                                ParDate: dateParam,
+                                                PlaceOfRepair: depo
+                                            });
+                                            if (sectionPlan.Error) {
+                                                throw new Error(sectionPlan.Error);
+                                            }
+                                            else {
+                                                return sectionPlan.array.map(function (item) {
+                                                    return {
+                                                        kp_number: '4',
+                                                        section_number: item.Name_Section || '',
+                                                        section_subumber: item.NumberSection
+                                                    };
+                                                });
+                                            }
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Валидируем дату, иначе поулчаем текующую
+                                            var dateParam = !validateDate(date) ? timeHandler.Generate({ timezone: true /* BOOLEAN */ }) : date;
+                                            // Если входной параметр dict_type (Тип справочника [1-RFID; 2-Plan; 3-Poligon]), ищем секции на стороне АСУ СГ, ЕИПП или по Полигону
+                                            switch(dict_type) {
+                                                case '1': {
+                                                    if (!dict_type) throw new Error('');
+                                                    result = {
+                                                        sections: getSectionsRfid(dateParam, depo_id) //This function can throw an Error
+                                                    };
+                                                    break;
+                                                }
+                                                case '2': {
+                                                    if (!dict_type) throw new Error('');
+                                                    result = {
+                                                        sections: getSectionsPlan(dateParam, depo_id) //This function can throw an Error
+                                                    };
+                                                    break;
+                                                }
+                                                case '3': {
+                                                    result = me.GetSectionsIDPoligon({
+                                                        date: dateParam /* STRING */,
+                                                        depo_id: depo_id /* STRING */
+                                                    });
+                                                    break;
+                                                }
+                                                default: throw new Error('Задан некорректный тип справочника. Корректные значения (String): 1 для RFID, 2 для Plan, 3 для Poligon');
+                                            } 
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result = {
+                                                Error: err.message,
+                                                sections: []
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSectionsIDPoligon">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        var connAsuSgThing = Things['connAsuSg']; 
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Получаем список полигонов на стороне АСУ СГ
+                                            var polygons = connAsuSgThing.GetPolygon();
+                                            if (polygons.Error) throw new Error(polygons.Error);
+                                            var sections = [];
+                                            // Итерируем по списку полигонов
+                                            polygons.array.forEach(function (polygon) {
+                                                // Получаем список секций по полигону
+                                                var sectionsOfPolygon = connAsuSgThing.GetSectionsOfPoligon({
+                                                    PolygonID: polygon.ID /* STRING */,
+                                                    MesTime: date /* STRING */,
+                                                    HomeDepot: undefined /* STRING */
+                                                });
+                                                
+                                                if (sectionsOfPolygon.array) {
+                                                   // Итерируем по всем секциям и сохраняем их в массив
+                                                   sectionsOfPolygon.array.forEach(function (item) {
+                                                       sections.push({
+                                                            kp_number: '4',
+                                                            section_subnumber: item.NumberSection,
+                                                            section_number: item.Name 
+                                                       });
+                                                   });
+                                                }
+                                            });
+                                            // Вывод списка секций
+                                            result = {
+                                                sections: sections
+                                            };
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result = {
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetVideoData">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Получение данных для мэшапа
+                                        var VIDEO_DATA_TEMPLATE = 'connVideoDataTemplate';
+                                        var searchFunctions = Resources['SearchFunctions'];
+                                        // Создание инфотаблицы
+                                        var result = Resources["InfoTableFunctions"]
+                                            .CreateInfoTableFromDataShape({
+                                                    infoTableName : "InfoTable",
+                                                    dataShapeName : "connVideoDataDataShape"
+                                            });
+                                        // Поиск данных по шаблону
+                                        var findRfidData = function(id) {
+                                            var queryFilters = [];
+                                            if (id) queryFilters.push({ type: 'Matches', fieldName: 'section_id', expression: id });
+                                            var things = searchFunctions.SearchThingsByTemplate({
+                                                thingTemplate: VIDEO_DATA_TEMPLATE /* THINGTEMPLATENAME */,
+                                                maxItems: undefined /* NUMBER */,
+                                                tags: undefined /* TAGS */,
+                                                nameMask: undefined /* STRING */,
+                                                query: {
+                                                     filters: {
+                                                        type: 'And', filters: queryFilters
+                                                     }
+                                                } /* QUERY */
+                                            });
+                                            return things;
+                                        };
+                                        
+                                        var videData = findRfidData(undefined);
+                                        // Заполнение инфотаблицы данными
+                                        for (var i = 0; i < videData.length; i++) {
+                                            var video = videData.rows[i];
+                                            
+                                            result.AddRow({
+                                                id: video.name,
+                                                Is_In_Plan: video.Is_In_Plan,
+                                                Is_In_Poligon: video.Is_In_Poligon,
+                                                Is_In_RFID: video.Is_In_RFID,
+                                                mes_time: Things['handlerTime'].Generate({
+                                                    timezone: true /* BOOLEAN */,
+                                                    date: new Date(video.mes_time) /* DATETIME */
+                                                }),
+                                                sec_number: video.sec_number,
+                                                route_number: video.route_number,
+                                                SLD_id: video.SLD_id,
+                                                SLD_name: video.SLD_name,
+                                                Video_id: video.Video_id,
+                                                Video_place: video.Video_place,
+                                                imageUrl: video.imageUrl
+                                            });
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetVideoData">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        var CONN_VIDEO_DATA_TEMPLATE = 'connVideoDataTemplate';
+                                        var timeHandler = Things['handlerTime'];
+                                        
+                                        var rfidLibrary = Things['connRfidLibrary'];
+                                        var entityServices = Resources['EntityServices'];
+                                        var testImageLoader = Things['TestImageLoad'];
+                                        
+                                        // Метод для валидации формата строки даты и времени
+                                        function validateTime() {
+                                            return mes_time && (/^\d{4}-\d{2}-\d{2}(\s+\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/g.test(mes_time));
+                                        }
+                                        
+                                        // Метод для генерации наимвенования файла с расширением [file_name.ext]
+                                        function generateFileName(fileData) {
+                                            var extFirstIndex = fileData.indexOf('/');
+                                            var extLastIndex = fileData.indexOf(';');
+                                            if (extFirstIndex === -1 || extLastIndex === -1) throw new Error('Некорректный формат base64');
+                                            
+                                            var ext = fileData.substring(extFirstIndex + 1, extLastIndex);
+                                            return me.get_sha_1({ A: (Video_id + '_' + Date())})+'.'+ext;  
+                                        }
+                                        
+                                        // Метод для сохранения изображения на платформе, принимает на вход наименование путь к файлу и содержимое в формате base64
+                                        function storeImage(filePath, fileContent) {
+                                            if (!fileContent || !filePath) return undefined;
+                                            try {
+                                                testImageLoader.SaveImage({
+                                                    path: filePath /* STRING */,
+                                                    content: fileContent /* IMAGE */
+                                                });
+                                                var imageData = testImageLoader.LoadImage({ path: filePath /* STRING */ });
+                                                return { data: imageData, filePath: filePath };
+                                            } catch (err) {
+                                                return undefined;
+                                            }
+                                        }
+                                        
+                                        // Метод конвертации даты в DateTime
+                                        function convertMesTime(dateString) {
+                                            var res = new Date();
+                                            var dateRegEx = /^\d{4}-\d{2}-\d{2}((T|\s+)?\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/i;
+                                        
+                                            if (dateString && dateRegEx.test(dateString)) {
+                                                var datePart = dateString.match(/^\d{4}-\d{2}-\d{2}/)[0].split('-');
+                                                res.setFullYear(datePart[0], datePart[1] - 1, datePart[2]);
+                                                var timePart = dateString.match(/\d{2}:\d{2}:\d{2}/);
+                                                if (timePart) {
+                                                    timePart = timePart[0].split(':');
+                                                    var timeZone = dateString.match(/\+\d{2}:\d{2}$/);
+                                                    if (timeZone) {
+                                                        timeZone = timeZone[0].substring(1).split(':');
+                                                        res.setHours(timePart[0], timePart[1], timePart[2]); //todo fix this moment
+                                                    } else {
+                                                        res.setHours(timePart[0], timePart[1], timePart[2]);
+                                                    }
+                                                }
+                                            }
+                                            return res;
+                                        }
+                                        
+                                        // Метод для сохранения данных видеоаналитики
+                                        function сreateVideoData(imageFile) {
+                                            var videoThingName = generateVideoDataThingName(Video_id, SLD_id);
+                                            var imageThing = storeImage(imageFile.filePath, imageFile.fileContent);
+                                            if (imageThing) {
+                                                /*entityServices.CreateMediaEntity({
+                                                    name: imageThing.filePath,
+                                                    description: undefined,
+                                                    tags: undefined,
+                                                    content: imageThing.data
+                                                });*/
+                                            }
+                                           
+                                            Resources['EntityServices'].CreateThing({
+                                                name: videoThingName,
+                                                description: sec_number + ' ' + Date.now(),
+                                                thingTemplateName: CONN_VIDEO_DATA_TEMPLATE,
+                                                tags: undefined
+                                            });
+                                            
+                                            var thing = Things[videoThingName];
+                                            thing.EnableThing();
+                                            thing.RestartThing();
+                                            
+                                            thing.Is_In_Plan = Is_In_Plan;
+                                            thing.Is_In_Poligon= Is_In_Poligon;
+                                            thing.Is_In_RFID = Is_In_RFID;
+                                            thing.mes_time = convertMesTime(mes_time);
+                                            thing.route_number = route_number;
+                                            thing.sec_number = sec_number;
+                                            thing.SLD_id = SLD_id;
+                                            thing.SLD_name = SLD_name;
+                                            thing.Video_id = Video_id;
+                                            thing.Video_place = Video_place;
+                                            // Для информации
+                                            thing.mes_time_str = mes_time;
+                                            var currentTime = new Date();
+                                            thing.modified = currentTime;
+                                            thing.modified_str = currentTime.toString();
+                                            
+                                            if (imageThing) {
+                                                 thing.image = imageThing.data;
+                                                 thing.imageUrl = 'http://devplatform.digitaldepot.ru:8085/Thingworx/FileRepositories/TestImageLoad/' + imageThing.filePath;
+                                            }
+                                          
+                                            return thing;
+                                        }
+                                        
+                                        // Метод для генерации идентификатора для записи данных видеоаналитики
+                                        function generateVideoDataThingName(videoId, sldId) {
+                                            return generateGUID();
+                                            //rfidLibrary.GetSha1({ A: (videoId  + sldId + Date()) /* STRING */ });
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Проверка входных параметров и проброс ошибки если параметры не верны
+                                            if (!SLD_id || !sec_number) throw new Error('Проверьте параметры');
+                                            if (!validateTime()) throw new Error('Неверный формат времени');
+                                            
+                                            var fileContent;
+                                            var filePath;
+                                            // Проверка содержимого иображения и сохранение его на платформе
+                                            if (image && image !== '') {
+                                                 filePath = generateFileName(image);
+                                                 var base64metdataLastIndex = image.indexOf('/9j/');
+                                                 if (base64metdataLastIndex === -1) throw new Error('Некорректный формат base64');
+                                                 fileContent = image.substring(base64metdataLastIndex);
+                                            } else {
+                                                fileContent = undefined;
+                                            }
+                                              
+                                            var diagnosticMap = me.SetVideoDataASU({
+                                                SLD_id: SLD_id,
+                                                SLD_name: SLD_name,
+                                                Video_id: Video_id,
+                                                Video_place: Video_place,
+                                                route_number: route_number,
+                                                mes_time: mes_time,
+                                                image: fileContent || '',
+                                                sec_number: sec_number
+                                            });
+                                            if (diagnosticMap.Error) //throw new Error(diagnosticMap.Error);
+                                            сreateVideoData({
+                                                fileContent: fileContent,
+                                                filePath: filePath
+                                            });
+                                            result = {
+                                                status: 'success'
+                                            };
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result = {
+                                                status: 'error',
+                                                error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetVideoDataASU">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        // Метод для парсинга ответа XML от АСУ СГ
+                                        function parseXMLResponse(xmlResponse) {
+                                            try {
+                                                var resultXML = xmlResponse.*:: Body.*::SetVideoDataASUResponse.*[1];
+                                                var containsDiagnosticMap = resultXML.*:: DiagnosticMapslocomotive.toString() != "";
+                                                if (containsDiagnosticMap) {
+                                                    return {
+                                                        DiagnosticMapslocomotive: resultXML.*:: DiagnosticMapslocomotive.toString()
+                                                    };
+                                                } else {
+                                                    return {
+                                                        Error: 'Нет данных в АСУ СГ',
+                                                        Description: resultXML.*:: ErrorDescription.toString()
+                                                    }
+                                                }
+                                            } catch (err) {
+                                                 return {
+                                                     Error: 'Ошибка в АСУ СГ'
+                                                 }
+                                            }
+                                           
+                                        }
+                                        /*
+                                        function getFormattedTime() {
+                                            var time;
+                                            if (/^\d{4}-\d{2}-\d{2} (\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/g.test(mes_time)) {
+                                                var date = mes_time.match(/\d{4}-\d{2}-\d{2}/g)[0];
+                                                var time = mes_time.match(/\d{2}:\d{2}:\d{2}/g)[0];
+                                                time = time ? date + 'T' + time : date;
+                                            } else throw new Error('Неверный формат времени');
+                                            return time;
+                                        }
+                                        */
+                                        
+                                        // Метод для получения форматированной строки даты и времени
+                                        function getFormattedTime() {
+                                            return mes_time.replace(' ', 'T');
+                                        }
+                                        
+                                        // Метод для обработки строки даты и времени
+                                        function timeHandling(mes_time) {
+                                            var res = {};
+                                            res.error = 0;
+                                            res.errorDescription = "";
+                                            res.date = "";
+                                            var date = getFormattedTime();
+                                            if (date.indexOf('+') !== -1) {
+                                                res.date = date.substring(0, date.indexOf('+'));
+                                            } else {
+                                                res.date = date;
+                                            }
+                                            return res;
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            var date = timeHandling(mes_time);
+                                            // Сборка тела soap запроса
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:SetVideoDataASU>\
+                                                     <eipp:Parameters>\
+                                                        <eipp:PlaceOfRepair>' + SLD_id + '</eipp:PlaceOfRepair>\
+                                                        <eipp:Video_id>' + Video_id + '</eipp:Video_id>\
+                                                        <eipp:Video_place>' + Video_place + '</eipp:Video_place>\
+                                                        <eipp:Route_number>' + route_number + '</eipp:Route_number>\
+                                                        <eipp:Mes_time>' + date.date + '</eipp:Mes_time>\
+                                                        <eipp:Foto>' + image + '</eipp:Foto>\
+                                                        <eipp:NumberSection>' + sec_number + '</eipp:NumberSection>\
+                                                     </eipp:Parameters>\
+                                                  </eipp:SetVideoDataASU>\
+                                               </soap:Body>\
+                                            </soap:Envelope>';
+                                            var params = {
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            };
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML(params);
+                                            var response = parseXMLResponse(xmlResponse);
+                                            
+                                            result = response;
+                                            result.res = date.date;
+                                        } catch (err) {
+                                            // Обрабокта ошибок
+                                            result = {
+                                                status: 'error',
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="VideoFact">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        // заглушка. Эти данные будут приходить из АСУ СГ, возможно в виде множественных значений
+                                        var test = {
+                                            "isVideoChecked": true,
+                                            "diagnosticMap": "6e6012c9-9bae-11e9-80d5-005056011052",        
+                                        };
+                                        
+                                        // Метод для создания факта видеофиксации секции на платформе
+                                        function createThing(obj) {
+                                            //Create new transfer thing
+                                            var ThingName = generateId(obj.section_number);
+                                            Resources['EntityServices'].CreateThing({
+                                                name: ThingName,
+                                                description: "Факт видеофикации секции " + section_number,
+                                                thingTemplateName: "connVideoFactTemplate",
+                                                tags: undefined
+                                            });
+                                            var thing = Things[ThingName];
+                                            
+                                            thing.EnableThing();
+                                            thing.RestartThing();
+                                            
+                                            thing.diagnosticMap = obj.diagnosticMap;
+                                            thing.isVideoChecked = obj.isVideoChecked;
+                                            thing.section_number = obj.section_number;
+                                            return ThingName;
+                                        }
+                                        
+                                        // Метод для генерации случайного идентификатор исходя из текущей даты и id
+                                        function generateId(id) {
+                                            return me.get_sha_1({
+                                        	A: (id + (new Date()))
+                                        });
+                                            //return me.get_sha_1({ A: (id + (new Date())) });
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            if (!section_number && !SLD_id) {
+                                        		throw new Error('Не указаны входные параметры');
+                                            } else {   
+                                                var obj = {};
+                                                obj.diagnosticMap = test.diagnosticMap;
+                                                obj.isVideoChecked = test.isVideoChecked;
+                                                obj.section_number = section_number;
+                                        
+                                                videoFactThing = createThing(obj);
+                                                // массив на случай множественных значений. И для соответствия спецификации
+                                                
+                                                this.result.array = [];
+                                                this.result.array.push({"isVideoChecked":obj.isVideoChecked,"diagnosticMap":obj.diagnosticMap});
+                                        	}   
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            this.result = {
+                                                Error: {
+                                                    code: 1,
+                                                    description: err.message
+                                                }
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="ASU_URL"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <ASU_URL>
+                    <Value>
+                    <![CDATA[
+                    http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-09-13T11:59:30.986+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_URL>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

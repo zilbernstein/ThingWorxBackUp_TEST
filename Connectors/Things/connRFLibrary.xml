@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description=""
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="connRFLibrary"
+         projectName="Connectors"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                </Read>
+                <Update>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                </Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions>
+                <Permissions
+                 resourceName="*">
+                    <PropertyRead>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </PropertyRead>
+                    <PropertyWrite>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </PropertyWrite>
+                    <ServiceInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </ServiceInvoke>
+                    <EventInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </EventInvoke>
+                    <EventSubscribe>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </EventSubscribe>
+                </Permissions>
+            </RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility>
+                    <Principal
+                     isPermitted="true"
+                     name="Тесты"
+                     type="Organization"></Principal>
+                </Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_URL"
+                     ordinal="2"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="get_sha_1">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="A"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetRfidData">
+                        <ResultType
+                         aspect.dataShape="connRfidDataDataShape"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="section_id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="getRFIDEventData">
+                        <ResultType
+                         aspect.dataShape="connRfidEventDataDataShape"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получение факта RFID фиксации из АСУ СГ"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="RFIDFact">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="section_number"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_id"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получения данных из системы RFID"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetRFIDData">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="device_id"
+                             ordinal="12"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description=""
+                             name="equipment_place_int"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="equipment_place_side"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="installation_place"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="mes_time"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="rfid"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="section_number"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="serial_number"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Передачи данных RFID из ЕИПП в АСУ СГ"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetRFIDDataASU">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="device_id"
+                             ordinal="12"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description=""
+                             name="equipment_place_int"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="equipment_place_side"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="installation_place"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="mes_time"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="rfid"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="section_number"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="serial_number"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получения данных RFID из системы RFID в ЕИПП"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetRFIDEventData">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="device_id"
+                             ordinal="12"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description="Место установки оборудования от 1 до 4 "
+                             name="equipment_place_int"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Место установки оборудования - сторона, true = левая, false = правая"
+                             name="equipment_place_side"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="installation_place"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="mes_time"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="rfid"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="section_number"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Серийный номер объекта установки "
+                             name="serial_number"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Передачи данных RFID из ЕИПП в АСУ СГ"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetRFIDEventDataASU">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="device_id"
+                             ordinal="12"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Место установки оборудования от 1 до 4 "
+                             name="equipment_place_int"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Место установки оборудования - сторона, true = левая, false = правая"
+                             name="equipment_place_side"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="installation_place"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="mes_time"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="rfid"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="section_number"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Серийный номер объекта установки "
+                             name="serial_number"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="get_sha_1">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Метод для генерации хеша при создании идентификаторов сущностей
+                                        /*
+                                         * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
+                                         * in FIPS PUB 180-1
+                                         * Version 2.1a Copyright Paul Johnston 2000 - 2002.
+                                         * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+                                         * Distributed under the BSD License
+                                         * See http://pajhome.org.uk/crypt/md5 for details.
+                                         */
+                                        
+                                        /*
+                                         * Configurable variables. You may need to tweak these to be compatible with
+                                         * the server-side, but the defaults work in most cases.
+                                         */
+                                        var hexcase = 0;  /* hex output format. 0 - lowercase; 1 - uppercase        */
+                                        var b64pad = ""; /* base-64 pad character. "=" for strict RFC compliance   */
+                                        var chrsz = 8;  /* bits per input character. 8 - ASCII; 16 - Unicode      */
+                                        
+                                        /*
+                                         * These are the functions you'll usually want to call
+                                         * They take string arguments and return either hex or base-64 encoded strings
+                                         */
+                                        function hex_sha1(s) { return binb2hex(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        
+                                        function b64_sha1(s) { return binb2b64(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        function str_sha1(s) { return binb2str(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        function hex_hmac_sha1(key, data) { return binb2hex(core_hmac_sha1(key, data)); }
+                                        function b64_hmac_sha1(key, data) { return binb2b64(core_hmac_sha1(key, data)); }
+                                        function str_hmac_sha1(key, data) { return binb2str(core_hmac_sha1(key, data)); }
+                                        
+                                        /*
+                                         * Perform a simple self-test to see if the VM is working
+                                         */
+                                        function sha1_vm_test() {
+                                            return hex_sha1("abc") == "a9993e364706816aba3e25717850c26c9cd0d89d";
+                                        }
+                                        
+                                        /*
+                                         * Calculate the SHA-1 of an array of big-endian words, and a bit length
+                                         */
+                                        function core_sha1(x, len) {
+                                            /* append padding */
+                                            x[len >> 5] |= 0x80 << (24 - len % 32);
+                                            x[((len + 64 >> 9) << 4) + 15] = len;
+                                        
+                                            var w = Array(80);
+                                            var a = 1732584193;
+                                            var b = -271733879;
+                                            var c = -1732584194;
+                                            var d = 271733878;
+                                            var e = -1009589776;
+                                        
+                                            for (var i = 0; i < x.length; i += 16) {
+                                                var olda = a;
+                                                var oldb = b;
+                                                var oldc = c;
+                                                var oldd = d;
+                                                var olde = e;
+                                        
+                                                for (var j = 0; j < 80; j++) {
+                                                    if (j < 16) w[j] = x[i + j];
+                                                    else w[j] = rol(w[j - 3] ^ w[j - 8] ^ w[j - 14] ^ w[j - 16], 1);
+                                                    var t = safe_add(safe_add(rol(a, 5), sha1_ft(j, b, c, d)),
+                                                        safe_add(safe_add(e, w[j]), sha1_kt(j)));
+                                                    e = d;
+                                                    d = c;
+                                                    c = rol(b, 30);
+                                                    b = a;
+                                                    a = t;
+                                                }
+                                        
+                                                a = safe_add(a, olda);
+                                                b = safe_add(b, oldb);
+                                                c = safe_add(c, oldc);
+                                                d = safe_add(d, oldd);
+                                                e = safe_add(e, olde);
+                                            }
+                                            return Array(a, b, c, d, e);
+                                        
+                                        }
+                                        
+                                        /*
+                                         * Perform the appropriate triplet combination function for the current
+                                         * iteration
+                                         */
+                                        function sha1_ft(t, b, c, d) {
+                                            if (t < 20) return (b & c) | ((~b) & d);
+                                            if (t < 40) return b ^ c ^ d;
+                                            if (t < 60) return (b & c) | (b & d) | (c & d);
+                                            return b ^ c ^ d;
+                                        }
+                                        
+                                        /*
+                                         * Determine the appropriate additive constant for the current iteration
+                                         */
+                                        function sha1_kt(t) {
+                                            return (t < 20) ? 1518500249 : (t < 40) ? 1859775393 :
+                                                (t < 60) ? -1894007588 : -899497514;
+                                        }
+                                        
+                                        /*
+                                         * Calculate the HMAC-SHA1 of a key and some data
+                                         */
+                                        function core_hmac_sha1(key, data) {
+                                            var bkey = str2binb(key);
+                                            if (bkey.length > 16) bkey = core_sha1(bkey, key.length * chrsz);
+                                        
+                                            var ipad = Array(16), opad = Array(16);
+                                            for (var i = 0; i < 16; i++) {
+                                                ipad[i] = bkey[i] ^ 0x36363636;
+                                                opad[i] = bkey[i] ^ 0x5C5C5C5C;
+                                            }
+                                        
+                                            var hash = core_sha1(ipad.concat(str2binb(data)), 512 + data.length * chrsz);
+                                            return core_sha1(opad.concat(hash), 512 + 160);
+                                        }
+                                        
+                                        /*
+                                         * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+                                         * to work around bugs in some JS interpreters.
+                                         */
+                                        function safe_add(x, y) {
+                                            var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+                                            var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+                                            return (msw << 16) | (lsw & 0xFFFF);
+                                        }
+                                        
+                                        /*
+                                         * Bitwise rotate a 32-bit number to the left.
+                                         */
+                                        function rol(num, cnt) {
+                                            return (num << cnt) | (num >>> (32 - cnt));
+                                        }
+                                        
+                                        /*
+                                         * Convert an 8-bit or 16-bit string to an array of big-endian words
+                                         * In 8-bit function, characters >255 have their hi-byte silently ignored.
+                                         */
+                                        function str2binb(str) {
+                                            var bin = Array();
+                                            var mask = (1 << chrsz) - 1;
+                                            for (var i = 0; i < str.length * chrsz; i += chrsz)
+                                                bin[i >> 5] |= (str.charCodeAt(i / chrsz) & mask) << (32 - chrsz - i % 32);
+                                            return bin;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a string
+                                         */
+                                        function binb2str(bin) {
+                                            var str = "";
+                                            var mask = (1 << chrsz) - 1;
+                                            for (var i = 0; i < bin.length * 32; i += chrsz)
+                                                str += String.fromCharCode((bin[i >> 5] >>> (32 - chrsz - i % 32)) & mask);
+                                            return str;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a hex string.
+                                         */
+                                        function binb2hex(binarray) {
+                                            var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+                                            var str = "";
+                                            for (var i = 0; i < binarray.length * 4; i++) {
+                                                str += hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8 + 4)) & 0xF) +
+                                                    hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8)) & 0xF);
+                                            }
+                                            return str;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a base-64 string
+                                         */
+                                        function binb2b64(binarray) {
+                                            var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+                                            var str = "";
+                                            for (var i = 0; i < binarray.length * 4; i += 3) {
+                                                var triplet = (((binarray[i >> 2] >> 8 * (3 - i % 4)) & 0xFF) << 16)
+                                                    | (((binarray[i + 1 >> 2] >> 8 * (3 - (i + 1) % 4)) & 0xFF) << 8)
+                                                    | ((binarray[i + 2 >> 2] >> 8 * (3 - (i + 2) % 4)) & 0xFF);
+                                                for (var j = 0; j < 4; j++) {
+                                                    if (i * 8 + j * 6 > binarray.length * 32) str += b64pad;
+                                                    else str += tab.charAt((triplet >> 6 * (3 - j)) & 0x3F);
+                                                }
+                                            }
+                                            return str;
+                                        }
+                                        
+                                        var result = hex_sha1(A);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetRfidData">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Метод получения данных для мэшапа
+                                        var RFID_DATA_TEMPLATE = 'connRfidDataTemplate';
+                                        var searchFunctions = Resources['SearchFunctions'];
+                                        
+                                        // Создание инфотаблицы
+                                        var result = Resources["InfoTableFunctions"]
+                                            .CreateInfoTableFromDataShape({
+                                                    infoTableName : "InfoTable",
+                                                    dataShapeName : "connRfidDataDataShape"
+                                            });
+                                        var timeHandler = Things['handlerTime'];
+                                        // Поиск данных по шаблону
+                                        var findRfidData = function(id) {
+                                            var queryFilters = [];
+                                            if (id) queryFilters.push({ type: 'Matches', fieldName: 'section_id', expression: id });
+                                            var things = searchFunctions.SearchThingsByTemplate({
+                                                thingTemplate: RFID_DATA_TEMPLATE /* THINGTEMPLATENAME */,
+                                                maxItems: undefined /* NUMBER */,
+                                                tags: undefined /* TAGS */,
+                                                nameMask: undefined /* STRING */,
+                                                query: {
+                                                     filters: {
+                                                        type: 'And', filters: queryFilters
+                                                     }
+                                                } /* QUERY */
+                                            });
+                                            return things;
+                                        };
+                                        
+                                        var formatValue = function (value) {
+                                            return value === 'undefined' || value === 'null' ? undefined : value;
+                                        };
+                                        
+                                        var rfidData = findRfidData(undefined);
+                                        // Заполнение инфотаблицы данными
+                                        for (var i = 0; i < rfidData.length; i++) {
+                                            var rfid = rfidData.rows[i];
+                                            
+                                            result.AddRow({
+                                                id: rfid.name,
+                                                Device: formatValue(rfid.device_id),
+                                                Installation_Place: formatValue(rfid.installation_place),
+                                                Mes_Time: timeHandler.Generate({
+                                                    timezone: true /* BOOLEAN */,
+                                                    date: rfid.mes_time /* DATETIME */
+                                                }),
+                                                RFID: formatValue(rfid.rfid),
+                                                Section: formatValue(rfid.section_number),
+                                                Serial_Number: formatValue(rfid.serial_number),
+                                                SLD: formatValue(rfid.SLD_id),
+                                            });
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="getRFIDEventData">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Получение данных для мэшапа Event
+                                        var RFID_DATA_TEMPLATE = 'connRfidEventDataTemplate';
+                                        var searchFunctions = Resources['SearchFunctions'];
+                                        // Создание новой инфотаблицы
+                                        var result = Resources["InfoTableFunctions"]
+                                            .CreateInfoTableFromDataShape({
+                                                    infoTableName : "InfoTable",
+                                                    dataShapeName : "connRfidEventDataDataShape"
+                                            });
+                                        var timeHandler = Things['handlerTime'];
+                                        // Поиск данных
+                                        var findRfidData = function(id) {
+                                            var queryFilters = [];
+                                            if (id) queryFilters.push({ type: 'Matches', fieldName: 'section_id', expression: id });
+                                            var things = searchFunctions.SearchThingsByTemplate({
+                                                thingTemplate: RFID_DATA_TEMPLATE /* THINGTEMPLATENAME */,
+                                                maxItems: undefined /* NUMBER */,
+                                                tags: undefined /* TAGS */,
+                                                nameMask: undefined /* STRING */,
+                                                query: {
+                                                     filters: {
+                                                        type: 'And', filters: queryFilters
+                                                     }
+                                                } /* QUERY */
+                                            });
+                                            return things;
+                                        };
+                                        
+                                        var rfidEventData = findRfidData(undefined);
+                                        // Заполнение инфотаблицы
+                                        for (var i = 0; i < rfidEventData.length; i++) {
+                                            var rfidEvent = rfidEventData.rows[i];
+                                            
+                                            result.AddRow({
+                                                id: rfidEvent.name,
+                                                device_id: rfidEvent.device_id,
+                                                equipment_place_int: rfidEvent.equipment_place_int,
+                                                equipment_place_side: rfidEvent.equipment_place_side,
+                                                installation_place: rfidEvent.installation_place,
+                                                mes_time: timeHandler.Generate({
+                                                    timezone: true /* BOOLEAN */,
+                                                    date: rfidEvent.mes_time /* DATETIME */
+                                                }),
+                                                rfid: rfidEvent.rfid,
+                                                section_id: rfidEvent.section_id,
+                                                serial_number: rfidEvent.serial_number,
+                                                section_number: rfidEvent.section_number,
+                                                SLD_id: rfidEvent.SLD_id
+                                            });
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="RFIDFact">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        // заглушка. Эти данные будут приходить из АСУ СГ, возможно в виде множественных значений
+                                        var test = {
+                                            "isRfidChecked": true,
+                                            "diagnosticMap": "6e6012c9-9bae-11e9-80d5-005056011052",        
+                                        };
+                                        
+                                        // Метод для создания факта фиксации ИС rfid перемещения секции на стороне ЕИПП
+                                        function createThing(obj) {
+                                            //Create new transfer thing
+                                            var ThingName = generateId(obj.section_number);
+                                            Resources['EntityServices'].CreateThing({
+                                                name: ThingName,
+                                                description: "Факт фиксации ИС RFID перемещения секции " + obj.section_number,
+                                                thingTemplateName: "connRfidFactTemplate",
+                                                tags: undefined
+                                            });
+                                            var thing = Things[ThingName];
+                                            
+                                            thing.EnableThing();
+                                            thing.RestartThing();
+                                            
+                                            thing.isRfidChecked = obj.isRfidChecked;
+                                            thing.section_number = obj.section_number;
+                                            return ThingName;
+                                        }
+                                        
+                                        // Метод для генерации случайного идентификатора
+                                        function generateId(id) {
+                                            return me.get_sha_1({A: (id + (new Date()))});    
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Проверка параметров и проброс ошибки если параметры не верны
+                                            if (!section_number && !SLD_id) {
+                                        		throw new Error('Не указаны входные параметры');
+                                            } else {   
+                                                var obj = {};
+                                                obj.isRfidChecked = test.isRfidChecked;
+                                                obj.section_number = section_number;
+                                        
+                                                rfidFactThing = createThing(obj);
+                                                // массив на случай множественных значений. И для соответствия спецификации
+                                                if (!rfidFactThing) throw new Error('Ошибка записи данных');
+                                                this.result.array = [];
+                                                this.result.array.push({"isRfidChecked": obj.isRfidChecked});
+                                        	}   
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            this.result = {
+                                                Error: {
+                                                    code: 1,
+                                                    description: err.message
+                                                }
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetRFIDData">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        var timeHandler = Things['handlerTime'];
+                                        
+                                        // Метод для создания установки rfid метки на стороне ЕИПП
+                                        function createThing(obj) {
+                                            //Create new transfer thing
+                                            var ThingName = generateId(obj.serial_number);
+                                            Resources['EntityServices'].CreateThing({
+                                                name: ThingName,
+                                                description: "Регистрация установки метки "+ rfid +" на оборудовании " + serial_number,
+                                                thingTemplateName: "connRfidDataTemplate",
+                                                tags: undefined
+                                            });
+                                            var thing = Things[ThingName];
+                                            
+                                            thing.EnableThing();
+                                            thing.RestartThing();
+                                            
+                                            thing.SLD_id = obj.SLD_id;
+                                            thing.installation_place = obj.installation_place;
+                                            thing.section_number = obj.section_number;
+                                            thing.mes_time = obj.mes_time;
+                                            thing.rfid = obj.rfid;
+                                            thing.serial_number = obj.serial_number;
+                                            thing.device_id = obj.device_id;
+                                            thing.equipment_place_int = obj.equipment_place_int;
+                                            thing.equipment_place_side = obj.equipment_place_side;
+                                            return ThingName;
+                                        }
+                                        
+                                        // Метод для генерации случайного идентификатора
+                                        function generateId(id) {
+                                            var randomNumber = Math.random();
+                                            return me.get_sha_1({A: (randomNumber + id + (new Date()))});
+                                        }
+                                        
+                                        // Мето для валидации формата времени
+                                        function validateTime() {
+                                            return mes_time && (/^\d{4}-\d{2}-\d{2}(\s+\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/g.test(mes_time));
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Проверка входных параметров и проброс ошибки если параметры не верны
+                                            if (!serial_number && !rfid && !SLD_id) {
+                                        		throw new Error('Не указаны обязательные параметры: серийный номер оборудования, строка RFID метки, место ремонта');
+                                            } else {  
+                                                if (!validateTime()) throw new Error('Неверный формат времени');
+                                                
+                                                equipment_place_int = equipment_place_int*1;
+                                                if (isNaN(equipment_place_int)) throw new Error('Некорректно задан номер колёсной пары');
+                                                if (equipment_place_int === 0 || equipment_place_int == 1 || equipment_place_int == 2 || equipment_place_int == 3 || equipment_place_int == 4) {} else {throw new Error('Некорректно задан номер колёсной пары');}
+                                                
+                                                // Формат положения колеса, исходя из входных данных
+                                                if (equipment_place_side == "Левая" || equipment_place_side == "Лев") equipment_place_side = "лев";
+                                                if (equipment_place_side == "Правая" || equipment_place_side == "Прав") equipment_place_side = "прав";
+                                               
+                                                // Отправка данных о фикации rfid метки на строну АСУ СГ
+                                                var rfidASU = me.SetRFIDDataASU({
+                                                    SLD_id: SLD_id /* STRING */,
+                                                    installation_place: installation_place /* STRING */,
+                                                    section_number: section_number /* STRING */,
+                                                    mes_time: mes_time /* STRING */,
+                                                    rfid: rfid /* STRING */,
+                                                    serial_number: serial_number /* STRING */,
+                                                    device_id: device_id /* STRING */,
+                                                    equipment_place_int: equipment_place_int /* STRING */,
+                                                    equipment_place_side: equipment_place_side /* STRING */
+                                                });
+                                                
+                                             
+                                                var obj = {};
+                                                obj.SLD_id = SLD_id;
+                                                obj.installation_place = installation_place;
+                                                obj.section_number = section_number;
+                                                obj.mes_time = timeHandler.Parse({
+                                                    dateString: mes_time /* STRING */
+                                                });
+                                                obj.rfid = rfid;
+                                                obj.serial_number = serial_number;
+                                                obj.device_id = device_id;
+                                                obj.equipment_place_int = equipment_place_int;
+                                                obj.equipment_place_side = equipment_place_side;
+                                        
+                                                rfidThing = createThing(obj); 
+                                                
+                                                //if (rfidASU.Error) logger.info('rfid asu error: '+rfidASU.Error+'. ID - '+rfidThing);
+                                                // массив на случай множественных значений. И для соответствия спецификации
+                                                if (!rfidThing) throw new Error('Ошибка записи данных');
+                                                this.result.array = [];
+                                                this.result.array.push({"status":"success"});
+                                        	}   
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            this.result = {
+                                                Error: {
+                                                    code: 1,
+                                                    description: err.message
+                                                }
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetRFIDDataASU">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        // Метод для парсинга ответа XML от АСУ СГ
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*::SetRFIDtoKMBResponse.*[1];
+                                            var containsAnswer = resultXML.*:: Answer;
+                                            if (containsAnswer && (resultXML.*:: Answer.toString() === "true")) {
+                                                return {
+                                                    Answer: resultXML.*:: Answer.toString()
+                                                };
+                                            } else {
+                                                return {
+                                                    Error: 'Нет данных в АСУ СГ',
+                                                    Description: resultXML.*:: ErrorDescription.toString()
+                                                }
+                                            }
+                                        }
+                                        
+                                        //function getFormattedTime() {
+                                        //    var time;
+                                        //    if (/^\d{4}-\d{2}-\d{2}$/g.test(mes_time)) {
+                                        //        time = mes_time;
+                                        //    } else if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/g.test(mes_time)) {
+                                        //        var timeChunks = mes_time.split(' ')
+                                        //        time = timeChunks[0] + 'T' + timeChunks[1];
+                                        //    } else throw new Error('Неверный формат времени');
+                                        //    return time;
+                                        //}
+                                        
+                                        // Метод для форматирования строки времние
+                                        function getFormattedTime() {
+                                            return mes_time.replace(' ', 'T');
+                                        }
+                                        
+                                        // Метод для обработки строки времени
+                                        function timeHandling(mes_time) {
+                                            var res = {};
+                                            res.error = 0;
+                                            res.errorDescription = "";
+                                            res.date = "";
+                                            var date = getFormattedTime();
+                                            if (date.indexOf('+') !== -1) {
+                                                res.date = date.substring(0, date.indexOf('+'));
+                                            } else {
+                                                res.date = date;
+                                            }
+                                            return res;
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            var date = timeHandling(mes_time);
+                                            // Сборка тела soap запроса с параметрами
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:SetRFIDtoKMB>\
+                                                     <eipp:Parameters>\
+                                                        <eipp:PlaceOfRepair>'+ SLD_id +'</eipp:PlaceOfRepair>\
+                                                        <eipp:RFID_ID>'+ device_id +'</eipp:RFID_ID>\
+                                                        <eipp:RFID_Place>'+ installation_place +'</eipp:RFID_Place>\
+                                                        <eipp:NumberSection>'+ section_number +'</eipp:NumberSection>\
+                                                        <eipp:Mes_time>'+ date.date +'</eipp:Mes_time>\
+                                                        <eipp:RFID>'+ rfid +'</eipp:RFID>\
+                                                        <eipp:ObjectOfKMB_SN>'+ serial_number +'</eipp:ObjectOfKMB_SN>\
+                                                        <eipp:ObjectOfKMB_CountKP>'+ equipment_place_int +'</eipp:ObjectOfKMB_CountKP>\
+                                                        <eipp:ObjectOfKMB_Side>'+ equipment_place_side +'</eipp:ObjectOfKMB_Side>\
+                                                     </eipp:Parameters>\
+                                                  </eipp:SetRFIDtoKMB>\
+                                               </soap:Body>\
+                                            </soap:Envelope>';
+                                            var params = {
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            };
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML(params);
+                                            var response = parseXMLResponse(xmlResponse);
+                                            
+                                            result = response;
+                                            result.res = date.date;
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result = {
+                                                status: 'error',
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetRFIDEventData">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        var timeHandler = Things['handlerTime'];
+                                        
+                                        // Метод для создания фиксации перехода на стороне ЕИПП
+                                        function createThing(obj) {
+                                            //Create new transfer thing
+                                            var ThingName = generateId(obj.section_number);
+                                            Resources['EntityServices'].CreateThing({
+                                                name: ThingName,
+                                                description: "RFID фиксация перехода " + section_number,
+                                                thingTemplateName: "connRfidEventDataTemplate",
+                                                tags: undefined
+                                            });
+                                            var thing = Things[ThingName];
+                                            
+                                            thing.EnableThing();
+                                            thing.RestartThing();
+                                            
+                                            thing.SLD_id = obj.SLD_id;
+                                            thing.installation_place = obj.installation_place;
+                                            thing.section_number = obj.section_number;
+                                            thing.mes_time = obj.mes_time;
+                                            thing.rfid = obj.rfid;
+                                            thing.serial_number = obj.serial_number;
+                                            thing.equipment_place_int = obj.equipment_place_int;
+                                            thing.equipment_place_side = obj.equipment_place_side;
+                                            thing.device_id = obj.device_id;
+                                            return ThingName;
+                                        }
+                                        
+                                        // Метод для генерации случайного идентификатора на основе id и текущей даты
+                                        function generateId(id) {
+                                            var randomNumber = Math.random();
+                                            return me.get_sha_1({A: (randomNumber + id + (new Date()))});
+                                        }
+                                        
+                                        // Метод для валидации даты и времени
+                                        function validateTime() {
+                                            return mes_time && (/^\d{4}-\d{2}-\d{2}(\s+\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/g.test(mes_time));
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Проверка параметров и проброс ошибки, если параметры не верны
+                                            if (!section_number || !SLD_id || !rfid || !device_id || !installation_place) {
+                                        		throw new Error('Не указаны обязательные параметры: ID места ремонта, ID RFID считывателя, Место установки, 8-значный номер секции, RFID метка');
+                                            } else {   
+                                                if (!validateTime()) throw new Error('Неверный формат времени');
+                                                        
+                                                equipment_place_int = equipment_place_int*1;
+                                                if (isNaN(equipment_place_int)) throw new Error('Некорректно задан номер колёсной пары');
+                                                if (equipment_place_int === 0 || equipment_place_int == 1 || equipment_place_int == 2 || equipment_place_int == 3 || equipment_place_int == 4) {} else {throw new Error('Некорректно задан номер колёсной пары');}
+                                                
+                                                if (equipment_place_side == "Левая" || equipment_place_side == "Лев") equipment_place_side = "лев";
+                                                if (equipment_place_side == "Правая" || equipment_place_side == "Прав") equipment_place_side = "прав";
+                                                // Отправка фиксации захода на сторону АСУ СГ
+                                                var rfidEvent = me.SetRFIDEventDataASU({
+                                                    SLD_id: SLD_id /* STRING */,
+                                                    installation_place: installation_place /* STRING */,
+                                                    section_number: section_number /* STRING */,
+                                                    mes_time: mes_time /* STRING */,
+                                                    rfid: rfid /* STRING */,
+                                                    serial_number: serial_number /* STRING */,
+                                                    equipment_place_int: equipment_place_int /* STRING */,
+                                                    equipment_place_side: equipment_place_side /* STRING */,
+                                                    device_id: device_id /* STRING */
+                                                });
+                                                //if (rfidEvent.Error) throw new Error(rfidEvent.Error);
+                                                var obj = {};
+                                                obj.SLD_id = SLD_id;
+                                                obj.installation_place = installation_place;
+                                                obj.section_number = section_number;
+                                                obj.mes_time = timeHandler.Parse({
+                                                    dateString: mes_time /* STRING */
+                                                });
+                                                obj.rfid = rfid;
+                                                obj.serial_number = serial_number;
+                                                obj.equipment_place_int = equipment_place_int;
+                                                obj.equipment_place_side = equipment_place_side;
+                                                obj.device_id = device_id;
+                                        
+                                                rfidThing = createThing(obj);
+                                                // массив на случай множественных значений. И для соответствия спецификации
+                                                if (!rfidThing) throw new Error('Ошибка записи данных');
+                                                this.result.array = [];
+                                                this.result.array.push({"status":"success"});
+                                        	}   
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            this.result = {
+                                                Error: {
+                                                    code: 1,
+                                                    description: err.message
+                                                }
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetRFIDEventDataASU">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        // Метод для парсинга ответа XML от АСУ СГ
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*::PassRFID_SectionResponse.*[1];
+                                            var containsAnswer = resultXML.*:: Answer;
+                                            if (containsAnswer && (resultXML.*:: Answer.toString() === "true")) {
+                                                return {
+                                                    Answer: resultXML.*:: Answer.toString()
+                                                };
+                                            } else {
+                                                return {
+                                                    Error: 'Нет данных в АСУ СГ',
+                                                    Description: resultXML.*:: ErrorDescription.toString()
+                                                }
+                                            }
+                                        }
+                                        
+                                        /*function getFormattedTime() {
+                                            var time;
+                                            if (/^\d{4}-\d{2}-\d{2}$/g.test(mes_time)) {
+                                                time = mes_time;
+                                            } else if (/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/g.test(mes_time)) {
+                                                var timeChunks = mes_time.split(' ')
+                                                time = timeChunks[0] + 'T' + timeChunks[1];
+                                            } else throw new Error('Неверный формат времени');
+                                            return time;
+                                        }*/
+                                        
+                                        // Метод для форматировани строки времени
+                                        function getFormattedTime() {
+                                            return mes_time.replace(' ', 'T');
+                                        }
+                                        
+                                        // Метод для обработки строки времени
+                                        function timeHandling(mes_time) {
+                                            var res = {};
+                                            res.error = 0;
+                                            res.errorDescription = "";
+                                            res.date = "";
+                                            var date = getFormattedTime();
+                                            if (date.indexOf('+') !== -1) {
+                                                res.date = date.substring(0, date.indexOf('+'));
+                                            } else {
+                                                res.date = date;
+                                            }
+                                            return res;
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            var date = timeHandling(mes_time);
+                                            // Сборка тела soap запроса с параметрами
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:PassRFID_Section>\
+                                                     <eipp:Parameters>\
+                                                        <eipp:PlaceOfRepair>'+ SLD_id +'</eipp:PlaceOfRepair>\
+                                                        <eipp:RFID_ID>'+ device_id +'</eipp:RFID_ID>\
+                                                        <eipp:RFID_Place>'+ installation_place +'</eipp:RFID_Place>\
+                                                        <eipp:NumberSection>'+ section_number +'</eipp:NumberSection>\
+                                                        <eipp:Mes_time>'+ date.date +'</eipp:Mes_time>\
+                                                        <eipp:RFID>'+ rfid +'</eipp:RFID>\
+                                                        <eipp:ObjectOfKMB_SN>'+ serial_number +'</eipp:ObjectOfKMB_SN>\
+                                                        <eipp:ObjectOfKMB_CountKP>'+ equipment_place_int +'</eipp:ObjectOfKMB_CountKP>\
+                                                        <eipp:ObjectOfKMB_Side>'+ equipment_place_side +'</eipp:ObjectOfKMB_Side>\
+                                                     </eipp:Parameters>\
+                                                  </eipp:PassRFID_Section>\
+                                               </soap:Body>\
+                                            </soap:Envelope>';
+                                            var params = {
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            };
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML(params);
+                                            var response = parseXMLResponse(xmlResponse);
+                                            
+                                            result = response;
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result = {
+                                                status: 'error',
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="ASU_URL"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <ASU_URL>
+                    <Value>
+                    <![CDATA[
+                    http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-09-16T17:17:11.805+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_URL>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

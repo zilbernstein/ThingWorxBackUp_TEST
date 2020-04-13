@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Mashups>
+        <Mashup
+         aspect.isResponsive="true"
+         aspect.mashupType="mashup"
+         columns="0.0"
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="connRfidDataMashup"
+         projectName="Connectors"
+         rows="0.0"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                </Read>
+                <Update>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                </Update>
+                <Delete>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                </Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions>
+                <Permissions
+                 resourceName="*">
+                    <PropertyRead>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </PropertyRead>
+                    <PropertyWrite>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </PropertyWrite>
+                    <ServiceInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </ServiceInvoke>
+                    <EventInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </EventInvoke>
+                    <EventSubscribe>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </EventSubscribe>
+                </Permissions>
+            </RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility>
+                    <Principal
+                     isPermitted="true"
+                     name="Тесты"
+                     type="Organization"></Principal>
+                </Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ParameterDefinitions></ParameterDefinitions>
+            <Things>
+                <Thing>connRFLibrary</Thing>
+            </Things>
+            <ThingShapes></ThingShapes>
+            <ThingTemplates></ThingTemplates>
+            <mashupContent>
+            <![CDATA[
+            {
+              "CustomMashupCss" : "",
+              "Data" : {
+                "Session" : {
+                  "DataName" : "Session",
+                  "EntityName" : "",
+                  "EntityType" : "Session",
+                  "Id" : "session",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "SessionInterface",
+                    "Name" : "GetGlobalSessionValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetGlobalSessionValues"
+                  } ]
+                },
+                "Things_connRFLibrary" : {
+                  "DataName" : "Things_connRFLibrary",
+                  "EntityName" : "connRFLibrary",
+                  "EntityType" : "Things",
+                  "Id" : "21b61558-06a3-4997-baf4-5f31d53066b0",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "22d9b636-50e8-44aa-a161-c939ac13211c",
+                    "Name" : "GetRfidData",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetRfidData"
+                  } ]
+                },
+                "UserExtensions" : {
+                  "DataName" : "UserExtensions",
+                  "EntityName" : "",
+                  "EntityType" : "UserExtensions",
+                  "Id" : "UserExtensions",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "UserExtensionInterface",
+                    "Name" : "GetCurrentUserExtensionProperties",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetCurrentUserExtensionProperties"
+                  } ]
+                }
+              },
+              "DataBindings" : [ {
+                "Id" : "97eb1af2-58ff-4cc7-b59c-4507c99c63e0",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "InfoTable",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetRfidData",
+                "SourceSection" : "Things_connRFLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxgrid-5",
+                "TargetSection" : ""
+              } ],
+              "DesignTimePermissions" : {
+                "Create" : [ ],
+                "Delete" : [ ],
+                "Metadata" : [ ],
+                "Read" : [ ],
+                "Update" : [ ]
+              },
+              "Events" : [ {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connRFLibrary",
+                "EventHandlerService" : "GetRfidData",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "5937f019-8d19-4698-90c7-f467d5d9e784"
+              } ],
+              "RunTimePermissions" : {
+                "permissions" : [ ]
+              },
+              "UI" : {
+                "Properties" : {
+                  "AddToDashboardButton" : "SimplePlus",
+                  "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+                  "Area" : "Mashup",
+                  "BGImage" : "",
+                  "BGImageRepeat" : "no-repeat",
+                  "BGImageSize" : "auto",
+                  "Columns" : 0,
+                  "ConfigureGadgetButton" : "SimpleGear",
+                  "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+                  "DisplayName" : "Mashup",
+                  "EnableParameterEditing" : false,
+                  "Height" : 618,
+                  "Id" : "mashup-root",
+                  "IgnoreWarningsInViewMashup" : false,
+                  "IsPrintLayout" : false,
+                  "Left" : 0,
+                  "MashupToEditGadget" : "DefaultMashupToEditGadget",
+                  "MinHeight" : 0,
+                  "MinWidth" : 0,
+                  "ResponsiveLayout" : true,
+                  "Rows" : 0,
+                  "ShowDataLoading" : true,
+                  "Style" : "DefaultMashupStyle",
+                  "StyleTheme" : "Base Theme",
+                  "Title" : "",
+                  "TitleBar" : false,
+                  "TitleBarStyle" : "DefaultTitleBarStyle",
+                  "TitleBarText" : "Gadget Title Here",
+                  "Top" : 0,
+                  "Type" : "mashup",
+                  "UseTheme" : false,
+                  "UseThemeForHybrids" : false,
+                  "Visible" : true,
+                  "Width" : 1024,
+                  "Z-index" : 10,
+                  "__TypeDisplayName" : "Mashup",
+                  "id_index" : 9,
+                  "supportsAutoResize" : true
+                },
+                "Widgets" : [ {
+                  "Properties" : {
+                    "Area" : "UI",
+                    "DisplayName" : "panel-2",
+                    "Height" : 200,
+                    "HideScrollbars" : false,
+                    "HorizontalAnchor" : "left",
+                    "Id" : "panel-2",
+                    "Left" : 195,
+                    "ResponsiveLayout" : true,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultPanelStyle",
+                    "Top" : 120,
+                    "Type" : "panel",
+                    "VerticalAnchor" : "top",
+                    "Visible" : true,
+                    "Width" : 300,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Panel"
+                  },
+                  "Widgets" : [ {
+                    "Properties" : {
+                      "AlignHeader" : false,
+                      "Area" : "UI",
+                      "AutoSelectFirstRow" : false,
+                      "CellTextWrapping" : false,
+                      "ColumnFormat" : {
+                        "formatInfo" : [ {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "Section",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "Section",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "Device",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "Device",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "Installation_Place",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "Installation_Place",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "Mes_Time",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "Mes_Time",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "RFID",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "RFID",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "Serial_Number",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "Serial_Number",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "SLD",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "SLD",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "id",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "id",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        } ]
+                      },
+                      "CurrentScrollTop" : 0,
+                      "Description" : "",
+                      "DisplayName" : "dhxgrid-5",
+                      "FocusStyle" : "DefaultFocusStyle",
+                      "GridBackgroundStyle" : "DefaultGridBackgroundStyle",
+                      "GridEditableFieldStyle" : "DefaultGridEditableFieldStyle",
+                      "GridHeaderStyle" : "DefaultGridHeaderStyle",
+                      "GridHeaderTextCase" : "capitalize",
+                      "GridInvalidFieldStyle" : "DefaultGridInvalidFieldStyle",
+                      "Height" : 300,
+                      "Id" : "dhxgrid-5",
+                      "IsEditable" : false,
+                      "IsPrintLayout" : false,
+                      "Left" : 10,
+                      "MultiSelect" : false,
+                      "ResponsiveLayout" : false,
+                      "RowAlternateBackgroundStyle" : "DefaultRowAlternateBackgroundStyle",
+                      "RowBackgroundStyle" : "DefaultRowBackgroundStyle",
+                      "RowFormat_StateParameters" : [ ],
+                      "RowHeight" : 30,
+                      "RowHoverStyle" : "DefaultRowHoverStyle",
+                      "RowSelectedStyle" : "DefaultRowSelectedStyle",
+                      "ScrollTop" : 0,
+                      "ShowAllColumns" : false,
+                      "ShowDataLoading" : true,
+                      "TabSequence" : 0,
+                      "Top" : 13,
+                      "Type" : "dhxgrid",
+                      "Visible" : true,
+                      "Width" : 1200,
+                      "Z-index" : 10,
+                      "__TypeDisplayName" : "Grid"
+                    },
+                    "Widgets" : [ ]
+                  } ]
+                } ]
+              },
+              "mashupType" : "mashup"
+            }
+            ]]>
+            </mashupContent>
+            <preview></preview>
+        </Mashup>
+    </Mashups>
+</Entities>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Mashups>
+        <Mashup
+         aspect.isResponsive="true"
+         aspect.mashupType="mashup"
+         columns="0.0"
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="connRfidEventDataMashup"
+         projectName="Connectors"
+         rows="0.0"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                </Read>
+                <Update>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                </Update>
+                <Delete>
+                    <Principal
+                     isPermitted="true"
+                     name="ИвановАМ"
+                     type="User"></Principal>
+                </Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions>
+                <Permissions
+                 resourceName="*">
+                    <PropertyRead>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </PropertyRead>
+                    <PropertyWrite>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </PropertyWrite>
+                    <ServiceInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </ServiceInvoke>
+                    <EventInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </EventInvoke>
+                    <EventSubscribe>
+                        <Principal
+                         isPermitted="true"
+                         name="ИвановАМ"
+                         type="User"></Principal>
+                    </EventSubscribe>
+                </Permissions>
+            </RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility>
+                    <Principal
+                     isPermitted="true"
+                     name="Тесты"
+                     type="Organization"></Principal>
+                </Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ParameterDefinitions></ParameterDefinitions>
+            <Things>
+                <Thing>connRFLibrary</Thing>
+            </Things>
+            <ThingShapes></ThingShapes>
+            <ThingTemplates></ThingTemplates>
+            <mashupContent>
+            <![CDATA[
+            {
+              "CustomMashupCss" : "",
+              "Data" : {
+                "Session" : {
+                  "DataName" : "Session",
+                  "EntityName" : "",
+                  "EntityType" : "Session",
+                  "Id" : "session",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "SessionInterface",
+                    "Name" : "GetGlobalSessionValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetGlobalSessionValues"
+                  } ]
+                },
+                "Things_connRFLibrary" : {
+                  "DataName" : "Things_connRFLibrary",
+                  "EntityName" : "connRFLibrary",
+                  "EntityType" : "Things",
+                  "Id" : "8f9d8f58-62fe-4b74-8efe-b6cf4aa7a52a",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "1a3218c4-9a08-4828-801c-08fc45f1a745",
+                    "Name" : "getRFIDEventData",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "getRFIDEventData"
+                  } ]
+                },
+                "UserExtensions" : {
+                  "DataName" : "UserExtensions",
+                  "EntityName" : "",
+                  "EntityType" : "UserExtensions",
+                  "Id" : "UserExtensions",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "UserExtensionInterface",
+                    "Name" : "GetCurrentUserExtensionProperties",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetCurrentUserExtensionProperties"
+                  } ]
+                }
+              },
+              "DataBindings" : [ {
+                "Id" : "2637fecc-dc26-4218-841d-4eaa8d2d9a81",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "InfoTable",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "getRFIDEventData",
+                "SourceSection" : "Things_connRFLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxgrid-10",
+                "TargetSection" : ""
+              } ],
+              "DesignTimePermissions" : {
+                "Create" : [ ],
+                "Delete" : [ ],
+                "Metadata" : [ ],
+                "Read" : [ ],
+                "Update" : [ ]
+              },
+              "Events" : [ {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connRFLibrary",
+                "EventHandlerService" : "getRFIDEventData",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "7ab09afb-fb7d-41b0-8f8c-da71401a0fb5"
+              } ],
+              "RunTimePermissions" : {
+                "permissions" : [ ]
+              },
+              "UI" : {
+                "Properties" : {
+                  "AddToDashboardButton" : "SimplePlus",
+                  "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+                  "Area" : "Mashup",
+                  "BGImage" : "",
+                  "BGImageRepeat" : "no-repeat",
+                  "BGImageSize" : "auto",
+                  "Columns" : 0,
+                  "ConfigureGadgetButton" : "SimpleGear",
+                  "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+                  "DisplayName" : "Mashup",
+                  "EnableParameterEditing" : false,
+                  "Height" : 618,
+                  "Id" : "mashup-root",
+                  "IgnoreWarningsInViewMashup" : false,
+                  "IsPrintLayout" : false,
+                  "Left" : 0,
+                  "MashupToEditGadget" : "DefaultMashupToEditGadget",
+                  "MinHeight" : 0,
+                  "MinWidth" : 0,
+                  "ResponsiveLayout" : true,
+                  "Rows" : 0,
+                  "ShowDataLoading" : true,
+                  "Style" : "DefaultMashupStyle",
+                  "StyleTheme" : "Base Theme",
+                  "Title" : "",
+                  "TitleBar" : false,
+                  "TitleBarStyle" : "DefaultTitleBarStyle",
+                  "TitleBarText" : "Gadget Title Here",
+                  "Top" : 0,
+                  "Type" : "mashup",
+                  "UseTheme" : false,
+                  "UseThemeForHybrids" : false,
+                  "Visible" : true,
+                  "Width" : 1024,
+                  "Z-index" : 10,
+                  "__TypeDisplayName" : "Mashup",
+                  "id_index" : 10,
+                  "supportsAutoResize" : true
+                },
+                "Widgets" : [ {
+                  "Properties" : {
+                    "Area" : "UI",
+                    "DisplayName" : "panel-2",
+                    "Height" : 200,
+                    "HideScrollbars" : false,
+                    "HorizontalAnchor" : "left",
+                    "Id" : "panel-2",
+                    "Left" : 195,
+                    "ResponsiveLayout" : true,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultPanelStyle",
+                    "Top" : 120,
+                    "Type" : "panel",
+                    "VerticalAnchor" : "top",
+                    "Visible" : true,
+                    "Width" : 300,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Panel"
+                  },
+                  "Widgets" : [ {
+                    "Properties" : {
+                      "AlignHeader" : false,
+                      "Area" : "UI",
+                      "AutoSelectFirstRow" : false,
+                      "CellTextWrapping" : false,
+                      "ColumnFormat" : {
+                        "formatInfo" : [ {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "device_id",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "device_id",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "right",
+                          "AllowEdit" : false,
+                          "FieldName" : "equipment_place_int",
+                          "FormatOptions" : {
+                            "FormatString" : "0",
+                            "renderer" : "INTEGER"
+                          },
+                          "Title" : "equipment_place_int",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "equipment_place_side",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "equipment_place_side",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "installation_place",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "installation_place",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "mes_time",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "mes_time",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "rfid",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "rfid",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "serial_number",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "serial_number",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "SLD_id",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "SLD_id",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "section_number",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "section_number",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        }, {
+                          "Align" : "left",
+                          "AllowEdit" : false,
+                          "FieldName" : "id",
+                          "FormatOptions" : {
+                            "FormatString" : "full",
+                            "renderer" : "STRING"
+                          },
+                          "Title" : "id",
+                          "ValidationExpression" : "",
+                          "ValidationMessage" : "",
+                          "Width" : "auto"
+                        } ]
+                      },
+                      "CurrentScrollTop" : 0,
+                      "DisplayName" : "dhxgrid-10",
+                      "FocusStyle" : "DefaultFocusStyle",
+                      "GridBackgroundStyle" : "DefaultGridBackgroundStyle",
+                      "GridEditableFieldStyle" : "DefaultGridEditableFieldStyle",
+                      "GridHeaderStyle" : "DefaultGridHeaderStyle",
+                      "GridHeaderTextCase" : "capitalize",
+                      "GridInvalidFieldStyle" : "DefaultGridInvalidFieldStyle",
+                      "Height" : 350,
+                      "Id" : "dhxgrid-10",
+                      "IsEditable" : false,
+                      "IsPrintLayout" : false,
+                      "Left" : 5,
+                      "MultiSelect" : false,
+                      "ResponsiveLayout" : false,
+                      "RowAlternateBackgroundStyle" : "DefaultRowAlternateBackgroundStyle",
+                      "RowBackgroundStyle" : "DefaultRowBackgroundStyle",
+                      "RowFormat_StateParameters" : [ ],
+                      "RowHeight" : 30,
+                      "RowHoverStyle" : "DefaultRowHoverStyle",
+                      "RowSelectedStyle" : "DefaultRowSelectedStyle",
+                      "ScrollTop" : 0,
+                      "ShowAllColumns" : false,
+                      "ShowDataLoading" : true,
+                      "TabSequence" : 0,
+                      "Top" : 10,
+                      "Type" : "dhxgrid",
+                      "Visible" : true,
+                      "Width" : 1450,
+                      "Z-index" : 10,
+                      "__TypeDisplayName" : "Grid"
+                    },
+                    "Widgets" : [ ]
+                  } ]
+                } ]
+              },
+              "mashupType" : "mashup"
+            }
+            ]]>
+            </mashupContent>
+            <preview></preview>
+        </Mashup>
+    </Mashups>
+</Entities>

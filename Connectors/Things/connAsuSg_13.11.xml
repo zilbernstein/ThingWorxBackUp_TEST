@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description=""
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="connAsuSg_13.11"
+         projectName="Connectors"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_URL"
+                     ordinal="3"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="5000"
+                     aspect.isPersistent="true"
+                     baseType="INTEGER"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="TIMEOUT"
+                     ordinal="2"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetCompositionLocomotiveSectionDate">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="ParDate"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SectionNumber"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetDiagnosticMapsOfLocomotive">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="GuidLine"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetInfoBySection">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="Section"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetMileage">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SectionId"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetPolygon">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSection">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SectionGUID"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSectionPlan">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="ParDate"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="PlaceOfRepair"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSectionsOfPoligon">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="HomeDepot"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="MesTime"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="PolygonID"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSectionsRFID">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="ParDate"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="PlaceOfRepair"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="ParseXMLResponse">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="lineFieldName"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="responseFieldName"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="xmlResponse"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="PostXMLString">
+                        <ResultType
+                         baseType="XML"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="xmlString"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SetKolodkaInfo">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="crack"
+                             ordinal="10"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="eqIq"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="humanSize"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="mes_time"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="optionAnalytics"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="padId"
+                             ordinal="14"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="padNum"
+                             ordinal="12"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="padSize"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="photo"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="placeOfRepair"
+                             ordinal="13"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="subnumSection"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="thinness"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="wedge"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="wheelPairNum"
+                             ordinal="11"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetCompositionLocomotiveSectionDate">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        try {
+                                            var content = ['<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:GetCompositionLocomotiveSectionDate>\
+                                                     <eipp:Parameter>\
+                                                        <!--Optional:-->\
+                                                        <eipp:Section_n></eipp:Section_n>\
+                                                        <eipp:Date>', ParDate, '</eipp:Date>\
+                                                        <!--Optional:-->\
+                                                        <eipp:NumberSection>', SectionNumber, '</eipp:NumberSection>\
+                                                        <eipp:PlaceOfRepair_n></eipp:PlaceOfRepair_n>\
+                                                     </eipp:Parameter>\
+                                                  </eipp:GetCompositionLocomotiveSectionDate>\
+                                               </soap:Body>\
+                                            </soap:Envelope>'].join('');
+                                            var xmlResponse = me.PostXMLString({
+                                                xmlString: content /* STRING */
+                                            });
+                                            result = me.ParseXMLResponse({
+                                                xmlResponse: xmlResponse /* STRING */,
+                                                responseFieldName: 'GetCompositionLocomotiveSectionDateResponse' /* STRING */,
+                                                lineFieldName: 'CompositionLocomotiveSectionDateLine' /* STRING */
+                                            });
+                                        } catch (err) {
+                                            result = {
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetDiagnosticMapsOfLocomotive">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        try {
+                                            var content = ['<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:GetDiagnosticMapsOfLocomotive>\
+                                                     <eipp:Guid>\
+                                                        <!--Zero or more repetitions:-->\
+                                                        <eipp:GuidLine>', GuidLine, '</eipp:GuidLine>\
+                                                      </eipp:Guid>\
+                                                  </eipp:GetDiagnosticMapsOfLocomotive>\
+                                               </soap:Body>\
+                                            </soap:Envelope>'].join('');
+                                            var xmlResponse = me.PostXMLString({
+                                                xmlString: content /* STRING */
+                                            });
+                                            var res = me.ParseXMLResponse({
+                                                xmlResponse: xmlResponse /* STRING */,
+                                                responseFieldName: 'GetDiagnosticMapsOfLocomotiveResponse' /* STRING */,
+                                                lineFieldName: 'DiagnosticMapsOfLocomotiveLine' /* STRING */
+                                            });
+                                            if (res.Error) {
+                                                result = res;
+                                            } else {
+                                                result = res.array.length ? res.array[0] : {
+                                                    Error: 'Нет данных в АСУ СГ'
+                                                };
+                                            }
+                                        } catch (err) {
+                                            result = {
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetInfoBySection">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        try {
+                                            if (!Section) throw new Error('Section is null');
+                                                function searchSectionsThings(Section) {
+                                                var sec = Resources["SearchFunctions"].SearchThingsByTemplate({
+                                                    thingTemplate: "2050Секция" /* THINGTEMPLATENAME */,
+                                                    maxItems: 1 /* NUMBER */,
+                                                    tags: undefined /* TAGS */,
+                                                    nameMask: undefined /* STRING */,
+                                                    query: {
+                                                        filters: { type: 'EQ', fieldName: 'НАИМЕНОВАНИЕ', value: Section  }
+                                                    } /* QUERY */
+                                                });
+                                                if (sec) { return sec.НОМЕР } else { return ''}   
+                                            }
+                                            var a = searchSectionsThings(Section);
+                                            var b = Section.substr(0, Section.length-1);
+                                            
+                                            result = {
+                                                sectionSubnumber: a || '',
+                                                locomotive: b || ''
+                                            };
+                                        } catch (err) {
+                                            result = {
+                                                sectionSubnumber: '',
+                                                locomotive: '',
+                                                error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetMileage">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var getMileage = function (section) {
+                                                switch(section) {
+                                                    case '0017А': case '0017Б': case '0017В': return 2138464;
+                                                    case '0148А': case '0148Б': case '0148В': return 974910;
+                                                    case '0710А': case '0710Б': case '0710В': return 1357358;
+                                                    case '0007А': case '0007Б': case '0007В': return 150811; 
+                                                    default: return 0;
+                                                }
+                                        };
+                                        
+                                        var result = {
+                                            value: getMileage(SectionId)
+                                        };
+                                        
+                                        /*
+                                        var REQUIRED_TYPE_OF_REPAIR_ID = '00000000-0000-0000-0000-000000000000';
+                                        var result = {
+                                            value: 0.0
+                                        };
+                                        
+                                        //Probably this loop would be exited after first iteration
+                                        function getMileageValue(response) {
+                                            var values = response.array;
+                                            var mileage = 0.0;
+                                            if (response && values) {
+                                                for (var i = 0; i < values.length; i++) {
+                                                    var item = values[i];
+                                                    if (item.TypeOfRepair_ID === REQUIRED_TYPE_OF_REPAIR_ID) {
+                                                        mileage = item.Fact_km;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                            return mileage;
+                                        }
+                                        
+                                        try {
+                                            var content = ['<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                                <soap:Header/>\
+                                                <soap:Body>\
+                                                  <eipp:GetMileageofSection>\
+                                                     <eipp:Parameters>\
+                                                        <eipp:NumberSection>', SectionId,'</eipp:NumberSection>\
+                                                     </eipp:Parameters>\
+                                                  </eipp:GetMileageofSection>\
+                                                </soap:Body>\
+                                                </soap:Envelope>'].join('');
+                                            var xmlResponse = me.PostXMLString({
+                                                xmlString: content 
+                                            });
+                                            var response = me.ParseXMLResponse({
+                                                xmlResponse: xmlResponse ,
+                                                responseFieldName: 'GetMileageofSectionResponse' ,
+                                                lineFieldName: 'GetMileageofSectionLine'
+                                            });
+                                            var mileage = getMileageValue(response);
+                                            if (typeof mileage === 'string') {
+                                                mileage = parseInt(mileage);
+                                            }
+                                            result = {
+                                                value: mileage, 
+                                                error: response.Error
+                                            };
+                                        } catch (err) {
+                                            result = {
+                                                value: 0,
+                                                error: err.message
+                                            };
+                                        }*/
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetPolygon">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        try {
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:GetPolygon>\
+                                                     <eipp:Guid>\
+                                                     </eipp:Guid>\
+                                                  </eipp:GetPolygon>\
+                                               </soap:Body>\
+                                            </soap:Envelope>';
+                                            var xmlResponse = me.PostXMLString({
+                                                xmlString: content /* STRING */
+                                            });
+                                            result = me.ParseXMLResponse({
+                                                xmlResponse: xmlResponse /* STRING */,
+                                                responseFieldName: 'GetPolygonResponse' /* STRING */,
+                                                lineFieldName: 'GetPolygonLine' /* STRING */
+                                            });
+                                        } catch (err) {
+                                            result = {
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSection">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        try {
+                                            var content = ['<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:GetSections>\
+                                                     <eipp:Guid>\
+                                                        <!--Zero or more repetitions:-->\
+                                                        <eipp:GuidLine>', SectionGUID, '</eipp:GuidLine>\
+                                                     </eipp:Guid>\
+                                                  </eipp:GetSections>\
+                                               </soap:Body>\
+                                            </soap:Envelope>'].join('');
+                                            var xmlResponse = me.PostXMLString({
+                                                xmlString: content /* STRING */
+                                            });
+                                            result = me.ParseXMLResponse({
+                                                xmlResponse: xmlResponse /* STRING */,
+                                                responseFieldName: 'GetSectionsResponse' /* STRING */,
+                                                lineFieldName: 'SectionsLine' /* STRING */
+                                            });
+                                        } catch (err) {
+                                            result = {
+                                                error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSectionPlan">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        try {
+                                            var content = ['<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:GetPlanDate>\
+                                                     <eipp:Parameter>\
+                                                        <eipp:Date>', ParDate, '</eipp:Date>\
+                                                        <eipp:PlaceOfRepair>', PlaceOfRepair, '</eipp:PlaceOfRepair>\
+                                                        <eipp:TypeOfRepair></eipp:TypeOfRepair>\
+                                                        <eipp:LocomotiveSeries></eipp:LocomotiveSeries>\
+                                                        <eipp:HomeDepot></eipp:HomeDepot>\
+                                                     </eipp:Parameter>\
+                                                  </eipp:GetPlanDate>\
+                                               </soap:Body>\
+                                            </soap:Envelope>'].join('');
+                                            var xmlResponse = me.PostXMLString({
+                                                xmlString: content /* STRING */
+                                            });
+                                            result = me.ParseXMLResponse({
+                                                xmlResponse: xmlResponse /* STRING */,
+                                                responseFieldName: 'GetPlanDateResponse' /* STRING */,
+                                                lineFieldName: 'PlanDateLine' /* STRING */
+                                            });
+                                        } catch (err) {
+                                            result = {
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSectionsOfPoligon">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        try {
+                                            var content = ['<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:GetSectionsOfPoligon>\
+                                                     <eipp:Parameters>\
+                                                        <eipp:Polygon>', PolygonID, '</eipp:Polygon>\
+                                                        <eipp:HomeDepot_n>', HomeDepot || '', '</eipp:HomeDepot_n>\
+                                                        <eipp:Mes_time>', MesTime, '</eipp:Mes_time>\
+                                                     </eipp:Parameters>\
+                                                  </eipp:GetSectionsOfPoligon>\
+                                               </soap:Body>\
+                                            </soap:Envelope>'].join('');
+                                            var xmlResponse = me.PostXMLString({
+                                                xmlString: content /* STRING */
+                                            });
+                                            result = me.ParseXMLResponse({
+                                                xmlResponse: xmlResponse /* STRING */,
+                                                responseFieldName: 'GetSectionsOfPoligonResponse' /* STRING */,
+                                                lineFieldName: 'GetSectionsOfPoligonLine' /* STRING */
+                                            });
+                                        } catch(err) {
+                                            result = {
+                                                 Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSectionsRFID">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        var RFID_EVENT_DATA_TEMPLATE = 'connRfidEventDataTemplate';
+                                        var searchFunctions = Resources['SearchFunctions'];
+                                        var tableFunctions = Resources['InfoTableFunctions'];
+                                        var timeHandler = Things['handlerTime'];
+                                        
+                                        var HOURS_SINCE_LAST_REGISTRATION = 168;
+                                        
+                                        function searchRfidEventThingsWithTimeBoundary(from, to) {
+                                            return searchFunctions.SearchThingsByTemplate({
+                                                thingTemplate: RFID_EVENT_DATA_TEMPLATE /* THINGTEMPLATENAME */,
+                                                maxItems: undefined /* NUMBER */,
+                                                tags: undefined /* TAGS */,
+                                                nameMask: undefined /* STRING */,
+                                                query: {
+                                                    filters: { type: 'Between', fieldName: 'mes_time', from: from, to: to  }
+                                                } /* QUERY */
+                                            });
+                                        }
+                                        var timeTo = timeHandler.Parse({
+                                        	dateString: ParDate /* STRING */
+                                        });
+                                        var timeFrom = new Date(timeTo.getTime() - HOURS_SINCE_LAST_REGISTRATION * 3600000);
+                                        var foundThingsTable = searchRfidEventThingsWithTimeBoundary(timeFrom, timeTo);
+                                        if (foundThingsTable) {
+                                            result = { 
+                                                array : tableFunctions.ToJSON({
+                                                    table: foundThingsTable /* INFOTABLE */
+                                                }).rows
+                                            };
+                                        } else {
+                                            result = {
+                                                Error: 'Нет результатов'
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="ParseXMLResponse">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                             
+                                        var parseErrorDescription = function(xmlResponse) {
+                                            var formattedText = xmlResponse.replace(/\b/g,'')
+                                                    .replace(/\r/g,'')
+                                                    .replace(/\t/g,'')
+                                                    .replace(/\n/g,'')
+                                                    .replace('</m:return>', '')
+                                                    .replace('</soap:Body>', '')
+                                                    .replace('</soap:Envelope>', '')
+                                                    .replace('</m:' + responseFieldName + '>', '');
+                                            return 'Error';
+                                        };
+                                        
+                                        if (xmlResponse && (xmlResponse.indexOf("</soap:Envelope>") >= 0) && xmlResponse.indexOf("<m:ErrorDescription>") === -1) {
+                                                var formattedText = xmlResponse.replace(/\b/g,'')
+                                                    .replace(/\r/g,'')
+                                                    .replace(/\t/g,'')
+                                                    .replace(/\n/g,'')
+                                                    .replace('</m:return>', '')
+                                                    .replace('</soap:Body>', '')
+                                                    .replace('</soap:Envelope>', '')
+                                                    .replace('</m:' + responseFieldName + '>', '');
+                                        
+                                                var arr = [];
+                                                var arr1 = formattedText.split('<m:' + lineFieldName + '>');
+                                                var regex = /<([a-zA-Z0-9_-]+)>(.*?)<\/[a-zA-Z0-9_-]+>/gm;
+                                                if (formattedText.length > 0) {
+                                                    for (var j = 1; j < arr1.length; j++) {
+                                                        if (arr1[j].length) {
+                                                            if (arr1[j])
+                                                            arr1[j] = arr1[j].replace(/(\<m\:)/g, '<')
+                                                                .replace(/(\<\/m\:)/g, '</')
+                                                                .replace('</' + lineFieldName + '>', '');
+                                                            var m;
+                                                            var dataObj = {};
+                                                            if (/(<([a-zA-Z0-9_-]+)>(.*?)<\/[a-zA-Z0-9_-]+>)+/g.test(arr1[j])) {
+                                                                while ((m = regex.exec(arr1[j])) !== null) {
+                                                                    if (m.index === regex.lastIndex) {
+                                                                        regex.lastIndex++;
+                                                                    }    
+                                                                    var lastKey = "";
+                                                                    m.forEach(function (match, groupIndex, i) {
+                                                                      if (parseInt(groupIndex) > 0) {
+                                                                        if (groupIndex == 1) {
+                                                                          lastKey = match;
+                                                                          dataObj[lastKey] = null;
+                                                                        } else if (groupIndex == 2) {
+                                                                          dataObj[lastKey] = match;
+                                                                        }
+                                                                      }
+                                                                    });
+                                                                }
+                                                            } else {
+                                                                 dataObj = arr1[j].trim();
+                                                            }
+                                                            arr.push(dataObj);
+                                                        }
+                                                     }
+                                                } 
+                                                result = arr;
+                                            } else {
+                                                result = { 
+                                                    Error: 'Нет данных в АСУ СГ',
+                                                    ErrorDescription: parseErrorDescription(xmlResponse)
+                                                };
+                                            };
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="PostXMLString">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        if (!xmlString) throw new Error('Xml string has to be provided!');
+                                        var result = Resources["ContentLoaderFunctions"].PostXML({
+                                                url: me.ASU_URL /* STRING */,
+                                                content: xmlString /* XML */,
+                                                username: 'ws_eipp' /* STRING */,
+                                                password: '11012019' /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                timeout: me.TIMEOUT /* NUMBER */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                proxyScheme: undefined /* STRING */
+                                            });
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SetKolodkaInfo">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        try {
+                                            var content = ['<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                               <soap:Header/>\
+                                               <soap:Body>\
+                                                  <eipp:SetKolodkaInfo>\
+                                                     <eipp:Parameters>\
+                                                        <eipp:NumberSection>', subnumSection, '</eipp:NumberSection>\
+                                                        <eipp:OptionAnalytics>', optionAnalytics,'</eipp:OptionAnalytics>\
+                                                        <eipp:Mes_time>', mes_time, '</eipp:Mes_time>\
+                                                        <eipp:MeasurementDevice_ID>', eqIq, '</eipp:MeasurementDevice_ID>\
+                                                        <eipp:Foto>', photo, '</eipp:Foto>\
+                                                        <eipp:ThicknessInstrument>', padSize, '</eipp:ThicknessInstrument>\
+                                                        <eipp:ThicknessManuallyEntered>', humanSize, '</eipp:ThicknessManuallyEntered>\
+                                                        <eipp:Thickness_Small>', thinness, '</eipp:Thickness_Small>\
+                                                        <eipp:WedgeShape>', wedge, '</eipp:WedgeShape>\
+                                                        <eipp:PresenceOfCracks>', crack, '</eipp:PresenceOfCracks>\
+                                                        <eipp:NumberOrder>', wheelPairNum, '</eipp:NumberOrder>\
+                                                        <eipp:Number_KP>', padNum, '</eipp:Number_KP>\
+                                                        <eipp:PlaceOfRepair>', placeOfRepair, '</eipp:PlaceOfRepair>\
+                                                        <eipp:SyntheticIdentifierPads>', padId, '</eipp:SyntheticIdentifierPads>\
+                                                     </eipp:Parameters>\
+                                                  </eipp:SetKolodkaInfo>\
+                                               </soap:Body>\
+                                            </soap:Envelope>'].join('');
+                                            logger.info(content.toString());
+                                            var xmlResponse = me.PostXMLString({
+                                                xmlString: content 
+                                            });
+                                            var res = me.ParseXMLResponse({
+                                                xmlResponse: xmlResponse ,
+                                                responseFieldName: 'SetKolodkaInfoResponse' ,
+                                                lineFieldName: 'Answer' 
+                                            });
+                                            if (res.Error) {
+                                                result = res;
+                                            } else {
+                                                result = res.array.length ? {
+                                                    status: res.array[0]
+                                                }: {
+                                                    Error: 'Нет данных в АСУ СГ'
+                                                };
+                                            }
+                                        } catch(err) {
+                                            result = {
+                                                 Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="ASU_URL"></AlertDefinitions>
+                <AlertDefinitions
+                 name="TIMEOUT"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <TIMEOUT>
+                    <Value>5000</Value>
+                    <Timestamp>2019-11-13T16:49:20.799+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </TIMEOUT>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

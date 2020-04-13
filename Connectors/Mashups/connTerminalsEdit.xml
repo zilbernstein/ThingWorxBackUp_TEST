@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Mashups>
+        <Mashup
+         aspect.isFlex="true"
+         aspect.isResponsive="true"
+         aspect.mashupType="mashup"
+         columns="0.0"
+         description="Мэшап - Таблицы 2"
+         documentationContent=""
+         homeMashup=""
+         name="connTerminalsEdit"
+         projectName="Connectors"
+         rows="0.0"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ParameterDefinitions>
+                <FieldDefinition
+                 aspect.bindingDirection="IN"
+                 aspect.isMandatory="false"
+                 aspect.ordinal="0"
+                 baseType="STRING"
+                 description=""
+                 name="deviceID"
+                 ordinal="0"></FieldDefinition>
+            </ParameterDefinitions>
+            <Things>
+                <Thing>connBiotekLibrary</Thing>
+            </Things>
+            <ThingShapes></ThingShapes>
+            <ThingTemplates></ThingTemplates>
+            <mashupContent>
+            <![CDATA[
+            {
+              "CustomMashupCss" : "",
+              "Data" : {
+                "Session" : {
+                  "DataName" : "Session",
+                  "EntityName" : "",
+                  "EntityType" : "Session",
+                  "Id" : "session",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "SessionInterface",
+                    "Name" : "GetGlobalSessionValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetGlobalSessionValues"
+                  } ]
+                },
+                "Things_connBiotekLibrary" : {
+                  "DataName" : "Things_connBiotekLibrary",
+                  "EntityName" : "connBiotekLibrary",
+                  "EntityType" : "Things",
+                  "Id" : "6f589721-1f80-448a-a4e2-e2e5a9928648",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "ba06fca0-a5aa-45d6-9368-392eee6f07ef",
+                    "Name" : "GetOneTerminal",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetOneTerminal"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "878eeb6b-171d-41a7-8fa4-73c7566c3b03",
+                    "Name" : "UpdateTerminals",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "UpdateTerminals"
+                  } ]
+                },
+                "UserExtensions" : {
+                  "DataName" : "UserExtensions",
+                  "EntityName" : "",
+                  "EntityType" : "UserExtensions",
+                  "Id" : "UserExtensions",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "UserExtensionInterface",
+                    "Name" : "GetCurrentUserExtensionProperties",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetCurrentUserExtensionProperties"
+                  } ]
+                }
+              },
+              "DataBindings" : [ {
+                "Id" : "c9dd632d-3a8b-4a9f-9fcd-cd606785cc55",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "deviceID",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "id",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "Mashup",
+                "SourceId" : "mashup-root",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "GetOneDevice",
+                "TargetSection" : "Things_connBiotekLibrary"
+              }, {
+                "Id" : "d5b476f8-4180-455c-a3db-464ee634e995",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "deviceID",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "id",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "Mashup",
+                "SourceId" : "mashup-root",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "UpdateDevicesPlaces",
+                "TargetSection" : "Things_connBiotekLibrary"
+              }, {
+                "Id" : "4bfa8dec-7cc3-46b6-a264-7126b7a7ff3f",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "deviceID",
+                  "SourcePropertyBaseType" : "STRING",
+                  "SourcePropertyType" : "Property",
+                  "TargetProperty" : "Text",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Mashup",
+                "SourceId" : "mashup-root",
+                "SourceSection" : "",
+                "TargetArea" : "UI",
+                "TargetId" : "label-21",
+                "TargetSection" : ""
+              }, {
+                "Id" : "34694a32-153c-4469-845e-7a3c9ef2f372",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "deviceID",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "id",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "Mashup",
+                "SourceId" : "mashup-root",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "GetOneTerminal",
+                "TargetSection" : "Things_connBiotekLibrary"
+              }, {
+                "Id" : "04c75888-21c5-46cd-a9bc-32049963ae47",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "НАИМЕНОВАНИЕ",
+                  "SourcePropertyBaseType" : "STRING",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Text",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetOneTerminal",
+                "SourceSection" : "Things_connBiotekLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "textarea-12",
+                "TargetSection" : ""
+              }, {
+                "Id" : "196e5c45-c63b-4c0c-9fb8-984aa1f68c3a",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "ОПИСАНИЕ",
+                  "SourcePropertyBaseType" : "STRING",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Text",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetOneTerminal",
+                "SourceSection" : "Things_connBiotekLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "textarea-16",
+                "TargetSection" : ""
+              }, {
+                "Id" : "b61af3b7-09ca-4314-9d93-2d2e147d1165",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "ФИО_АВТОРА_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ",
+                  "SourcePropertyBaseType" : "STRING",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Text",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "GetOneTerminal",
+                "SourceSection" : "Things_connBiotekLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "textarea-22",
+                "TargetSection" : ""
+              }, {
+                "Id" : "5596115b-d116-4101-8424-8765854bc0de",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "Text",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "fio",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "UI",
+                "SourceId" : "textarea-22",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "UpdateTerminals",
+                "TargetSection" : "Things_connBiotekLibrary"
+              }, {
+                "Id" : "c4ee6e91-0488-4b63-aeec-be8a3d7fa286",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "Text",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "description",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "UI",
+                "SourceId" : "textarea-16",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "UpdateTerminals",
+                "TargetSection" : "Things_connBiotekLibrary"
+              }, {
+                "Id" : "456644c3-d9ce-4aa4-8e46-d4105c268104",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "Text",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "terminal",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "UI",
+                "SourceId" : "textarea-12",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "UpdateTerminals",
+                "TargetSection" : "Things_connBiotekLibrary"
+              }, {
+                "Id" : "6cfbd74b-bf75-4989-a6ed-b542679564ae",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "deviceID",
+                  "SourcePropertyBaseType" : "STRING",
+                  "TargetProperty" : "id",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "Parameter"
+                } ],
+                "SourceArea" : "Mashup",
+                "SourceId" : "mashup-root",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "UpdateTerminals",
+                "TargetSection" : "Things_connBiotekLibrary"
+              }, {
+                "Id" : "3bf11f56-cf66-4422-b785-948e7fe58b37",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "СООБЩЕНИЕ",
+                  "SourcePropertyBaseType" : "STRING",
+                  "SourcePropertyType" : "Field",
+                  "TargetProperty" : "Text",
+                  "TargetPropertyBaseType" : "STRING",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "UpdateTerminals",
+                "SourceSection" : "Things_connBiotekLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "label-15",
+                "TargetSection" : ""
+              } ],
+              "DesignTimePermissions" : {
+                "Create" : [ ],
+                "Delete" : [ ],
+                "Metadata" : [ ],
+                "Read" : [ ],
+                "Update" : [ ]
+              },
+              "Events" : [ {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connBiotekLibrary",
+                "EventHandlerService" : "GetOneTerminal",
+                "EventTriggerArea" : "Mashup",
+                "EventTriggerEvent" : "Loaded",
+                "EventTriggerId" : "mashup-root",
+                "EventTriggerSection" : "",
+                "Id" : "44bb30f1-5cb8-45ae-817b-eea14dc1985f"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connBiotekLibrary",
+                "EventHandlerService" : "UpdateTerminals",
+                "EventTriggerArea" : "UI",
+                "EventTriggerEvent" : "Clicked",
+                "EventTriggerId" : "button-13",
+                "EventTriggerSection" : "",
+                "Id" : "ca5e1416-8a8e-4297-b137-bcfe6815aaa5"
+              } ],
+              "RunTimePermissions" : {
+                "permissions" : [ ]
+              },
+              "UI" : {
+                "Properties" : {
+                  "AddToDashboardButton" : "SimplePlus",
+                  "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+                  "Area" : "Mashup",
+                  "BGImage" : "",
+                  "BGImageRepeat" : "no-repeat",
+                  "BGImageSize" : "auto",
+                  "Columns" : 0,
+                  "ConfigureGadgetButton" : "SimpleGear",
+                  "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+                  "DisplayName" : "Mashup",
+                  "EnableParameterEditing" : false,
+                  "Height" : 618,
+                  "Id" : "mashup-root",
+                  "IgnoreWarningsInViewMashup" : false,
+                  "IsPrintLayout" : false,
+                  "Left" : 0,
+                  "MashupToEditGadget" : "DefaultMashupToEditGadget",
+                  "MinHeight" : 0,
+                  "MinWidth" : 0,
+                  "ResponsiveLayout" : true,
+                  "Rows" : 0,
+                  "ShowDataLoading" : true,
+                  "Style" : "DefaultMashupStyle",
+                  "StyleTheme" : "Base Theme",
+                  "Title" : "",
+                  "TitleBar" : false,
+                  "TitleBarStyle" : "DefaultTitleBarStyle",
+                  "TitleBarText" : "Gadget Title Here",
+                  "Top" : 0,
+                  "Type" : "mashup",
+                  "UseTheme" : false,
+                  "UseThemeForHybrids" : false,
+                  "Visible" : true,
+                  "Width" : 1024,
+                  "Z-index" : 10,
+                  "__TypeDisplayName" : "Mashup",
+                  "_currentParameterDefs" : [ {
+                    "Aspects" : {
+                      "bindingDirection" : "IN",
+                      "isMandatory" : false
+                    },
+                    "BaseType" : "STRING",
+                    "Description" : "",
+                    "ParameterName" : "deviceID"
+                  } ],
+                  "deviceID" : "",
+                  "flex-grow" : 0,
+                  "id_index" : 22,
+                  "supportsAutoResize" : true
+                },
+                "Widgets" : [ {
+                  "Properties" : {
+                    "Area" : "UI",
+                    "DisplayName" : "flexcontainer-2",
+                    "Id" : "flexcontainer-2",
+                    "ResponsiveLayout" : true,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultContainerStyle",
+                    "Type" : "flexcontainer",
+                    "UseTheme" : false,
+                    "Visible" : true,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Flex Container",
+                    "align-content" : "flex-start",
+                    "align-items" : "flex-start",
+                    "flex-basis" : "auto",
+                    "flex-direction" : "column",
+                    "flex-grow" : 1,
+                    "flex-height" : 0,
+                    "flex-shrink" : 0,
+                    "flex-width" : 0,
+                    "flex-wrap" : "nowrap",
+                    "iconClass" : "widgets-flexcontainer",
+                    "justify-content" : "flex-start",
+                    "userCannotRemove" : true
+                  },
+                  "Widgets" : [ {
+                    "Properties" : {
+                      "Area" : "UI",
+                      "DisplayName" : "Header",
+                      "Id" : "flexcontainer-4",
+                      "ResponsiveLayout" : true,
+                      "ShowDataLoading" : true,
+                      "Style" : "DefaultContainerStyle",
+                      "Type" : "flexcontainer",
+                      "UseTheme" : false,
+                      "Visible" : true,
+                      "Z-index" : 10,
+                      "__TypeDisplayName" : "Flex Container",
+                      "align-content" : "flex-start",
+                      "align-items" : "flex-start",
+                      "flex-basis" : "auto",
+                      "flex-direction" : "row",
+                      "flex-grow" : 1,
+                      "flex-height" : 71,
+                      "flex-shrink" : 0,
+                      "flex-width" : 0,
+                      "flex-wrap" : "nowrap",
+                      "iconClass" : "widgets-flexcontainer-fixed",
+                      "isLocked" : false,
+                      "justify-content" : "flex-start",
+                      "userCannotRemove" : false
+                    },
+                    "Widgets" : [ {
+                      "Properties" : {
+                        "Alignment" : "center",
+                        "Area" : "UI",
+                        "ClickOutsideToClose" : false,
+                        "DisplayName" : "navigation-14",
+                        "FixedPopupHeight" : 0,
+                        "FixedPopupWidth" : 0,
+                        "Height" : 30,
+                        "Icon" : "",
+                        "IconAlignment" : "left",
+                        "Id" : "navigation-14",
+                        "Left" : 25,
+                        "Margin" : "5",
+                        "MashupName" : "connTerminals",
+                        "MashupParameters" : [ ],
+                        "MessageToShow" : "Mashup must be selected",
+                        "ModalPopupOpacity" : 0.5,
+                        "NavigationActiveStyle" : "DefaultNavigationActiveStyle",
+                        "NavigationFocusStyle" : "DefaultNavigationFocusStyle",
+                        "NavigationHoverStyle" : "DefaultNavigationHoverStyle",
+                        "PopupScrolling" : "auto",
+                        "PopupTitle" : "",
+                        "PopupTitleStyle" : "DefaultPopupTitleStyle",
+                        "ReloadOnReplace" : false,
+                        "ResponsiveLayout" : false,
+                        "RoundedCorners" : true,
+                        "ShowCloseButton" : true,
+                        "ShowDataLoading" : true,
+                        "ShowMessageIfNoMashup" : false,
+                        "SingleClickSelectOnTablets" : true,
+                        "Style" : "DefaultNavigationStyle",
+                        "TabSequence" : 0,
+                        "TargetWindow" : "replace",
+                        "Text" : "&lt;&lt; &#1053;&#1072;&#1079;&#1072;&#1076; &#1082; &#1089;&#1087;&#1080;&#1089;&#1082;&#1091;",
+                        "ToolTipField" : "",
+                        "ToolTipStyle" : "DefaultTooltipStyle",
+                        "Top" : 20,
+                        "Transparent" : false,
+                        "Type" : "navigation",
+                        "UseTheme" : false,
+                        "Visible" : true,
+                        "Width" : 200,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Navigation",
+                        "__supportsTooltip" : true
+                      },
+                      "Widgets" : [ ]
+                    }, {
+                      "Properties" : {
+                        "Alignment" : "right",
+                        "AllowEllipsis" : false,
+                        "Area" : "UI",
+                        "DisplayName" : "label-19",
+                        "Height" : 22,
+                        "Id" : "label-19",
+                        "Left" : 220,
+                        "Margin" : "10",
+                        "ResponsiveLayout" : false,
+                        "ShowDataLoading" : true,
+                        "Style" : "DefaultLabelStyle",
+                        "Text" : "ID:",
+                        "ToolTipField" : "",
+                        "ToolTipStyle" : "DefaultTooltipStyle",
+                        "Top" : 10,
+                        "Type" : "label",
+                        "Visible" : true,
+                        "Width" : 25,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Label",
+                        "__supportsTooltip" : true
+                      },
+                      "Widgets" : [ ]
+                    }, {
+                      "Properties" : {
+                        "Alignment" : "left",
+                        "AllowEllipsis" : false,
+                        "Area" : "UI",
+                        "DisplayName" : "label-21",
+                        "Height" : 22,
+                        "Id" : "label-21",
+                        "Left" : 290,
+                        "Margin" : "10",
+                        "ResponsiveLayout" : false,
+                        "ShowDataLoading" : true,
+                        "Style" : "DefaultLabelStyle",
+                        "ToolTipField" : "",
+                        "ToolTipStyle" : "DefaultTooltipStyle",
+                        "Top" : 15,
+                        "Type" : "label",
+                        "Visible" : true,
+                        "Width" : 365,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Label",
+                        "__supportsTooltip" : true
+                      },
+                      "Widgets" : [ ]
+                    } ]
+                  }, {
+                    "Properties" : {
+                      "Area" : "UI",
+                      "DisplayName" : "Body",
+                      "Id" : "flexcontainer-3",
+                      "ResponsiveLayout" : true,
+                      "ShowDataLoading" : true,
+                      "Style" : "DefaultContainerStyle",
+                      "Type" : "flexcontainer",
+                      "UseTheme" : false,
+                      "Visible" : true,
+                      "Z-index" : 10,
+                      "__TypeDisplayName" : "Flex Container",
+                      "align-content" : "flex-start",
+                      "align-items" : "flex-start",
+                      "flex-basis" : "auto",
+                      "flex-direction" : "row",
+                      "flex-grow" : 1,
+                      "flex-height" : 0,
+                      "flex-shrink" : 0,
+                      "flex-width" : 0,
+                      "flex-wrap" : "nowrap",
+                      "iconClass" : "widgets-flexcontainer",
+                      "isLocked" : true,
+                      "justify-content" : "flex-start",
+                      "userCannotRemove" : false
+                    },
+                    "Widgets" : [ {
+                      "Properties" : {
+                        "Area" : "UI",
+                        "DisplayName" : "panel-11",
+                        "Height" : 200,
+                        "HideScrollbars" : false,
+                        "HorizontalAnchor" : "left",
+                        "Id" : "panel-11",
+                        "Left" : 160,
+                        "ResponsiveLayout" : true,
+                        "ShowDataLoading" : true,
+                        "Style" : "DefaultPanelStyle",
+                        "Top" : 95,
+                        "Type" : "panel",
+                        "VerticalAnchor" : "top",
+                        "Visible" : true,
+                        "Width" : 300,
+                        "Z-index" : 10,
+                        "__TypeDisplayName" : "Panel"
+                      },
+                      "Widgets" : [ {
+                        "Properties" : {
+                          "Area" : "UI",
+                          "DisplayName" : "textarea-12",
+                          "Height" : 30,
+                          "Id" : "textarea-12",
+                          "InnerShadow" : true,
+                          "Label" : "Наименование назначения терминала",
+                          "LabelAlignment" : "left",
+                          "Left" : 25,
+                          "ReadOnly" : false,
+                          "ResponsiveLayout" : false,
+                          "ShowDataLoading" : true,
+                          "Style" : "DefaultTextAreaStyle",
+                          "TabSequence" : 0,
+                          "Text" : "",
+                          "TextareaFocusStyle" : "DefaultFocusStyle",
+                          "TextareaLabelStyle" : "DefaultWidgetLabelStyle",
+                          "ToolTipField" : "",
+                          "ToolTipStyle" : "DefaultTooltipStyle",
+                          "Top" : 10,
+                          "Type" : "textarea",
+                          "Visible" : true,
+                          "Width" : 300,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "TextArea",
+                          "__supportsLabel" : true,
+                          "__supportsTooltip" : true
+                        },
+                        "Widgets" : [ ]
+                      }, {
+                        "Properties" : {
+                          "ActiveStyle" : "DefaultButtonActiveStyle",
+                          "Area" : "UI",
+                          "CancelConfirmationButton" : "button2",
+                          "ConfirmationButton1Label" : "Yes",
+                          "ConfirmationButton2Label" : "No",
+                          "ConfirmationPrompt" : "Do Action?",
+                          "ConfirmationRequired" : false,
+                          "ConfirmationTitle" : "Confirm Action",
+                          "ContextId" : "",
+                          "DefaultConfirmationButton" : "button1",
+                          "Disabled" : false,
+                          "DisabledStyle" : "DefaultButtonDisabledStyle",
+                          "DisplayName" : "button-13",
+                          "FocusStyle" : "DefaultButtonFocusStyle",
+                          "Height" : 30,
+                          "HoverStyle" : "DefaultButtonHoverStyle",
+                          "IconAlignment" : "left",
+                          "Id" : "button-13",
+                          "Label" : "Сохранить",
+                          "Left" : 25,
+                          "ResponsiveLayout" : false,
+                          "RoundedCorners" : true,
+                          "ShowDataLoading" : true,
+                          "SingleClickSelectOnTablets" : true,
+                          "Style" : "DefaultButtonStyle",
+                          "TabSequence" : 0,
+                          "ToolTipField" : "",
+                          "ToolTipStyle" : "DefaultTooltipStyle",
+                          "Top" : 293,
+                          "Type" : "button",
+                          "Visible" : true,
+                          "Width" : 140,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "Button",
+                          "__supportsTooltip" : true
+                        },
+                        "Widgets" : [ ]
+                      }, {
+                        "Properties" : {
+                          "Alignment" : "left",
+                          "AllowEllipsis" : false,
+                          "Area" : "UI",
+                          "DisplayName" : "label-15",
+                          "Height" : 22,
+                          "Id" : "label-15",
+                          "Left" : 25,
+                          "ResponsiveLayout" : false,
+                          "ShowDataLoading" : true,
+                          "Style" : "DefaultLabelStyle",
+                          "ToolTipField" : "",
+                          "ToolTipStyle" : "DefaultTooltipStyle",
+                          "Top" : 344,
+                          "Type" : "label",
+                          "Visible" : true,
+                          "Width" : 365,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "Label",
+                          "__supportsTooltip" : true
+                        },
+                        "Widgets" : [ ]
+                      }, {
+                        "Properties" : {
+                          "Area" : "UI",
+                          "DisplayName" : "textarea-16",
+                          "Height" : 105,
+                          "Id" : "textarea-16",
+                          "InnerShadow" : true,
+                          "Label" : "Описание",
+                          "LabelAlignment" : "left",
+                          "Left" : 25,
+                          "ReadOnly" : false,
+                          "ResponsiveLayout" : false,
+                          "ShowDataLoading" : true,
+                          "Style" : "DefaultTextAreaStyle",
+                          "TabSequence" : 0,
+                          "Text" : "",
+                          "TextareaFocusStyle" : "DefaultFocusStyle",
+                          "TextareaLabelStyle" : "DefaultWidgetLabelStyle",
+                          "ToolTipField" : "",
+                          "ToolTipStyle" : "DefaultTooltipStyle",
+                          "Top" : 74,
+                          "Type" : "textarea",
+                          "Visible" : true,
+                          "Width" : 300,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "TextArea",
+                          "__supportsLabel" : true,
+                          "__supportsTooltip" : true
+                        },
+                        "Widgets" : [ ]
+                      }, {
+                        "Properties" : {
+                          "Area" : "UI",
+                          "DisplayName" : "textarea-22",
+                          "Height" : 30,
+                          "Id" : "textarea-22",
+                          "InnerShadow" : true,
+                          "Label" : "ФИО автора последнего изменения",
+                          "LabelAlignment" : "left",
+                          "Left" : 25,
+                          "ReadOnly" : false,
+                          "ResponsiveLayout" : false,
+                          "ShowDataLoading" : true,
+                          "Style" : "DefaultTextAreaStyle",
+                          "TabSequence" : 0,
+                          "Text" : "",
+                          "TextareaFocusStyle" : "DefaultFocusStyle",
+                          "TextareaLabelStyle" : "DefaultWidgetLabelStyle",
+                          "ToolTipField" : "",
+                          "ToolTipStyle" : "DefaultTooltipStyle",
+                          "Top" : 220,
+                          "Type" : "textarea",
+                          "Visible" : true,
+                          "Width" : 300,
+                          "Z-index" : 10,
+                          "__TypeDisplayName" : "TextArea",
+                          "__supportsLabel" : true,
+                          "__supportsTooltip" : true
+                        },
+                        "Widgets" : [ ]
+                      } ]
+                    } ]
+                  } ]
+                } ]
+              },
+              "mashupType" : "mashup"
+            }
+            ]]>
+            </mashupContent>
+            <preview></preview>
+        </Mashup>
+    </Mashups>
+</Entities>

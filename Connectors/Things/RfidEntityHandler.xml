@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description=""
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="RfidEntityHandler"
+         projectName="Connectors"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions></PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="FindRfid">
+                        <ResultType
+                         aspect.dataShape="JSONArrayElement"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="kpSerial"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="rfid"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sectionId"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="status"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="tedSerial"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="type"
+                             ordinal="6"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="FindTransfer">
+                        <ResultType
+                         aspect.dataShape="JSONArrayElement"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="enterDate"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="exitDate"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sectionId"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="status"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="FindTransferZone">
+                        <ResultType
+                         aspect.dataShape="JSONArrayElement"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="placeId"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="type"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="FindRfid">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var CONN_RFID_CATALOG_TEMPLATE = 'connRfidCatalog';
+                                        var queryFilters = [];
+                                        
+                                        if (rfid) queryFilters.push({ type: 'Matches', fieldName: 'rfid', expression: rfid });
+                                        if (status) queryFilters.push({ type: 'Matches', fieldName: 'rfidStatus', expression: status });
+                                        if (type) queryFilters.push({ type: 'Matches', fieldName: 'type', expression: type });
+                                        if (sectionId) queryFilters.push({ type: 'Matches', fieldName: 'sectionId', expression: sectionId });
+                                        if (kpSerial) queryFilters.push({ type: 'Matches', fieldName: 'kpSerial', expression: kpSerial });
+                                        if (tedSerial) queryFilters.push({ type: 'Matches', fieldName: 'tedSerial', expression: tedSerial });
+                                        
+                                        var params = {
+                                                maxItems: undefined,
+                                                nameMask: undefined,
+                                                query: {
+                                                    filters: {
+                                                        type: 'And', filters: queryFilters
+                                                    }
+                                                },
+                                                thingTemplate: CONN_RFID_CATALOG_TEMPLATE,
+                                                tags: undefined
+                                            };
+                                        var result = Resources['SearchFunctions'].SearchThingsByTemplate(params);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="FindTransfer">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var CONN_TRANSFER_TEMPLATE = 'connTransfer';
+                                        var queryFilters = [
+                                            { type: 'Matches', fieldName: 'sectionId', expression: sectionId || '' },
+                                            { type: 'Matches', fieldName: 'status', expression: status || '' }
+                                        ];
+                                        
+                                        if (enterDate) queryFilters.push({ type: 'Matches', fieldName: 'enterDate', expression: enterDate });
+                                        if (exitDate) queryFilters.push({ type: 'Matches', fieldName: 'exitDate', expression: exitDate });
+                                        
+                                        var queryParams = {
+                                                maxItems: 1,
+                                                nameMask: undefined,
+                                                query: {
+                                                    filters: {
+                                                        type: 'And', filters: queryFilters
+                                                    }
+                                                },
+                                                thingTemplate: CONN_TRANSFER_TEMPLATE,
+                                                tags: undefined
+                                            };
+                                        var result = Resources['SearchFunctions'].SearchThingsByTemplate(queryParams);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="FindTransferZone">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var CONN_ZONE_CATALOG_TEMPLATE = 'connZoneCatalog';
+                                        var params = {
+                                                maxItems: 1,
+                                                nameMask: undefined,
+                                                query: {
+                                                    filters: {
+                                                        type: 'And', filters: [
+                                                            { type: 'Matches', fieldName: 'id', expression: placeId || '' },
+                                                            { type: 'Matches', fieldName: 'type', expression: type || '' }
+                                                        ]
+                                                    }
+                                                },
+                                                thingTemplate: CONN_ZONE_CATALOG_TEMPLATE,
+                                                tags: undefined
+                                            };
+                                        var result = Resources['SearchFunctions'].SearchThingsByTemplate(params);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations></AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties></ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description="c"
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="connBrakeShoesLibrary"
+         projectName="Connectors"
+         published="false"
+         tags=""
+         thingTemplate="GenericThing"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read>
+                    <Principal
+                     isPermitted="true"
+                     name="Тестовая_группа"
+                     type="Group"></Principal>
+                </Read>
+                <Update>
+                    <Principal
+                     isPermitted="true"
+                     name="Тестовая_группа"
+                     type="Group"></Principal>
+                </Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions>
+                <Permissions
+                 resourceName="*">
+                    <PropertyRead>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </PropertyRead>
+                    <PropertyWrite>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </PropertyWrite>
+                    <ServiceInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </ServiceInvoke>
+                    <EventInvoke>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </EventInvoke>
+                    <EventSubscribe>
+                        <Principal
+                         isPermitted="true"
+                         name="Тестовая_группа"
+                         type="Group"></Principal>
+                    </EventSubscribe>
+                </Permissions>
+            </RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility>
+                    <Principal
+                     isPermitted="true"
+                     name="Тесты"
+                     type="Organization"></Principal>
+                </Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_URL"
+                     ordinal="2"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetBreakShoes">
+                        <ResultType
+                         aspect.dataShape="connBreakShoesDataShape"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получение Словарей номеров секций"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSectionsID">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="date"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="depo_id"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="dict_type"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Получение номеров секций из БД локомотивов полигона"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSectionsIDPoligon">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="date"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="depo_id"
+                             ordinal="2"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Загрузка данных"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="LoadDataPad">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description="Корреляция (вход 1, выход -1) "
+                             name="correlationId"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="crack"
+                             ordinal="16"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Идентификатор аппаратного устройства "
+                             name="eqIq"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Путь к фотографии"
+                             name="fileId"
+                             ordinal="13"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="filePath"
+                             ordinal="13"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description="размер, введенный оператором"
+                             name="humanSize"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Дата и время проведения замера "
+                             name="mesTime"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="false"
+                             baseType="STRING"
+                             description="Синтетический идентификатор колодки"
+                             name="padId"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description="номер колодки"
+                             name="padNum"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description="размер, определенный приборно"
+                             name="padSize"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description="Признак активности колодки или того, что ее сняли и она уже не используется на секции (1 активна, 0 не используется) "
+                             name="padStatus"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description="признак необходимости замены"
+                             name="replace"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description=""
+                             name="rimSize"
+                             ordinal="17"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="LONG"
+                             description=""
+                             name="session_id"
+                             ordinal="18"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD_id"
+                             ordinal="19"></FieldDefinition>
+                            <FieldDefinition
+                             aspect.isRequired="false"
+                             baseType="STRING"
+                             description="Идентификатор субномера секции "
+                             name="subnumSection"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="thinness"
+                             ordinal="14"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="wedge"
+                             ordinal="15"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description="номер оси по порядку"
+                             name="wheelPairNum"
+                             ordinal="10"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="true"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="loadDataPadAsuSg">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="crack"
+                             ordinal="9"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="eqIq"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="humanSize"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="id"
+                             ordinal="14"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="mesTime"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="padId"
+                             ordinal="13"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="padNum"
+                             ordinal="11"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="padSize"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="photo"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="sld"
+                             ordinal="14"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="subnumSection"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="thinness"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="BOOLEAN"
+                             description=""
+                             name="wedge"
+                             ordinal="8"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="wheelPairNum"
+                             ordinal="10"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetBreakShoes">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Сбор данных для мэшапа
+                                        var BREAK_SHOES_CATALOG_TEMPLATE = 'connBrakeShoesCatalog';
+                                        var searchFunctions = Resources['SearchFunctions'];
+                                        var result = Resources["InfoTableFunctions"]
+                                            .CreateInfoTableFromDataShape({
+                                                    infoTableName : "InfoTable",
+                                                    dataShapeName : "connBreakShoesDataShape"
+                                            });
+                                        
+                                        // Метод для поиска колодок в ЕИПП
+                                        var findBreakShoesCatalogs = function() {
+                                            var things = searchFunctions.SearchThingsByTemplate({
+                                                thingTemplate: BREAK_SHOES_CATALOG_TEMPLATE /* THINGTEMPLATENAME */,
+                                                maxItems: undefined /* NUMBER */,
+                                                tags: undefined /* TAGS */,
+                                                nameMask: undefined /* STRING */,
+                                                query: undefined /* QUERY */
+                                            });
+                                            return things;
+                                        };
+                                        
+                                        var breakShoesCatalogs = findBreakShoesCatalogs(undefined);
+                                        
+                                        for (var i = 0; i < breakShoesCatalogs.length; i++) {
+                                            var breakShoesCatalog = breakShoesCatalogs.rows[i];
+                                            
+                                            result.AddRow({
+                                                id: breakShoesCatalog.name,
+                                                correlationId: breakShoesCatalog.correlationId,
+                                                crack: breakShoesCatalog.crack,
+                                                eqId: breakShoesCatalog.eqId,
+                                                humanSize: breakShoesCatalog.humanSize,
+                                                imageUrl: breakShoesCatalog.imageUrl,
+                                                mesTime: breakShoesCatalog.mesTime,
+                                                padId: breakShoesCatalog.padId,
+                                                padNum: breakShoesCatalog.padNum,
+                                                padSize: breakShoesCatalog.padSize,
+                                                padStatus: breakShoesCatalog.padStatus,
+                                                replace: breakShoesCatalog.replace,
+                                                rimSize: breakShoesCatalog.rimSize,
+                                                session_id: breakShoesCatalog.session_id,
+                                                subnumSection: breakShoesCatalog.subnumSection,
+                                                thinnes: breakShoesCatalog.thinnes,
+                                                wedge: breakShoesCatalog.wedge,
+                                                wheelPairNum: breakShoesCatalog.wheelPairNum
+                                            });
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSectionsID">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        logger.info('BS GetSectionsID. dict_type = '+dict_type+'; depo_id = '+depo_id+'; date = '+date);
+                                        var result = {};
+                                        var timeHandler = Things['handlerTime'];
+                                        var connAsuSgThing = Things['connAsuSg'];
+                                        
+                                        // Метод для валидации формата строки даты и времени
+                                        function validateDate() {
+                                            return date && /^\d{4}-\d{2}-\d{2}(\s+\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/i.test(date);
+                                        }
+                                        
+                                        // Метод для получения номера секции по субномеру
+                                        function getSectionName(dateParam, sectionNumber) {
+                                            var sectionName = '';
+                                            // Получаем данные по локомотиву на стороне АСУ СГ
+                                            var locoInfoResult = connAsuSgThing.GetCompositionLocomotiveSectionDate({
+                                                ParDate: dateParam /* STRING */,
+                                                SectionNumber: sectionNumber /* STRING */
+                                            }); //Берем первый результат
+                                            if (!locoInfoResult.Error)  {
+                                                var locoInfo = locoInfoResult.array[0];
+                                                // В локомотиве 3 секции, составляем список секций
+                                                var sections = [locoInfo.Section1, locoInfo.Section2, locoInfo.Section3];
+                                                // Итерируем по списку секций
+                                                for (var i = 0; i < sections.length; i++) {
+                                                    var sectionInfoResult = connAsuSgThing.GetSection({
+                                                        SectionGUID: sections[i] /* STRING */
+                                                    }); //take first value
+                                                    if (sectionInfoResult.Error) continue;
+                                                    var sectionInfo = sectionInfoResult.array[0];
+                                                    // Если субномер секции совпал с входным субномером, возвращаем номер
+                                                    if (sectionInfo.Number === sectionNumber) {
+                                                        sectionName = sectionInfo.Name;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                            return sectionName;
+                                        }
+                                        
+                                        // Метод для получения секций Рфид на стороне ЕИПП
+                                        function getSectionsRfid(dateParam, depo) {
+                                            var sectionsRfid = connAsuSgThing.GetSectionsRFID({
+                                                ParDate: dateParam,
+                                                PlaceOfRepair: depo
+                                            });
+                                            if (sectionsRfid.Error) {
+                                                throw new Error(sectionsRfid.Error);
+                                            } else {
+                                                return sectionsRfid.array.map(function (item) {
+                                                    return {
+                                                        kp_number: '4',
+                                                        section_subnumber: item.section_number,
+                                                        section_number: getSectionName(dateParam, item.section_number)
+                                                    };
+                                                });
+                                            }
+                                        }
+                                        
+                                        // Метод для поулчения секций на стороне АСУ СГ
+                                        function getSectionsPlan(dateParam, depo) {
+                                            var sectionPlan = connAsuSgThing.GetSectionPlan({
+                                                ParDate: dateParam,
+                                                PlaceOfRepair: depo
+                                            });
+                                            if (sectionPlan.Error) {
+                                                throw new Error(sectionPlan.Error);
+                                            }
+                                            else {
+                                                return sectionPlan.array.map(function (item) {
+                                                    return {
+                                                        kp_number: '4',
+                                                        section_number: item.Name_Section || '',
+                                                        section_subumber: item.NumberSection
+                                                    };
+                                                });
+                                            }
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Валидируем дату и если она невалидна, генерируем строку из текущей даты
+                                            var dateParam = !validateDate(date) ? timeHandler.Generate({ timezone: true /* BOOLEAN */ }) : date;
+                                            // Исходя из значения параметра dict_type (Тип справочника [1-RFID; 2-Plan; 3-Poligon]) получаем список секций в АСУ СГ, ЕИПП или Полигоне
+                                            switch(dict_type) {
+                                                case '1': {
+                                                    if (!dict_type) throw new Error('');
+                                                    result = {
+                                                        sections: getSectionsRfid(dateParam, depo_id) //This function can throw an Error
+                                                    };
+                                                    break;
+                                                }
+                                                case '2': {
+                                                    if (!dict_type) throw new Error('');
+                                                    result = {
+                                                        sections: getSectionsPlan(dateParam, depo_id) //This function can throw an Error
+                                                    };
+                                                    break;
+                                                }
+                                                case '3': {
+                                                    result = me.GetSectionsIDPoligon({
+                                                        date: dateParam /* STRING */,
+                                                        depo_id: depo_id /* STRING */
+                                                    });
+                                                    break;
+                                                }
+                                                default: throw new Error('Задан некорректный тип справочника. Корректные значения (String): 1 для RFID, 2 для Plan, 3 для Poligon');
+                                            } 
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result = {
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSectionsIDPoligon">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        var connAsuSgThing = Things['connAsuSg']; 
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Получаем список полигонов на стороне АСУ СГ
+                                            var polygons = connAsuSgThing.GetPolygon();
+                                            if (polygons.Error) throw new Error(polygons.Error);
+                                            var sections = [];
+                                            // Итерируем по списку полгинов и получаем информацию по секциям
+                                            polygons.array.forEach(function (polygon) {
+                                                var sectionsOfPolygon = connAsuSgThing.GetSectionsOfPoligon({
+                                                    PolygonID: polygon.ID /* STRING */,
+                                                    MesTime: date /* STRING */,
+                                                    HomeDepot: undefined /* STRING */
+                                                });
+                                                
+                                                if (sectionsOfPolygon.array) {
+                                                   // Итерируем по списку полигонов и сохраняем их в массив
+                                                   sectionsOfPolygon.array.forEach(function (item) {
+                                                       sections.push({
+                                                            kp_number: '4',
+                                                            section_subnumber: item.NumberSection,
+                                                            section_number: item.Name 
+                                                       });
+                                                   });
+                                                }
+                                            });
+                                            
+                                            // Вывод списка секций
+                                            result = {
+                                                sections: sections
+                                            };
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result = {
+                                                Error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="LoadDataPad">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        var CONN_RFID_CATALOG_TEMPLATE = 'connBrakeShoesCatalog';
+                                        
+                                        var rfidLibrary = Things['connRfidLibrary'];
+                                        var entityServices = Resources['EntityServices'];
+                                        var testImageLoader = Things['TestImageLoad'];
+                                        
+                                        // Валидация времени
+                                        function validateTime() {
+                                        	return mesTime && (/^\d{4}-\d{2}-\d{2}(\s+\d{2}:\d{2}:\d{2})?(\+\d{2}:\d{2})?$/g.test(mesTime));
+                                        }
+                                        
+                                        // Метод для генерации имени файла с расширением [fileName.ext]
+                                        function generateFileName(fileData) {
+                                        	var extFirstIndex = fileData.indexOf('/');
+                                        	var extLastIndex = fileData.indexOf(';');
+                                        	if (extFirstIndex === -1 || extLastIndex === -1) throw new Error('Некорректный формат base64');
+                                        
+                                        	var ext = fileData.substring(extFirstIndex + 1, extLastIndex);
+                                        	return rfidLibrary.GetSha1({
+                                        		A: (filePath + '_' + Date()) /* STRING */
+                                        	}) + '.' + ext;
+                                        }
+                                        
+                                        // Метод для сохранения изображений в системе, на вход путь к файлу и содержимое в формате base64
+                                        function storeImage(filePath, fileData) {
+                                        	if (!fileData || !filePath) return undefined;
+                                        	// Извлечение данных изображения из base64
+                                        	var base64metdataLastIndex = fileData.indexOf('/9j/');
+                                        	if (base64metdataLastIndex === -1) throw new Error('Некорректный формат base64');
+                                        	var fileContent = fileId.substring(base64metdataLastIndex);
+                                        
+                                        	var finalFilePath = generateFileName(fileData);
+                                        	try {
+                                        		testImageLoader.SaveImage({
+                                        			path: finalFilePath /* STRING */ ,
+                                        			content: fileContent /* IMAGE */
+                                        		});
+                                        		var imageData = testImageLoader.LoadImage({
+                                        			path: finalFilePath /* STRING */
+                                        		});
+                                        		return {
+                                        			content: fileContent,
+                                        			data: imageData,
+                                        			filePath: finalFilePath
+                                        		};
+                                        	} catch (err) {
+                                        		return undefined;
+                                        	}
+                                        }
+                                        
+                                        // Метод для создания колодки на стороне ЕИПП
+                                        function createBrakeShoes() {
+                                        	var shoesThingName = generateBreakShoesThingName(padId, subnumSection);
+                                        	Resources['EntityServices'].CreateThing({
+                                        		name: shoesThingName,
+                                        		//description: thingProps.type /* Or provide equipment as a description */,
+                                        		thingTemplateName: CONN_RFID_CATALOG_TEMPLATE,
+                                        		tags: undefined
+                                        	});
+                                        
+                                        	var thing = Things[shoesThingName];
+                                        	thing.EnableThing();
+                                        	thing.RestartThing();
+                                        
+                                        	thing.subnumSection = subnumSection.toString();
+                                        	thing.correlationId = correlationId || 1;
+                                        	thing.mesTime = mesTime || '';
+                                        	thing.padId = padId;
+                                        	thing.padStatus = padStatus || 1;
+                                        	thing.eqIq = eqIq || '';
+                                        	thing.padSize = padSize || 1;
+                                        	thing.humanSize = humanSize || 1;
+                                        	thing.replace = replace || true;
+                                        	thing.wheelPairNum = wheelPairNum || 1;
+                                        	thing.padNum = padNum || 1;
+                                        	thing.thinness = thinness || false;
+                                        	thing.wedge = wedge || false;
+                                        	thing.crack = crack || false;
+                                        	thing.rimSize = rimSize || 0;
+                                        	thing.session_id = session_id || 0;
+                                        
+                                        	if (fileId && filePath) {
+                                        		// Сохранение изображения
+                                        		var image = storeImage(filePath, fileId);
+                                        		if (image) {
+                                        			/*entityServices.CreateMediaEntity({
+                                        			   name: image.filePath,
+                                        			   description: undefined,
+                                        			   tags: undefined,
+                                        			   content: image.data
+                                        			}); */
+                                        			thing.image = image.data;
+                                        			thing.imageUrl = 'http://devplatform.digitaldepot.ru:8085/Thingworx/FileRepositories/TestImageLoad/' + image.filePath;
+                                        		}
+                                        	}
+                                        
+                                        	me.loadDataPadAsuSg({
+                                        		subnumSection: thing.subnumSection /* STRING */ ,
+                                        		mesTime: thing.mesTime /* STRING */ ,
+                                        		eqIq: thing.eqIq /* STRING */ ,
+                                        		photo: image.content || '' /* STRING */ ,
+                                        		padSize: thing.padSize /* STRING */ ,
+                                        		humanSize: thing.humanSize /* STRING */ ,
+                                        		thinness: thing.thinness /* BOOLEAN */ ,
+                                        		wedge: thing.wedge /* BOOLEAN */ ,
+                                        		crack: thing.crack /* BOOLEAN */ ,
+                                        		wheelPairNum: thing.wheelPairNum /* STRING */ ,
+                                        		padNum: thing.padNum /* STRING */ ,
+                                        		padId: thing.padId /* STRING */ ,
+                                        		id: thing.name /* STRING */ ,
+                                        		sld: SLD_id
+                                        	});
+                                        
+                                        	return thing;
+                                        }
+                                        
+                                        // Метод для генерации идентификатора колодки
+                                        function generateBreakShoesThingName(padId, subnumSection) {
+                                        	//var curDate = Date();
+                                        	//return rfidLibrary.GetSha1({ A: (padId  + subnumSection + curDate) /* STRING */ });
+                                        	return generateGUID();
+                                        }
+                                        
+                                        try {
+                                        	if (!validateTime()) throw new Error('Неверный формат времени ' + mesTime);
+                                        	//throw new Error(base64DecodeString(fileId));
+                                        	if (!SLD_id) throw new Error('Не указано место ремонта');
+                                        	if (subnumSection && padId) {
+                                        		var breakShoesThing = createBrakeShoes();
+                                        		result = {
+                                        			status: 'Данные измерений успешно сохранены'
+                                        		};
+                                        	} else throw new Error('Проверьте параметры');
+                                        	try {
+                                        
+                                        		var currentDate = new Date();
+                                        		var lastDate = dateAddDays(currentDate, -1);
+                                        
+                                        
+                                        		var info = Things["connCLOVERLibrary"].postBrakeShoeToClover({
+                                        			startTime: lastDate /* DATETIME */ ,
+                                        			endTime: Date /* DATETIME */
+                                        		});
+                                        	} catch (cler) {
+                                        		logger.info("CLOVER ERROR");
+                                        	}
+                                        } catch (err) {
+                                        	result = {
+                                        		error: err.message
+                                        	};
+                                        }
+                                        
+                                        /*try {
+                                           if (!subnumSection || !padId) throw new Error('Проверьте параметры');
+                                            // далее создание thing
+                                        } catch (err) {
+                                           result = { 
+                                               error: err.message 
+                                           };
+                                        }*/
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="loadDataPadAsuSg">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        var asuSgThing = Things['connAsuSg'];
+                                        
+                                        var searchFunctions = Resources['SearchFunctions'];
+                                        var infoTableFunctions = Resources['InfoTableFunctions'];
+                                        
+                                        var RFID_EVENT_DATA_TEMPLATE = 'connRfidEventDataTemplate';
+                                        var SECTION_2050_TEMPLATE = '2050Секция';
+                                        
+                                        var REPEAT_ATTEMPTS = 5;
+                                        
+                                        function timeHandling(mes_time) {
+                                        	var res = {};
+                                        	res.error = 0;
+                                        	res.errorDescription = "";
+                                        	res.date = "";
+                                        	var date = getFormattedTime();
+                                        	if (date.indexOf('+') !== -1) {
+                                        		res.date = date.substring(0, date.indexOf('+'));
+                                        	} else {
+                                        		res.date = date;
+                                        	}
+                                        	return res;
+                                        }
+                                        
+                                        function getFormattedTime() {
+                                        	return mesTime.replace(' ', 'T');
+                                        }
+                                        
+                                        function setThingAsuSgStatus(status, error) {
+                                        	var thing = Things[id];
+                                        	thing.EnableThing();
+                                        	thing.RestartThing();
+                                        
+                                        	thing.asuSgStatus = status;
+                                        	if (error) {
+                                        		thing.asuSgError = error;
+                                        	}
+                                        }
+                                        
+                                        // Метод для поиска финги шаблона connRfidEventDataTemplate 
+                                        function findRfidEventData(sectionSubnum) {
+                                        	var searchResult = infoTableFunctions.ToJSON({
+                                        		table: searchFunctions.SearchThingsByTemplate({
+                                        			thingTemplate: RFID_EVENT_DATA_TEMPLATE /* THINGTEMPLATENAME */ ,
+                                        			maxItems: 1 /* NUMBER */ ,
+                                        			tags: undefined /* TAGS */ ,
+                                        			nameMask: undefined /* STRING */ ,
+                                        			query: {
+                                        				filters: {
+                                        					type: 'Matches',
+                                        					fieldName: 'section_number',
+                                        					expression: sectionSubnum
+                                        				}
+                                        			} /* QUERY */
+                                        		}) /* INFOTABLE */
+                                        	}).rows;
+                                        	return searchResult ? searchResult[0] : undefined;
+                                        }
+                                        
+                                        // Метод дял поиска финги шаблона 2050Секция - устаревший
+                                        /*
+                                        function findSection(sectionSubnum) {
+                                            var searchResult = infoTableFunctions.ToJSON({
+                                                table: searchFunctions.SearchThingsByTemplate({
+                                                    thingTemplate: SECTION_2050_TEMPLATE ,
+                                                    maxItems: 1 ,
+                                                    tags: undefined ,
+                                                    nameMask: undefined ,
+                                                    query: {
+                                                        filters: { type: 'Matches', fieldName: 'НОМЕР', expression: sectionSubnum }
+                                                    } 
+                                                }) 
+                                            }).rows;
+                                            return searchResult ? searchResult[0] : undefined;
+                                        }
+                                        */
+                                        try {
+                                        	/*
+                                        	var section = findSection(subnumSection);
+                                        	if (!section || !section.ТЕКУЩАЯ_ДК || !section.ТЕКУЩАЯ_ДК.length) throw new Error('Не найдена ДК. Невозможно определить место ремонта');
+                                            
+                                        	var locomotive;
+                                        	var isSuccess = false;
+                                        	for (var i = 0; i < REPEAT_ATTEMPTS && !isSuccess; i++) {
+                                        	    locomotive = locomotive = asuSgThing.GetDiagnosticMapsOfLocomotive({
+                                        	            GuidLine: section.ТЕКУЩАЯ_ДК 
+                                        	    });
+                                        	    if (!locomotive.Error) isSuccess = true;
+                                        	}
+                                            
+                                        	if (locomotive.Error) throw new Error('Не найдено место ремонта по ДК. АСУ СГ вернула ошибку ' + locomotive.Error);
+                                        	*/
+                                        	var optionAnalytics = findRfidEventData(subnumSection) !== undefined;
+                                        	var setBreakShoesResponse = asuSgThing.SetKolodkaInfo({
+                                        		subnumSection: subnumSection /* STRING */ ,
+                                        		optionAnalytics: optionAnalytics /* STRING */ ,
+                                        		mes_time: getFormattedTime() /* STRING */ ,
+                                        		eqIq: eqIq /* STRING */ ,
+                                        		photo: photo /* STRING */ ,
+                                        		padSize: padSize /* STRING */ ,
+                                        		humanSize: humanSize /* STRING */ ,
+                                        		thinness: thinness.toString() /* STRING */ ,
+                                        		wedge: wedge /* STRING */ ,
+                                        		crack: crack /* STRING */ ,
+                                        		wheelPairNum: wheelPairNum /* STRING */ ,
+                                        		padNum: padNum /* STRING */ ,
+                                        		placeOfRepair: sld /* STRING */ ,
+                                        		padId: padId /* STRING */
+                                        	});
+                                        	if (setBreakShoesResponse.Error) throw new Error(setBreakShoesResponse.Error);
+                                        	var status = setBreakShoesResponse.status ? 'Success' : 'Error';
+                                        	setThingAsuSgStatus(status, undefined);
+                                        	result = {
+                                        		status: status
+                                        	};
+                                        	try {
+                                        		var currentDate = new Date();
+                                        		var lastDate = dateAddDays(currentDate, -1);
+                                        		var info = Things["connCLOVERLibrary"].postBrakeShoeToClover({
+                                        			startTime: lastDate /* DATETIME */ ,
+                                        			endTime: Date /* DATETIME */
+                                        		});
+                                        
+                                        } catch (cler) {
+                                        	logger.info("CLOVER ERROR");
+                                        }
+                                        } catch (err) {
+                                        	setThingAsuSgStatus('Error', err.message);
+                                        	result = {
+                                        		status: 'error',
+                                        		Error: err.message
+                                        	};
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="ASU_URL"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <ASU_URL>
+                    <Value>
+                    <![CDATA[
+                    http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-08-07T14:49:59.528+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_URL>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>

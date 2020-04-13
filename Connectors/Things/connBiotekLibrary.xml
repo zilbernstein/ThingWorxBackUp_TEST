@@ -1,0 +1,2602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Things>
+        <Thing
+         description="Библиотека сервисов Биотек"
+         documentationContent=""
+         effectiveThingPackage="ConfiguredThing"
+         enabled="true"
+         homeMashup=""
+         identifier=""
+         name="connBiotekLibrary"
+         projectName="Connectors"
+         published="false"
+         tags=""
+         thingTemplate="connBiotekLibraryTemplate"
+         valueStream="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ThingShape>
+                <PropertyDefinitions>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="ASU_URL"
+                     ordinal="6"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="95.181.203.115"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="Biotek_URL"
+                     ordinal="2"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="Infodba"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="Login_Biotek"
+                     ordinal="3"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="hauls-bqk!7F"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="Pass_Biotek"
+                     ordinal="4"></PropertyDefinition>
+                    <PropertyDefinition
+                     aspect.cacheTime="0.0"
+                     aspect.dataChangeType="VALUE"
+                     aspect.defaultValue="3033"
+                     aspect.isPersistent="true"
+                     baseType="STRING"
+                     category=""
+                     description=""
+                     isLocalOnly="false"
+                     name="Port_Biotek"
+                     ordinal="5"></PropertyDefinition>
+                </PropertyDefinitions>
+                <ServiceDefinitions>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Запрос (от BioTime в ЕИПП) Событие – приход - уход – авто-уход сотрудника"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="AssignStatusPersonal">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="checkpointId"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="date"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="device"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="eventType"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="status"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="workerId"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Метод заглушка вместо внешнего метода ИС Склад Салаир "
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="checkTMC">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="DATETIME"
+                             description="Дата тип DateTime (ms)"
+                             name="Data_time"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="ID сотрудника"
+                             name="ID_sotrudnik"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description="Табельный номер сотрудника"
+                             name="Tabel_sotrudnik"
+                             ordinal="3"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="true"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="checkTMCSoap">
+                        <ResultType
+                         baseType="NOTHING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="date"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="place"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="status"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="worker_id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Запрос (от BioTime в ЕИПП) Выгрузить НСИ данные персонала"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetDataPersonal">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description=""
+                             name="end"
+                             ordinal="7"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="placeOfRepair"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="SLD"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="INTEGER"
+                             description=""
+                             name="start"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="workerId"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetDevicesPlaces">
+                        <ResultType
+                         aspect.dataShape="connDevicePlaces"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetOneDevice">
+                        <ResultType
+                         aspect.dataShape="connDevices4Detail"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetOneTerminal">
+                        <ResultType
+                         aspect.dataShape="connTerminals"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Запрос (от BioTime в ЕИПП) Получить список Мест ремонта"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetRepairSites">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetRepairSitesRefactored">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSha1">
+                        <ResultType
+                         baseType="STRING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="A"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Запрос (от BioTime в ЕИПП) Получить список СЛД"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSLD">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetSLDList">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetTerminals">
+                        <ResultType
+                         aspect.dataShape="connTerminals"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description="Запрос (от Biotime в ЕИПП) НСИ структура подразделений"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetUnits">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="GetUnitsLegacy">
+                        <ResultType
+                         baseType="JSON"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions></ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="RemoveDevicesPlaces">
+                        <ResultType
+                         aspect.dataShape="shuntingFormMessage"
+                         baseType="NOTHING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="id"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="SearchTerminal">
+                        <ResultType
+                         baseType="BOOLEAN"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="deviceId"
+                             ordinal="1"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="true"
+                     category=""
+                     description="В методе проверяется, соответствует ли устройство назначению терминала &quot;Шкаф Логимат&quot; и если соответствует, вызывает метод отправки данных checkTMC"
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="sendStock">
+                        <ResultType
+                         baseType="NOTHING"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="date"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="device"
+                             ordinal="5"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="employeeId"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="place"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="status"
+                             ordinal="3"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="UpdateDevicesPlaces">
+                        <ResultType
+                         aspect.dataShape="shuntingFormMessage"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="device"
+                             ordinal="2"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="fio"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="id"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="placeId"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="placeName"
+                             ordinal="4"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="placeTerminalFunction"
+                             ordinal="5"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                    <ServiceDefinition
+                     aspect.isAsync="false"
+                     category=""
+                     description=""
+                     isAllowOverride="false"
+                     isLocalOnly="false"
+                     isOpen="false"
+                     isPrivate="false"
+                     name="UpdateTerminals">
+                        <ResultType
+                         aspect.dataShape="shuntingFormMessage"
+                         baseType="INFOTABLE"
+                         description=""
+                         name="result"
+                         ordinal="0"></ResultType>
+                        <ParameterDefinitions>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="description"
+                             ordinal="3"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="fio"
+                             ordinal="6"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="id"
+                             ordinal="1"></FieldDefinition>
+                            <FieldDefinition
+                             baseType="STRING"
+                             description=""
+                             name="terminal"
+                             ordinal="4"></FieldDefinition>
+                        </ParameterDefinitions>
+                    </ServiceDefinition>
+                </ServiceDefinitions>
+                <EventDefinitions></EventDefinitions>
+                <ServiceMappings></ServiceMappings>
+                <ServiceImplementations>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="AssignStatusPersonal">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var BIOTIME_PERSON_STATUS_ASSIGNMENT_TEMPLATE = 'biotimePersonStatusAssignment';
+                                        var result = {};
+                                        
+                                        // Метод для парсинга ответа от АСУ СГ, разбирает XML и переводит его в JSON
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*::SpecifyTheStatusOfTheEmployeeResponse.*[1];
+                                            var containsError = resultXML.*:: ErrorDescription.toString() !== "";
+                                            if (containsError) {
+                                                return {
+                                                    Error: 'Ошибка на стороне АСУ СГ',
+                                                    ErrorDescription: resultXML.*:: ErrorDescription.toString()
+                                                }
+                                            } else {
+                                                return {
+                                                    Status: resultXML.*:: Answer.toString() == 'true'
+                                                }
+                                            }
+                                        }
+                                        
+                                        // Метод для установления свойств финги статуса сотрудника 
+                                        function setupThing(thing) {
+                                            thing.workerId = workerId;
+                                            thing.device = device;
+                                            thing.status = status;
+                                            thing.eventType = eventType;
+                                            thing.date = date;
+                                            thing.checkpointId = checkpointId;
+                                        }
+                                        
+                                        // Метод для обработки статуса сотрудника
+                                        function specifyStatusThing() {
+                                            var thingName = 'stat_' + workerId;
+                                            var thing = Things[thingName];
+                                            // Если статус сущесвтует в системе, меняем его, иначе добавляем статус сотрудника в систему
+                                            if (thing) {
+                                                 if (thing.thingTemplate === BIOTIME_PERSON_STATUS_ASSIGNMENT_TEMPLATE) {
+                                                     setupThing(thing);
+                                                 }
+                                            } else {
+                                                Resources["EntityServices"].CreateThing({
+                                                    name: thingName /* STRING */,
+                                                    description: "Статус сотрудника " + workerId /* STRING */,
+                                                    thingTemplateName: BIOTIME_PERSON_STATUS_ASSIGNMENT_TEMPLATE /* THINGTEMPLATENAME */,
+                                                    tags: undefined /* TAGS */
+                                                });
+                                                thing = Things[thingName]
+                                                
+                                                thing.EnableThing();
+                                                thing.RestartThing();
+                                                
+                                                setupThing(thing);
+                                            }
+                                        }
+                                        
+                                        // Тело основного скрипта
+                                        logger.info("ASSIGN_STATUS_PERSONAL");
+                                        
+                                        try {
+                                            // Проверка входящих параметров, проброс ошибки при неверных праметрах
+                                            if (!workerId && !status && !date) throw new Error('Проверьте входные параметры');
+                                            
+                                            // Сборка тела soap запроса для АСУ СГ
+                                            var content = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eipp="http://EIPP.org">\
+                                            <soapenv:Header/>\
+                                            <soapenv:Body>\
+                                                <eipp:SpecifyTheStatusOfTheEmployee>\
+                                                    <eipp:Parameter>\
+                                                        <eipp:Sotrudnik>' + workerId + '</eipp:Sotrudnik>\
+                                                        <eipp:StatusSotrudnika>' + status + '</eipp:StatusSotrudnika>\
+                                                        <eipp:Date>' + date + '</eipp:Date>\
+                                                        <eipp:Source_n>еипп_биометрия</eipp:Source_n>\
+                                                    </eipp:Parameter>\
+                                                </eipp:SpecifyTheStatusOfTheEmployee>\
+                                            </soapenv:Body>\
+                                            </soapenv:Envelope>';
+                                            var params = {
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            };
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML(params);
+                                            var response = parseXMLResponse(xmlResponse);
+                                            if (response.Error) {
+                                                this.result = response;
+                                            } else {
+                                                // Если статус сотрудника изменен, меняем его на ЕИПП
+                                                var isStatusChanged = response.Status;
+                                                if (isStatusChanged === true) {
+                                                    specifyStatusThing();
+                                                }
+                                                this.result = { Status: isStatusChanged };
+                                            }
+                                            /*me.sendStock({
+                                                date: date,
+                                                employeeId: workerId,
+                                                status: status,
+                                                place: "",
+                                                device: device
+                                            });*/
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result = {
+                                                error: err.message
+                                            };
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="checkTMC">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {
+                                        	Error: "0",
+                                            ErrorDescription: ""
+                                        };
+                                        
+                                        if (!Data_time || !ID_sotrudnik || !Tabel_sotrudnik) {
+                                        	result.Error = "1";
+                                            result.ErrorDescription = "Ошибка метода CheckTMC";
+                                        }
+                                        //logger.info('checkTMC');
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="checkTMCSoap">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*::SpecifyTheStatusOfTheEmployeeResponse.*[1];
+                                            var containsError = resultXML.*:: faultstring.toString() !== "";
+                                            if (containsError) {
+                                                return {
+                                                    Error: 'Ошибка от САЛАИР',
+                                                    ErrorDescription: resultXML.*:: faultstring.toString()
+                                                }
+                                            } else {
+                                                if (resultXML.toString() == "false") {
+                                                	return {
+                                                        Error: 'Ошибка от САЛАИР',
+                                                        ErrorDescription: 'Ответ: '+resultXML.toString()
+                                                    }
+                                                } else {
+                                                	return {
+                                                    	Status: true
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        
+                                        
+                                        // Сборка тела soap запроса для АСУ СГ
+                                            var content = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eipp="EIPP">\
+                                           <soapenv:Header/>\
+                                           <soapenv:Body>\
+                                              <eipp:SpecifyTheStatusOfTheEmployee>\
+                                                 <eipp:Sotrudnik>'+worker_id+'</eipp:Sotrudnik>\
+                                                 <eipp:StatusSotrudnika>'+status+'</eipp:StatusSotrudnika>\
+                                                 <eipp:Date>'+date+'</eipp:Date>\
+                                                 <eipp:Source_n>еипп_биометрия</eipp:Source_n>\
+                                                 <eipp:PlaceOfRepair_n>'+place+'</eipp:PlaceOfRepair_n>\
+                                              </eipp:SpecifyTheStatusOfTheEmployee>\
+                                           </soapenv:Body>\
+                                        </soapenv:Envelope>';
+                                            var params = {
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: "http://89.221.62.60:18980/WS2050/ws/eipp" /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "GLIp4ZiB" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "WS" /* STRING */
+                                            };
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML(params);
+                                            var response = parseXMLResponse(xmlResponse);
+                                        	if (response.Error) logger.info(response.ErrorDescription);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetDataPersonal">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var TIMEOUT = 90;
+                                        var result = {};
+                                        
+                                        // Метод для парсинга ответа от АСУ СГ, разбирает XML и переводит его в JSON
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*:: GetSotrudnikiResponse.* [1];
+                                            var containsPersonLine = resultXML.*:: SotrudnikiLine.*.length() !== 0;
+                                            if (containsPersonLine) {
+                                                var result = [];
+                                                for (var i = 0; i < resultXML.*:: SotrudnikiLine.length(); i++) {
+                                                    var node = resultXML.*:: SotrudnikiLine[i]
+                                                    result.push({
+                                                        ID: node.*:: ID.toString(),
+                                                        Kod: node.*:: Kod.toString().trim(),
+                                                        GroupID: node.*:: GroupID.toString(),
+                                                        Name: node.*:: Name.toString(),
+                                                        NaturalPerson: node.*:: NaturalPerson.toString(),
+                                                        Position: node.*:: Position.toString(),
+                                                        DateDismissal: node.*:: DateDismissal.toString(),
+                                                        DateEmployment: node.*:: DateEmployment.toString(),
+                                                        Gender: node.*:: Floor.toString(),
+                                                        DateOBirth: node.*:: DateOBirth.toString(),
+                                                        ServiceNumber: node.*:: ServiceNumber.toString().trim(),
+                                                        WorkSchedule: node.*:: WorkSchedule.toString(),
+                                                        Subdivision: node.*:: Subdivision.toString(),
+                                                        SLD: node.*:: SLD.toString(),
+                                                        PositionString: node.*:: PositionString.toString()
+                                                    });
+                                                }
+                                                return result;
+                                            } else {
+                                                return {
+                                                    Error: 'Нет данных в АСУ СГ по данным входных параметров',
+                                                    ErrorDescription: resultXML.*:: ErrorDescription.toString()
+                                                }
+                                            }
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Проверка входящих параметров, проброс ошибок при неверных значениях параметров
+                                            if ((start === undefined && end !== undefined) || 
+                                                (start !== undefined && end === undefined)) throw new Error('Проверьте параметры ограничения выборки');
+                                            if (start < 0 || end < 0) throw new Error('Границы выборки не должны быть меньше нуля');
+                                            if (end <= start) throw new Error('Границы начала должны быть меньше границ конца выборки');
+                                            
+                                            // Сборка тела soap запроса для АСУ СГ
+                                            var content = ['<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                                  <soap:Header/>\
+                                                  <soap:Body>\
+                                                    <eipp:GetSotrudniki>\
+                                                      <eipp:Guid>',
+                                                        (workerId ? ('<eipp:GuidLine>' + workerId + '</eipp:GuidLine>') : ''),
+                                                        (placeOfRepair ? ('<eipp:PlaceOfRepair>' + placeOfRepair + '</eipp:PlaceOfRepair>') : ''),
+                                                        '<eipp:SLD>' + (SLD || '') + '</eipp:SLD>\
+                                                        <eipp:Start>' + (start || '') + '</eipp:Start>\
+                                                        <eipp:End>' + (end || '') + '</eipp:End>\
+                                                        </eipp:Guid>\
+                                                    </eipp:GetSotrudniki>\
+                                                  </soap:Body>\
+                                                </soap:Envelope>'].join('');
+                                            var params = {
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: TIMEOUT /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            };
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML(params);
+                                            logger.info(xmlResponse);
+                                            var response = parseXMLResponse(xmlResponse);
+                                            this.result = response;
+                                        } catch (err) {
+                                            // Обработка ошибок и пробрасывание их в результат
+                                            result.error = err.message;
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetDevicesPlaces">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Сбор данных Табл 1 для мэшапа
+                                        
+                                        // Поиск элементов по шаблону
+                                        var params = {
+                                        	maxItems: 2000,
+                                        	nameMask: undefined,
+                                        	query: undefined,
+                                        	thingTemplate: "connDevicePlaces",
+                                        	tags: undefined
+                                        };
+                                        var infotable = Resources["SearchFunctions"].SearchThingsByTemplate(params);
+                                        
+                                        // Создание инфотаблицы по форме данных
+                                        var parameters = {
+                                        	infoTableName: "InfoTable",
+                                        	dataShapeName: "connDevicePlaces"
+                                        };
+                                        var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(parameters);
+                                        
+                                        // Перебор результатов поиска, добор данных и добавление строк в итоговую инфотаблицу
+                                        for (var x = 0; x < infotable.length; x++) {
+                                            
+                                            var row = infotable.getRow(x);
+                                        	
+                                            
+                                            var newEntry = new Object();
+                                            newEntry.ID = row.name+"";
+                                        	newEntry.УСТРОЙСТВО = row.device+"";
+                                            newEntry.МЕСТО_УСТАНОВКИ_ID = row.placeId+"";
+                                        	newEntry.МЕСТО_УСТАНОВКИ_НАИМЕНОВАНИЕ = row.placeName+"";
+                                            newEntry.ФИО_АВТОРА_ИЗМЕНЕНИЯ = row.fio+"";
+                                            // Добор данных назначения терминала
+                                            if (Things[row.placeTerminalFunction]) {
+                                            	newEntry.НАЗНАЧЕНИЕ_ТЕРМИНАЛА = Things[row.placeTerminalFunction].terminal+"";
+                                            } else {
+                                            	newEntry.НАЗНАЧЕНИЕ_ТЕРМИНАЛА = "";
+                                            }
+                                            
+                                        	newEntry.ДАТА_ВРЕМЯ_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = row.dateTime.toString();
+                                            
+                                            result.AddRow(newEntry);    
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetOneDevice">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Сбор данных Табл 1 для мэшапа
+                                        
+                                        // Создание инфотаблицы по форме данных
+                                        var parameters = {
+                                        	infoTableName: "InfoTable",
+                                        	dataShapeName: "connDevices4Detail"
+                                        };
+                                        var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(parameters);
+                                        
+                                        // Получение инфотаблицы
+                                        
+                                        var thing = Things[id]; 
+                                        	
+                                        var newEntry = new Object();
+                                        if (thing) {
+                                            newEntry.ID = thing.name+"";
+                                            newEntry.УСТРОЙСТВО = thing.device+"";
+                                            newEntry.МЕСТО_УСТАНОВКИ_ID = thing.placeId+""; 
+                                            newEntry.МЕСТО_УСТАНОВКИ_НАИМЕНОВАНИЕ = thing.placeName+"";
+                                            newEntry.ДАТА_ВРЕМЯ_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = thing.dateTime.toString();
+                                            newEntry.ФИО_АВТОРА_ИЗМЕНЕНИЯ = thing.fio+"";
+                                            // Добор данных назначения терминала
+                                            if (Things[thing.placeTerminalFunction]) {
+                                                newEntry.НАЗНАЧЕНИЕ_ТЕРМИНАЛА = Things[thing.placeTerminalFunction].name+"";
+                                                newEntry.НАЗНАЧЕНИЕ_ТЕРМИНАЛА_НАИМЕНОВАНИЕ = Things[thing.placeTerminalFunction].terminal+"";
+                                            } else {
+                                                newEntry.НАЗНАЧЕНИЕ_ТЕРМИНАЛА = "";
+                                                newEntry.НАЗНАЧЕНИЕ_ТЕРМИНАЛА_НАИМЕНОВАНИЕ = "";
+                                            }
+                                        } else { 
+                                            newEntry.ID = "";
+                                            newEntry.УСТРОЙСТВО = "";
+                                            newEntry.МЕСТО_УСТАНОВКИ_ID = ""; 
+                                            newEntry.МЕСТО_УСТАНОВКИ_НАИМЕНОВАНИЕ = "";
+                                            newEntry.НАЗНАЧЕНИЕ_ТЕРМИНАЛА = "";
+                                            newEntry.ДАТА_ВРЕМЯ_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = "";
+                                        }
+                                                
+                                        result.AddRow(newEntry);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetOneTerminal">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Сбор данных Табл 1 для мэшапа
+                                        
+                                        // Поиск элементов по шаблону
+                                        var params = {
+                                        	maxItems: 2000,
+                                        	nameMask: undefined,
+                                        	query: undefined,
+                                        	thingTemplate: "connTerminals",
+                                        	tags: undefined
+                                        };
+                                        var infotable = Resources["SearchFunctions"].SearchThingsByTemplate(params);
+                                        
+                                        // Создание инфотаблицы по форме данных
+                                        var parameters = {
+                                        	infoTableName: "InfoTable",
+                                        	dataShapeName: "connTerminals"
+                                        };
+                                        var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(parameters);
+                                        
+                                        // Перебор результатов поиска, добор данных и добавление строк в итоговую инфотаблицу 
+                                        var row = Things[id];
+                                        var newEntry = new Object();
+                                        
+                                        if (row) {
+                                            newEntry.ID = row.name+"";
+                                            newEntry.НАИМЕНОВАНИЕ = row.terminal+"";
+                                            newEntry.ОПИСАНИЕ = row.terminalDescription+"";
+                                            newEntry.ДАТА_ВРЕМЯ_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = row.date.toString();
+                                            newEntry.ФИО_АВТОРА_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = row.fio+"";
+                                        } else {
+                                        	newEntry.ID = "";
+                                            newEntry.НАИМЕНОВАНИЕ = "";
+                                            newEntry.ОПИСАНИЕ = "";
+                                            newEntry.ДАТА_ВРЕМЯ_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = "";
+                                            newEntry.ФИО_АВТОРА_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = "";
+                                        }
+                                        result.AddRow(newEntry);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetRepairSites">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = [];
+                                        
+                                        // Тело запроса soap для АСУ СГ
+                                        var content ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eipp="http://EIPP.org"><soapenv:Header/><soapenv:Body><eipp:GetRepairSites><eipp:Guid></eipp:Guid></eipp:GetRepairSites></soapenv:Body></soapenv:Envelope>';
+                                        var params = {
+                                            proxyScheme: undefined /* STRING */,
+                                            headers: undefined /* JSON */,
+                                            ignoreSSLErrors: undefined /* BOOLEAN */,
+                                            useNTLM: undefined /* BOOLEAN */,
+                                            workstation: undefined /* STRING */,
+                                            useProxy: undefined /* BOOLEAN */,
+                                            withCookies: undefined /* BOOLEAN */,
+                                            proxyHost: undefined /* STRING */,
+                                            url: me.ASU_URL /* STRING */,
+                                            content: content /* STRING */,
+                                            timeout: 0 /* NUMBER */,
+                                            proxyPort: undefined /* INTEGER */,
+                                            password: "11012019" /* STRING */,
+                                            domain: undefined /* STRING */,
+                                            contentType: undefined /* STRING */,
+                                            username: "ws_eipp" /* STRING */
+                                        };
+                                        var text = Resources["ContentLoaderFunctions"].PostText(params);
+                                        /**
+                                        * Алгоритм парсинга XML от АСУ СГ
+                                        **/
+                                        // Проверка на наличие ошибки в ответе от АСУ СГ
+                                        if ((typeof text != "undefined") && (text.indexOf("</soap:Envelope") >= 0) && (text.indexOf("<m:ErrorDescription>") === -1) && (text.indexOf("ошибка") === -1)) {
+                                            // Исключение знаков табуляции и переносов из ответа
+                                            text = text.replace(/\b/g,'');
+                                            text = text.replace(/\r/g,'');
+                                            text = text.replace(/\t/g,'');
+                                            text = text.replace(/\n/g,'');
+                                            // Исключение служебных и прочих тегов в ответе
+                                            text = text.replace('</m:return>','');
+                                            text = text.replace('</m:GetRepairSitesResponse>','');
+                                            text = text.replace('</soap:Body>','');
+                                            text = text.replace('</soap:Envelope>','');
+                                            var arr1 = text.split('<m:RepairSitesLine>');
+                                        
+                                            var arr = [];
+                                            var rest = {};
+                                            var regex = /<([a-zA-Z]+)>(.*?)<\/[a-zA-Z]+>/gm;
+                                            
+                                            if (arr1.length > 0) {
+                                                for (var j = 1; j < arr1.length; j++) {
+                                                    if (arr1[j].length) {
+                                                        arr1[j] = arr1[j].replace(/(\<m\:)/g,'<').replace(/(\<\/m\:)/g,'</').replace('</m:RepairSitesLine>', '');
+                                                        var m;
+                                                        var dataObj = {};
+                                                        var obj = {};
+                                                        while ((m = regex.exec(arr1[j])) !== null) {
+                                                            if (m.index === regex.lastIndex) {
+                                                                regex.lastIndex++;
+                                                            }    
+                                                            var lastKey = "";
+                                                            m.forEach(function (match, groupIndex, i) {
+                                                              if (parseInt(groupIndex) > 0) {
+                                                                if (groupIndex == 1) {
+                                                                  lastKey = match;
+                                                                  dataObj[lastKey] = null;
+                                                                } else if (groupIndex == 2) {
+                                                                  dataObj[lastKey] = match;
+                                                                }
+                                                              }
+                                                            });
+                                                        }
+                                                        arr.push(dataObj);
+                                                        obj.ID = dataObj.ID;
+                                                    	obj.Name = dataObj.Name;
+                                                        result.push(obj);
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            // Обработка ошибок
+                                            err = {};
+                                            err.Error = "ThingWorx Data Error";
+                                            result.push(obj);
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetRepairSitesRefactored">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        // Метод для парсинга ответа от АСУ СГ, разбирает XML и переводит его в JSON
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*:: GetRepairSitesResponse.*[1];
+                                            var containsRepairSiteLines = resultXML.*:: RepairSitesLine.length() !== 0;
+                                            if (containsRepairSiteLines) {
+                                                var result = [];
+                                                for (var i = 0; i < resultXML.*:: RepairSitesLine.length(); i++) {
+                                                    var node = resultXML.*:: RepairSitesLine[i];
+                                                    result.push({
+                                                        ID: node.*:: ID.toString(),
+                                                        Kod: node.*:: Kod.toString(),
+                                                        Name: node.*:: Name.toString(),
+                                                        Organization: node.*:: Organization.toString()
+                                                    });
+                                                }
+                                                return result;
+                                            } else {
+                                                return {
+                                                    Error: 'Нет данных в АСУ СГ',
+                                                    ErrorDescription: resultXML.*:: ErrorDescription.toString()
+                                                };
+                                            }
+                                        }
+                                        
+                                        try {
+                                            var content ='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eipp="http://EIPP.org"><soapenv:Header/><soapenv:Body><eipp:GetRepairSites><eipp:Guid></eipp:Guid></eipp:GetRepairSites></soapenv:Body></soapenv:Envelope>';
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML({
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            });
+                                            var response = parseXMLResponse(xmlResponse);
+                                            this.result = response;
+                                        } catch (err) {
+                                            result.error = err.message;
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSha1">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Метод используется для генерации хеша при создании идентификаторов сущностей
+                                        /*
+                                         * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
+                                         * in FIPS PUB 180-1
+                                         * Version 2.1a Copyright Paul Johnston 2000 - 2002.
+                                         * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+                                         * Distributed under the BSD License
+                                         * See http://pajhome.org.uk/crypt/md5 for details.
+                                         */
+                                        
+                                        /*
+                                         * Configurable variables. You may need to tweak these to be compatible with
+                                         * the server-side, but the defaults work in most cases.
+                                         */
+                                        var hexcase = 0;  /* hex output format. 0 - lowercase; 1 - uppercase        */
+                                        var b64pad = ""; /* base-64 pad character. "=" for strict RFC compliance   */
+                                        var chrsz = 8;  /* bits per input character. 8 - ASCII; 16 - Unicode      */
+                                        
+                                        /*
+                                         * These are the functions you'll usually want to call
+                                         * They take string arguments and return either hex or base-64 encoded strings
+                                         */
+                                        function hex_sha1(s) { return binb2hex(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        
+                                        function b64_sha1(s) { return binb2b64(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        function str_sha1(s) { return binb2str(core_sha1(str2binb(s), s.length * chrsz)); }
+                                        function hex_hmac_sha1(key, data) { return binb2hex(core_hmac_sha1(key, data)); }
+                                        function b64_hmac_sha1(key, data) { return binb2b64(core_hmac_sha1(key, data)); }
+                                        function str_hmac_sha1(key, data) { return binb2str(core_hmac_sha1(key, data)); }
+                                        
+                                        /*
+                                         * Perform a simple self-test to see if the VM is working
+                                         */
+                                        function sha1_vm_test() {
+                                            return hex_sha1("abc") == "a9993e364706816aba3e25717850c26c9cd0d89d";
+                                        }
+                                        
+                                        /*
+                                         * Calculate the SHA-1 of an array of big-endian words, and a bit length
+                                         */
+                                        function core_sha1(x, len) {
+                                            /* append padding */
+                                            x[len >> 5] |= 0x80 << (24 - len % 32);
+                                            x[((len + 64 >> 9) << 4) + 15] = len;
+                                        
+                                            var w = Array(80);
+                                            var a = 1732584193;
+                                            var b = -271733879;
+                                            var c = -1732584194;
+                                            var d = 271733878;
+                                            var e = -1009589776;
+                                        
+                                            for (var i = 0; i < x.length; i += 16) {
+                                                var olda = a;
+                                                var oldb = b;
+                                                var oldc = c;
+                                                var oldd = d;
+                                                var olde = e;
+                                        
+                                                for (var j = 0; j < 80; j++) {
+                                                    if (j < 16) w[j] = x[i + j];
+                                                    else w[j] = rol(w[j - 3] ^ w[j - 8] ^ w[j - 14] ^ w[j - 16], 1);
+                                                    var t = safe_add(safe_add(rol(a, 5), sha1_ft(j, b, c, d)),
+                                                        safe_add(safe_add(e, w[j]), sha1_kt(j)));
+                                                    e = d;
+                                                    d = c;
+                                                    c = rol(b, 30);
+                                                    b = a;
+                                                    a = t;
+                                                }
+                                        
+                                                a = safe_add(a, olda);
+                                                b = safe_add(b, oldb);
+                                                c = safe_add(c, oldc);
+                                                d = safe_add(d, oldd);
+                                                e = safe_add(e, olde);
+                                            }
+                                            return Array(a, b, c, d, e);
+                                        
+                                        }
+                                        
+                                        /*
+                                         * Perform the appropriate triplet combination function for the current
+                                         * iteration
+                                         */
+                                        function sha1_ft(t, b, c, d) {
+                                            if (t < 20) return (b & c) | ((~b) & d);
+                                            if (t < 40) return b ^ c ^ d;
+                                            if (t < 60) return (b & c) | (b & d) | (c & d);
+                                            return b ^ c ^ d;
+                                        }
+                                        
+                                        /*
+                                         * Determine the appropriate additive constant for the current iteration
+                                         */
+                                        function sha1_kt(t) {
+                                            return (t < 20) ? 1518500249 : (t < 40) ? 1859775393 :
+                                                (t < 60) ? -1894007588 : -899497514;
+                                        }
+                                        
+                                        /*
+                                         * Calculate the HMAC-SHA1 of a key and some data
+                                         */
+                                        function core_hmac_sha1(key, data) {
+                                            var bkey = str2binb(key);
+                                            if (bkey.length > 16) bkey = core_sha1(bkey, key.length * chrsz);
+                                        
+                                            var ipad = Array(16), opad = Array(16);
+                                            for (var i = 0; i < 16; i++) {
+                                                ipad[i] = bkey[i] ^ 0x36363636;
+                                                opad[i] = bkey[i] ^ 0x5C5C5C5C;
+                                            }
+                                        
+                                            var hash = core_sha1(ipad.concat(str2binb(data)), 512 + data.length * chrsz);
+                                            return core_sha1(opad.concat(hash), 512 + 160);
+                                        }
+                                        
+                                        /*
+                                         * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+                                         * to work around bugs in some JS interpreters.
+                                         */
+                                        function safe_add(x, y) {
+                                            var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+                                            var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+                                            return (msw << 16) | (lsw & 0xFFFF);
+                                        }
+                                        
+                                        /*
+                                         * Bitwise rotate a 32-bit number to the left.
+                                         */
+                                        function rol(num, cnt) {
+                                            return (num << cnt) | (num >>> (32 - cnt));
+                                        }
+                                        
+                                        /*
+                                         * Convert an 8-bit or 16-bit string to an array of big-endian words
+                                         * In 8-bit function, characters >255 have their hi-byte silently ignored.
+                                         */
+                                        function str2binb(str) {
+                                            var bin = Array();
+                                            var mask = (1 << chrsz) - 1;
+                                            for (var i = 0; i < str.length * chrsz; i += chrsz)
+                                                bin[i >> 5] |= (str.charCodeAt(i / chrsz) & mask) << (32 - chrsz - i % 32);
+                                            return bin;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a string
+                                         */
+                                        function binb2str(bin) {
+                                            var str = "";
+                                            var mask = (1 << chrsz) - 1;
+                                            for (var i = 0; i < bin.length * 32; i += chrsz)
+                                                str += String.fromCharCode((bin[i >> 5] >>> (32 - chrsz - i % 32)) & mask);
+                                            return str;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a hex string.
+                                         */
+                                        function binb2hex(binarray) {
+                                            var hex_tab = hexcase ? "0123456789ABCDEF" : "0123456789abcdef";
+                                            var str = "";
+                                            for (var i = 0; i < binarray.length * 4; i++) {
+                                                str += hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8 + 4)) & 0xF) +
+                                                    hex_tab.charAt((binarray[i >> 2] >> ((3 - i % 4) * 8)) & 0xF);
+                                            }
+                                            return str;
+                                        }
+                                        
+                                        /*
+                                         * Convert an array of big-endian words to a base-64 string
+                                         */
+                                        function binb2b64(binarray) {
+                                            var tab = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+                                            var str = "";
+                                            for (var i = 0; i < binarray.length * 4; i += 3) {
+                                                var triplet = (((binarray[i >> 2] >> 8 * (3 - i % 4)) & 0xFF) << 16)
+                                                    | (((binarray[i + 1 >> 2] >> 8 * (3 - (i + 1) % 4)) & 0xFF) << 8)
+                                                    | ((binarray[i + 2 >> 2] >> 8 * (3 - (i + 2) % 4)) & 0xFF);
+                                                for (var j = 0; j < 4; j++) {
+                                                    if (i * 8 + j * 6 > binarray.length * 32) str += b64pad;
+                                                    else str += tab.charAt((triplet >> 6 * (3 - j)) & 0x3F);
+                                                }
+                                            }
+                                            return str;
+                                        }
+                                        
+                                        var result = hex_sha1(A);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSLD">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        // Метод для парсинга ответа от АСУ СГ, разбирает XML и переводит его в JSON
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*:: GetSLDResponse.*[1];
+                                            var containsSLDLines = resultXML.*:: GetSLDLine.length() !== 0;
+                                            if (containsSLDLines) {
+                                                var result = [];
+                                                for (var i = 0; i < resultXML.*:: GetSLDLine.length(); i++) {
+                                                    var node = resultXML.*:: GetSLDLine[i];
+                                                    result.push({
+                                                        ID: node.*:: ID.toString(),
+                                                        Kod: node.*:: Kod.toString(),
+                                                        Name: node.*:: Name.toString()
+                                                    });
+                                                }
+                                                return result;
+                                            } else {
+                                                return {
+                                                    Error: 'Нет данных в АСУ СГ',
+                                                    ErrorDescription: resultXML.*:: ErrorDescription.toString()
+                                                }
+                                            }
+                                        }
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/
+                                        try {
+                                            // Сборка тела запроса soap для АСУ СГ
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                            <soap:Header/>\
+                                            <soap:Body>\
+                                              <eipp:GetSLD>\
+                                                 <eipp:Guid>\
+                                                    <!--Zero or more repetitions:-->\
+                                                 </eipp:Guid>\
+                                              </eipp:GetSLD>\
+                                            </soap:Body>\
+                                            </soap:Envelope>';
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML({
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            });
+                                            var response = parseXMLResponse(xmlResponse);
+                                            this.result = response;
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            result.error = err.message;
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetSLDList">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = {};
+                                        
+                                        // Метод для парсинга ответа от АСУ СГ, разбирает XML и переводит его в JSON
+                                        function parseXMLResponse(xmlResponse) {
+                                            var resultXML = xmlResponse.*:: Body.*:: GetSLDResponse.*[1];
+                                            var containsSLDLines = resultXML.*:: GetSLDLine.length() !== 0;
+                                            if (containsSLDLines) {
+                                                var result = [];
+                                                for (var i = 0; i < resultXML.*:: GetSLDLine.length(); i++) {
+                                                    var node = resultXML.*:: GetSLDLine[i];
+                                                    result.push({
+                                                        ID: node.*:: ID.toString(),
+                                                        Kod: node.*:: Kod.toString(),
+                                                        Name: node.*:: Name.toString()
+                                                    });
+                                                }
+                                                return result;
+                                            } else {
+                                                return {
+                                                    Error: 'Нет данных в АСУ СГ',
+                                                    ErrorDescription: resultXML.*:: ErrorDescription.toString()
+                                                }
+                                            }
+                                        }
+                                        
+                                        try {
+                                            var content = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:eipp="http://EIPP.org">\
+                                            <soap:Header/>\
+                                            <soap:Body>\
+                                              <eipp:GetSLD>\
+                                                 <eipp:Guid>\
+                                                    <!--Zero or more repetitions:-->\
+                                                 </eipp:Guid>\
+                                              </eipp:GetSLD>\
+                                            </soap:Body>\
+                                            </soap:Envelope>';
+                                            var xmlResponse = Resources["ContentLoaderFunctions"].PostXML({
+                                                proxyScheme: undefined /* STRING */,
+                                                headers: undefined /* JSON */,
+                                                ignoreSSLErrors: undefined /* BOOLEAN */,
+                                                useNTLM: undefined /* BOOLEAN */,
+                                                workstation: undefined /* STRING */,
+                                                useProxy: undefined /* BOOLEAN */,
+                                                withCookies: undefined /* BOOLEAN */,
+                                                proxyHost: undefined /* STRING */,
+                                                url: me.ASU_URL /* STRING */,
+                                                content: content /* STRING */,
+                                                timeout: 0 /* NUMBER */,
+                                                proxyPort: undefined /* INTEGER */,
+                                                password: "11012019" /* STRING */,
+                                                domain: undefined /* STRING */,
+                                                contentType: undefined /* STRING */,
+                                                username: "ws_eipp" /* STRING */
+                                            });
+                                            var response = parseXMLResponse(xmlResponse);
+                                            this.result = response;
+                                        } catch (err) {
+                                            result.error = err.message;
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetTerminals">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Сбор данных Табл 1 для мэшапа
+                                        
+                                        // Поиск элементов по шаблону
+                                        var params = {
+                                        	maxItems: 2000,
+                                        	nameMask: undefined,
+                                        	query: undefined,
+                                        	thingTemplate: "connTerminals",
+                                        	tags: undefined
+                                        };
+                                        var infotable = Resources["SearchFunctions"].SearchThingsByTemplate(params);
+                                        
+                                        // Создание инфотаблицы по форме данных
+                                        var parameters = {
+                                        	infoTableName: "InfoTable",
+                                        	dataShapeName: "connTerminals"
+                                        };
+                                        var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(parameters);
+                                        
+                                        // Перебор результатов поиска, добор данных и добавление строк в итоговую инфотаблицу
+                                        for (var x = 0; x < infotable.length; x++) {
+                                            var row = infotable.getRow(x);
+                                        	var newEntry = new Object();
+                                            newEntry.ID = row.name+"";
+                                        	newEntry.НАИМЕНОВАНИЕ = row.terminal+"";
+                                            newEntry.ОПИСАНИЕ = row.terminalDescription+"";
+                                            newEntry.ДАТА_ВРЕМЯ_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = row.date.toString();
+                                            newEntry.ФИО_АВТОРА_ПОСЛЕДНЕГО_ИЗМЕНЕНИЯ = row.fio+"";
+                                            
+                                            result.AddRow(newEntry);    
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetUnits">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = [];
+                                        
+                                        // Тело запроса soap для АСУ СГ
+                                        var content = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eipp="http://EIPP.org"><soapenv:Header/><soapenv:Body><eipp:GetUnits><eipp:Guid><!--Zero or more repetitions:--></eipp:Guid></eipp:GetUnits></soapenv:Body></soapenv:Envelope>';
+                                        var params = {
+                                            proxyScheme: undefined /* STRING */,
+                                            headers: undefined /* JSON */,
+                                            ignoreSSLErrors: undefined /* BOOLEAN */,
+                                            useNTLM: undefined /* BOOLEAN */,
+                                            workstation: undefined /* STRING */,
+                                            useProxy: undefined /* BOOLEAN */,
+                                            withCookies: undefined /* BOOLEAN */,
+                                            proxyHost: undefined /* STRING */,
+                                            url: me.ASU_URL /* STRING */,
+                                            content: content /* STRING */,
+                                            timeout: 0 /* NUMBER */,
+                                            proxyPort: undefined /* INTEGER */,
+                                            password: "11012019" /* STRING */,
+                                            domain: undefined /* STRING */,
+                                            contentType: undefined /* STRING */,
+                                            username: "ws_eipp" /* STRING */
+                                        };
+                                        var text = Resources["ContentLoaderFunctions"].PostText(params);
+                                        
+                                        /**
+                                        * Алгоритм парсинга XML от АСУ СГ
+                                        **/
+                                        // Проверка на наличие ошибки в ответе от АСУ СГ
+                                        if ((typeof text != "undefined") && (text.indexOf("</soap:Envelope") >= 0) && (text.indexOf("<m:ErrorDescription>") === -1) && (text.indexOf("ошибка") === -1)) {
+                                            // Исключение знаков табуляции и переносов из ответа
+                                            text = text.replace(/\b/g, '');
+                                            text = text.replace(/\r/g, '');
+                                            text = text.replace(/\t/g, '');
+                                            text = text.replace(/\n/g, '');
+                                            // Исключение служебных и прочих тегов в ответе
+                                            text = text.replace('</m:return>', '');
+                                            text = text.replace('</m:GetUnitsResponse>', '');
+                                            text = text.replace('</soap:Body>', '');
+                                            text = text.replace('</soap:Envelope>', '');
+                                            var arr1 = text.split('<m:GetUnitsLine>');
+                                        
+                                            var arr = [];
+                                            var rest = {};
+                                            var regex = /<([a-zA-Z]+)>(.*?)<\/[a-zA-Z]+>/gm;
+                                        
+                                            if (arr1.length > 0) {
+                                                for (var j = 1; j < arr1.length; j++) {
+                                                    if (arr1[j].length) {
+                                                        // multipurpose parser to JSON - dataObj
+                                                        arr1[j] = arr1[j].replace(/(\<m\:)/g, '<').replace(/(\<\/m\:)/g, '</').replace('</m:GetUnitsLine>', '');
+                                                        var m;
+                                                        var dataObj = {};
+                                                        var obj = {};
+                                                        while ((m = regex.exec(arr1[j])) !== null) {
+                                                            if (m.index === regex.lastIndex) {
+                                                                regex.lastIndex++;
+                                                            }
+                                                            var lastKey = "";
+                                                            m.forEach(function (match, groupIndex, i) {
+                                                                if (parseInt(groupIndex) > 0) {
+                                                                    if (groupIndex == 1) {
+                                                                        lastKey = match;
+                                                                        dataObj[lastKey] = null;
+                                                                    } else if (groupIndex == 2) {
+                                                                        dataObj[lastKey] = match;
+                                                                    }
+                                                                }
+                                                            });
+                                                        }
+                                                        //arr.push(dataObj);
+                                                        obj.ID = dataObj.ID;
+                                                        obj.Kod = dataObj.Kod;
+                                                        obj.Name = dataObj.Name;
+                                                        obj.GroupID = dataObj.GroupID;
+                                                        obj.Position = dataObj.Position;
+                                                        obj.Organization = dataObj.Organization;
+                                                        result.push(obj);
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            // Обработка ошибок
+                                            var err = {};
+                                            err.Error = "Parameter sld is required";
+                                            result.push(err);
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="GetUnitsLegacy">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = [];
+                                        
+                                        var content = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:eipp="http://EIPP.org"><soapenv:Header/><soapenv:Body><eipp:GetUnits><eipp:Guid><!--Zero or more repetitions:--></eipp:Guid></eipp:GetUnits></soapenv:Body></soapenv:Envelope>';
+                                        var params = {
+                                            proxyScheme: undefined /* STRING */,
+                                            headers: undefined /* JSON */,
+                                            ignoreSSLErrors: undefined /* BOOLEAN */,
+                                            useNTLM: undefined /* BOOLEAN */,
+                                            workstation: undefined /* STRING */,
+                                            useProxy: undefined /* BOOLEAN */,
+                                            withCookies: undefined /* BOOLEAN */,
+                                            proxyHost: undefined /* STRING */,
+                                            url: me.ASU_URL /* STRING */,
+                                            content: content /* STRING */,
+                                            timeout: 0 /* NUMBER */,
+                                            proxyPort: undefined /* INTEGER */,
+                                            password: "11012019" /* STRING */,
+                                            domain: undefined /* STRING */,
+                                            contentType: undefined /* STRING */,
+                                            username: "ws_eipp" /* STRING */
+                                        };
+                                        var text = Resources["ContentLoaderFunctions"].PostText(params);
+                                        if ((typeof text != "undefined") && (text.indexOf("</soap:Envelope") >= 0) && (text.indexOf("<m:ErrorDescription>") === -1) && (text.indexOf("ошибка") === -1)) {
+                                            text = text.replace(/\b/g, '');
+                                            text = text.replace(/\r/g, '');
+                                            text = text.replace(/\t/g, '');
+                                            text = text.replace(/\n/g, '');
+                                            text = text.replace('</m:return>', '');
+                                            text = text.replace('</m:GetUnitsResponse>', '');
+                                            text = text.replace('</soap:Body>', '');
+                                            text = text.replace('</soap:Envelope>', '');
+                                            var arr1 = text.split('<m:GetUnitsLine>');
+                                        
+                                            var arr = [];
+                                            var rest = {};
+                                            var regex = /<([a-zA-Z]+)>(.*?)<\/[a-zA-Z]+>/gm;
+                                        
+                                            if (arr1.length > 0) {
+                                                for (var j = 1; j < arr1.length; j++) {
+                                                    if (arr1[j].length) {
+                                                        // multipurpose parser to JSON - dataObj
+                                                        arr1[j] = arr1[j].replace(/(\<m\:)/g, '<').replace(/(\<\/m\:)/g, '</').replace('</m:GetUnitsLine>', '');
+                                                        var m;
+                                                        var dataObj = {};
+                                                        var obj = {};
+                                                        while ((m = regex.exec(arr1[j])) !== null) {
+                                                            if (m.index === regex.lastIndex) {
+                                                                regex.lastIndex++;
+                                                            }
+                                                            var lastKey = "";
+                                                            m.forEach(function (match, groupIndex, i) {
+                                                                if (parseInt(groupIndex) > 0) {
+                                                                    if (groupIndex == 1) {
+                                                                        lastKey = match;
+                                                                        dataObj[lastKey] = null;
+                                                                    } else if (groupIndex == 2) {
+                                                                        dataObj[lastKey] = match;
+                                                                    }
+                                                                }
+                                                            });
+                                                        }
+                                                        //arr.push(dataObj);
+                                                        obj.ID = dataObj.ID;
+                                                        obj.Kod = dataObj.Kod;
+                                                        obj.Name = dataObj.Name;
+                                                        obj.GroupID = dataObj.GroupID;
+                                                        obj.Position = dataObj.Position;
+                                                        obj.Organization = dataObj.Organization;
+                                                        result.push(obj);
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            var err = {};
+                                            err.Error = "Parameter sld is required";
+                                            result.push(err);
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="RemoveDevicesPlaces">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        if (Things[id]) {
+                                            Resources['EntityServices'].DeleteThing({
+                                                name: Things[id].name
+                                            });   
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="SearchTerminal">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        var result = false;
+                                        var DESIRED_TERMINAL = "Шкаф Логимат";
+                                        var arrTerminals = [];
+                                        
+                                        // По строке "Шкаф логимат" найти все финги с этим шкафом и собрать их ID в массив
+                                        var query1 = { 
+                                            		"filters": {
+                                            			"type": "And",
+                                            			"filters": [
+                                            				{
+                                            					"type": "Matches",
+                                            					"fieldName": "terminal",
+                                            					"expression": DESIRED_TERMINAL
+                                            				},
+                                            			]
+                                            		}
+                                            	};
+                                        var params = {
+                                        	maxItems: 2000,
+                                        	nameMask: undefined,
+                                        	query: query1,
+                                        	thingTemplate: "connTerminals",
+                                        	tags: undefined
+                                        };
+                                        var infotable = Resources["SearchFunctions"].SearchThingsByTemplate(params);
+                                        for (var x = 0; x < infotable.length; x++) {
+                                            var row = infotable.getRow(x);
+                                        	arrTerminals.push(row.name);    
+                                        }
+                                        
+                                        // По устройству найти все девайсы и собрать из них ID всех терминалов в массив
+                                        var query2 = { 
+                                            		"filters": {
+                                            			"type": "And",
+                                            			"filters": [
+                                            				{
+                                            					"type": "Matches",
+                                            					"fieldName": "device",
+                                            					"expression": deviceId
+                                            				},
+                                            			]
+                                            		}
+                                            	}; 
+                                        var params2 = {
+                                        	maxItems: 2000,
+                                        	nameMask: undefined,
+                                        	query: query2,
+                                        	thingTemplate: "connDevicePlaces",
+                                        	tags: undefined
+                                        };
+                                        var infotable2 = Resources["SearchFunctions"].SearchThingsByTemplate(params2);
+                                        
+                                        for (var y = 0; y < infotable2.length; y++) {
+                                            var rowDevice = infotable2.getRow(y);
+                                        	// Если ID терминала данного девайса соответствует ID терминала с наименованием "Шкаф Логимат", возвращаем true и останавливаем цикл
+                                            if (arrTerminals.indexOf(rowDevice.placeTerminalFunction) !== -1) {
+                                            	result = true;
+                                                break;
+                                            }
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="sendStock">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Согласно постановки задачи, метод асинхронный, все ошибки собираются в общий лог
+                                        // Функция для отправки и парсинга ответа
+                                        
+                                        /**
+                                        * Основное тело скрипта
+                                        **/ 
+                                        try {
+                                            // Проверка входных параметров и проброс ошибки если параметры не верны
+                                            // Проверка, соответствует ли устройство терминалу - Шкаф Логимат. Если нет, ничего не делаем в данном скрипте
+                                            	if (!device) throw new Error('Не указан идентификатор устройства');
+                                            	var checkDevice = me.SearchTerminal({
+                                                    deviceId: device /* STRING */
+                                                });
+                                            	if (checkDevice) {
+                                                	// Скрипт вызова внешнего метода CheckTMC и передачи ему данных. 
+                                                    me.checkTMCSoap({
+                                                        worker_id: employeeId /* STRING */,
+                                                        date: date /* STRING */,
+                                                        status: status /* STRING */,
+                                                        place: place /* STRING */
+                                                    });
+                                                }
+                                        		/*
+                                                if (!employeeId) throw new Error('Не указан сотрудник');
+                                        		// Скрипт поиска сотрудника и получение табельного номера. Варианты ошибок - не найден сотрудник, не указан табельный номер
+                                        		if (!Things[employeeId]) throw new Error('На платформе не найден указанный пользователь');
+                                                if (!Things[employeeId].НОМЕР_ТАБЕЛЯ) throw new Error('На платформе не указан номер табеля указанного сотрудника');
+                                                // Скрипт проверки даты и форматирования даты в TimeStamp
+                                        		var timestamp = new Date();
+                                                if (date) {
+                                                	var arr1 = [];
+                                                    if (date.indexOf('T') !== -1) {
+                                                    	arr1 = date.split('T');
+                                                    } else {
+                                                    	arr1.push(date);
+                                                    }
+                                                    var arrDate = arr1[0].split('-'); 
+                                                    var arrTime = [];
+                                                    if (arr1[1]) {
+                                                    	var arr2 = arr1[1].split(':'); 
+                                                        arrTime.push(arr2[0]);
+                                                        arrTime.push(arr2[1]);
+                                                        arrTime.push(arr2[2]);
+                                                    } else {
+                                                    	arrTime.push(0);
+                                                        arrTime.push(0);
+                                                        arrTime.push(0);
+                                                    }
+                                                    timestamp = new Date((arrDate[0]*1), (arrDate[1]*1 - 1), (arrDate[2]*1), arrTime[0], arrTime[1], arrTime[2]);
+                                                }
+                                                */	 
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            logger.info("BioTime. Проблема с отправкой данных в САЛАИР. Ошибка:" +err.message);
+                                        }
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="UpdateDevicesPlaces">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Обновление данных Табл через мэшап
+                                        
+                                        var obj = {};
+                                        
+                                        // Генерация ID новой заявки
+                                        function generateID(salt) {
+                                            return me.GetSha1({ A: (salt + Date()) /* STRING */ });
+                                        }
+                                        
+                                        // Создание новой заявки
+                                        function createNewThing() {
+                                            var thingName = generateID("places");
+                                            
+                                            Resources['EntityServices'].CreateThing({
+                                                name: thingName,
+                                                description: 'Места установки устройств',
+                                                thingTemplateName: 'connDevicePlaces',
+                                                tags: undefined
+                                            });
+                                            
+                                            var thing = Things[thingName];
+                                            thing.EnableThing();
+                                            thing.RestartThing();
+                                            
+                                            return thingName;
+                                        }
+                                        
+                                        // Поиск thing по ID или создание новой, если ID не найден
+                                        function initThing(id) {
+                                        	var thing;
+                                            if (id) {
+                                            	thing = Things[id];
+                                            } else {
+                                            	var newId = createNewThing();
+                                                thing = Things[newId];
+                                            }
+                                            return thing;
+                                        }
+                                        
+                                        // Создание инфотаблицы по форме данных
+                                        var parameters = {
+                                        	infoTableName: "InfoTable",
+                                        	dataShapeName: "shuntingFormMessage"
+                                        };
+                                        var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(parameters);
+                                        
+                                        // Основное тело скрипта
+                                        try {
+                                            // Инициализация финги
+                                            if (id == "undefined") id = "";
+                                            var thing = initThing(id);
+                                            
+                                            
+                                            // Заполнение данных
+                                            thing.dateTime = new Date();
+                                            thing.device = device;
+                                            thing.placeId = placeId;
+                                            thing.placeName = placeName;
+                                            thing.placeTerminalFunction = placeTerminalFunction;
+                                            thing.fio = fio;
+                                            
+                                            obj.message = "Заявка сохранена";
+                                            obj.class = "success";
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            obj = {
+                                                class: "error",
+                                                message: err.message
+                                            };
+                                        }
+                                        
+                                        // Заполнение инфотаблицы ответа
+                                        var newEntry = new Object();
+                                        newEntry.СООБЩЕНИЕ = obj.message+"";
+                                        newEntry.КЛАСС = obj.class+"";
+                                        
+                                        result.AddRow(newEntry);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                    <ServiceImplementation
+                     description=""
+                     handlerName="Script"
+                     name="UpdateTerminals">
+                        <ConfigurationTables>
+                            <ConfigurationTable
+                             description=""
+                             isMultiRow="false"
+                             name="Script"
+                             ordinal="0">
+                                <DataShape>
+                                    <FieldDefinitions>
+                                        <FieldDefinition
+                                         baseType="STRING"
+                                         description="code"
+                                         name="code"
+                                         ordinal="0"></FieldDefinition>
+                                    </FieldDefinitions>
+                                </DataShape>
+                                <Rows>
+                                    <Row>
+                                        <code>
+                                        <![CDATA[
+                                        // Обновление данных Табл 2 через мэшап
+                                        
+                                        var obj = {};
+                                        
+                                        // Генерация ID новой заявки
+                                        function generateID(salt) {
+                                            return me.GetSha1({ A: (salt + Date()) /* STRING */ });
+                                        }
+                                        
+                                        // Создание новой заявки
+                                        function createNewThing() {
+                                            var thingName = generateID("places");
+                                            
+                                            Resources['EntityServices'].CreateThing({
+                                                name: thingName,
+                                                description: '',
+                                                thingTemplateName: 'connTerminals',
+                                                tags: undefined
+                                            });
+                                            
+                                            var thing = Things[thingName];
+                                            thing.EnableThing();
+                                            thing.RestartThing();
+                                            
+                                            return thingName;
+                                        }
+                                        
+                                        // Поиск thing по ID или создание новой, если ID не найден
+                                        function initThing(id) {
+                                        	var thing;
+                                            if (id) {
+                                            	thing = Things[id];
+                                            } else {
+                                            	var newId = createNewThing();
+                                                thing = Things[newId];
+                                            }
+                                            return thing;
+                                        }
+                                        
+                                        // Создание инфотаблицы по форме данных
+                                        var parameters = {
+                                        	infoTableName: "InfoTable",
+                                        	dataShapeName: "shuntingFormMessage"
+                                        };
+                                        var result = Resources["InfoTableFunctions"].CreateInfoTableFromDataShape(parameters);
+                                        
+                                        // Основное тело скрипта
+                                        try {
+                                            // Инициализация финги
+                                            if (id == "undefined") id = "";
+                                            var thing = initThing(id);
+                                            
+                                            
+                                            // Заполнение данных
+                                            thing.date = new Date();
+                                            thing.fio = fio;
+                                            thing.terminal = terminal;
+                                            thing.terminalDescription = description;
+                                            
+                                            obj.message = "Заявка сохранена";
+                                            obj.class = "success";
+                                        } catch (err) {
+                                            // Обработка ошибок
+                                            obj = {
+                                                class: "error",
+                                                message: err.message
+                                            };
+                                        }
+                                        
+                                        // Заполнение инфотаблицы ответа
+                                        var newEntry = new Object();
+                                        newEntry.СООБЩЕНИЕ = obj.message+"";
+                                        newEntry.КЛАСС = obj.class+"";
+                                        
+                                        result.AddRow(newEntry);
+                                        ]]>
+                                        </code>
+                                    </Row>
+                                </Rows>
+                            </ConfigurationTable>
+                        </ConfigurationTables>
+                    </ServiceImplementation>
+                </ServiceImplementations>
+                <Subscriptions></Subscriptions>
+            </ThingShape>
+            <PropertyBindings></PropertyBindings>
+            <RemotePropertyBindings></RemotePropertyBindings>
+            <RemoteServiceBindings></RemoteServiceBindings>
+            <RemoteEventBindings></RemoteEventBindings>
+            <AlertConfigurations>
+                <AlertDefinitions
+                 name="ASU_URL"></AlertDefinitions>
+                <AlertDefinitions
+                 name="Biotek_URL"></AlertDefinitions>
+                <AlertDefinitions
+                 name="Login_Biotek"></AlertDefinitions>
+                <AlertDefinitions
+                 name="Pass_Biotek"></AlertDefinitions>
+                <AlertDefinitions
+                 name="Port_Biotek"></AlertDefinitions>
+            </AlertConfigurations>
+            <ImplementedShapes></ImplementedShapes>
+            <ThingProperties>
+                <ASU_URL>
+                    <Value>
+                    <![CDATA[
+                    http://1cdev.locotech.ru/urp_TB_02/ru_RU/ws/IntegrationEIPP
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-10-29T14:53:22.460+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </ASU_URL>
+                <Login_Biotek>
+                    <Value>
+                    <![CDATA[
+                    Infodba
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-10-29T14:53:22.462+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </Login_Biotek>
+                <Pass_Biotek>
+                    <Value>
+                    <![CDATA[
+                    hauls-bqk!7F
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-10-29T14:53:22.463+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </Pass_Biotek>
+                <Biotek_URL>
+                    <Value>
+                    <![CDATA[
+                    95.181.203.115
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-10-29T14:53:22.462+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </Biotek_URL>
+                <Port_Biotek>
+                    <Value>
+                    <![CDATA[
+                    3033
+                    ]]>
+                    </Value>
+                    <Timestamp>2019-10-29T14:53:22.463+03:00</Timestamp>
+                    <Quality>GOOD</Quality>
+                </Port_Biotek>
+            </ThingProperties>
+        </Thing>
+    </Things>
+</Entities>
