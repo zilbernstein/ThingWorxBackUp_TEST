@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Entities
+ build="b123"
+ majorVersion="8"
+ minorVersion="5"
+ modelPersistenceProviderPackage="PostgresPersistenceProviderPackage"
+ revision="3"
+ schemaVersion="1052"
+ universal="password">
+    <Mashups>
+        <Mashup
+         aspect.isResponsive="false"
+         aspect.mashupType="mashup"
+         columns="0.0"
+         description=""
+         documentationContent=""
+         homeMashup=""
+         name="CLOVERData"
+         projectName="CLOVER"
+         rows="0.0"
+         tags="">
+            <avatar></avatar>
+            <DesignTimePermissions>
+                <Create></Create>
+                <Read></Read>
+                <Update></Update>
+                <Delete></Delete>
+                <Metadata></Metadata>
+            </DesignTimePermissions>
+            <RunTimePermissions></RunTimePermissions>
+            <VisibilityPermissions>
+                <Visibility></Visibility>
+            </VisibilityPermissions>
+            <ConfigurationTableDefinitions></ConfigurationTableDefinitions>
+            <ConfigurationTables></ConfigurationTables>
+            <ParameterDefinitions></ParameterDefinitions>
+            <Things>
+                <Thing>connCLOVERLibrary</Thing>
+            </Things>
+            <ThingShapes></ThingShapes>
+            <ThingTemplates></ThingTemplates>
+            <mashupContent>
+            <![CDATA[
+            {
+              "CustomMashupCss" : "",
+              "Data" : {
+                "Session" : {
+                  "DataName" : "Session",
+                  "EntityName" : "",
+                  "EntityType" : "Session",
+                  "Id" : "session",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "SessionInterface",
+                    "Name" : "GetGlobalSessionValues",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetGlobalSessionValues"
+                  } ]
+                },
+                "Things_connCLOVERLibrary" : {
+                  "DataName" : "Things_connCLOVERLibrary",
+                  "EntityName" : "connCLOVERLibrary",
+                  "EntityType" : "Things",
+                  "Id" : "c03da94f-0b33-4343-82db-82669e4e4dfe",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "eaa3ba53-823e-4f26-b1d0-359fc943386c",
+                    "Name" : "getRIFTECMeasurements",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "getRIFTECMeasurements"
+                  }, {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "d4192f6b-c184-4861-9d59-6d13ea93e675",
+                    "Name" : "getBreakShoesData",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "getBreakShoesData"
+                  } ]
+                },
+                "UserExtensions" : {
+                  "DataName" : "UserExtensions",
+                  "EntityName" : "",
+                  "EntityType" : "UserExtensions",
+                  "Id" : "UserExtensions",
+                  "Services" : [ {
+                    "APIMethod" : "post",
+                    "Characteristic" : "Services",
+                    "Id" : "UserExtensionInterface",
+                    "Name" : "GetCurrentUserExtensionProperties",
+                    "Parameters" : { },
+                    "RefreshInterval" : 0,
+                    "Target" : "GetCurrentUserExtensionProperties"
+                  } ]
+                }
+              },
+              "DataBindings" : [ {
+                "Id" : "46ba51cc-4cdb-4cb0-9cd6-7471bc4c6f47",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "DateTime",
+                  "SourcePropertyBaseType" : "DATETIME",
+                  "TargetProperty" : "dateFrom",
+                  "TargetPropertyBaseType" : "DATETIME"
+                } ],
+                "SourceArea" : "UI",
+                "SourceId" : "datetimepicker-4",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "getRIFTECMeasurements",
+                "TargetSection" : "Things_connCLOVERLibrary"
+              }, {
+                "Id" : "a886f5bc-6ce0-4545-a734-b540fecd321c",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "DateTime",
+                  "SourcePropertyBaseType" : "DATETIME",
+                  "TargetProperty" : "dateTo",
+                  "TargetPropertyBaseType" : "DATETIME"
+                } ],
+                "SourceArea" : "UI",
+                "SourceId" : "datetimepicker-6",
+                "SourceSection" : "",
+                "TargetArea" : "Data",
+                "TargetId" : "getRIFTECMeasurements",
+                "TargetSection" : "Things_connCLOVERLibrary"
+              }, {
+                "Id" : "ad840d92-763c-4bb9-b404-1b737c4a15e0",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "InfoTable",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "getBreakShoesData",
+                "SourceSection" : "Things_connCLOVERLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxgrid-11",
+                "TargetSection" : ""
+              }, {
+                "Id" : "d976f5be-8ab6-440d-bc42-107322afe788",
+                "PropertyMaps" : [ {
+                  "SourceProperty" : "",
+                  "SourcePropertyBaseType" : "INFOTABLE",
+                  "SourcePropertyType" : "InfoTable",
+                  "TargetProperty" : "Data",
+                  "TargetPropertyBaseType" : "INFOTABLE",
+                  "TargetPropertyType" : "property"
+                } ],
+                "SourceArea" : "Data",
+                "SourceDetails" : "AllData",
+                "SourceId" : "getRIFTECMeasurements",
+                "SourceSection" : "Things_connCLOVERLibrary",
+                "TargetArea" : "UI",
+                "TargetId" : "dhxgrid-7",
+                "TargetSection" : ""
+              } ],
+              "DesignTimePermissions" : {
+                "Create" : [ ],
+                "Delete" : [ ],
+                "Metadata" : [ ],
+                "Read" : [ ],
+                "Update" : [ ]
+              },
+              "Events" : [ {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connCLOVERLibrary",
+                "EventHandlerService" : "getRIFTECMeasurements",
+                "EventTriggerArea" : "UI",
+                "EventTriggerEvent" : "Clicked",
+                "EventTriggerId" : "button-3",
+                "EventTriggerSection" : "",
+                "Id" : "28af49e2-5db2-4476-bd62-457ab483aa63"
+              }, {
+                "EventHandlerArea" : "Data",
+                "EventHandlerId" : "Things_connCLOVERLibrary",
+                "EventHandlerService" : "getBreakShoesData",
+                "EventTriggerArea" : "UI",
+                "EventTriggerEvent" : "Clicked",
+                "EventTriggerId" : "button-10",
+                "EventTriggerSection" : "",
+                "Id" : "f71fe90f-2bee-4052-a450-7beedd5b8b1e"
+              } ],
+              "RunTimePermissions" : {
+                "permissions" : [ ]
+              },
+              "UI" : {
+                "Properties" : {
+                  "AddToDashboardButton" : "SimplePlus",
+                  "AddToDashboardButtonStyle" : "DefaultAddToDashboardButtonStyle",
+                  "Area" : "Mashup",
+                  "BGImage" : "",
+                  "BGImageRepeat" : "no-repeat",
+                  "BGImageSize" : "auto",
+                  "Columns" : 0,
+                  "ConfigureGadgetButton" : "SimpleGear",
+                  "ConfigureGadgetButtonStyle" : "DefaultConfigureGadgetButtonStyle",
+                  "DisplayName" : "Mashup",
+                  "EnableParameterEditing" : false,
+                  "Height" : 618,
+                  "Id" : "mashup-root",
+                  "IgnoreWarningsInViewMashup" : false,
+                  "IsPrintLayout" : false,
+                  "Left" : 0,
+                  "MashupToEditGadget" : "DefaultMashupToEditGadget",
+                  "MinHeight" : 0,
+                  "MinWidth" : 0,
+                  "ResponsiveLayout" : false,
+                  "Rows" : 0,
+                  "ShowDataLoading" : true,
+                  "Style" : "DefaultMashupStyle",
+                  "StyleTheme" : "Base Theme",
+                  "Title" : "",
+                  "TitleBar" : false,
+                  "TitleBarStyle" : "DefaultTitleBarStyle",
+                  "TitleBarText" : "RIFTEC",
+                  "Top" : 0,
+                  "Type" : "mashup",
+                  "UseTheme" : false,
+                  "UseThemeForHybrids" : false,
+                  "Visible" : true,
+                  "Width" : 1024,
+                  "Z-index" : 10,
+                  "__TypeDisplayName" : "Mashup",
+                  "id_index" : 11,
+                  "supportsAutoResize" : true
+                },
+                "Widgets" : [ {
+                  "Properties" : {
+                    "ActiveStyle" : "DefaultButtonActiveStyle",
+                    "Area" : "UI",
+                    "CancelConfirmationButton" : "button2",
+                    "ConfirmationButton1Label" : "Yes",
+                    "ConfirmationButton2Label" : "No",
+                    "ConfirmationPrompt" : "Do Action?",
+                    "ConfirmationRequired" : false,
+                    "ConfirmationTitle" : "Confirm Action",
+                    "ContextId" : "",
+                    "DefaultConfirmationButton" : "button1",
+                    "Disabled" : false,
+                    "DisabledStyle" : "DefaultButtonDisabledStyle",
+                    "DisplayName" : "button-3",
+                    "FocusStyle" : "DefaultButtonFocusStyle",
+                    "Height" : 30,
+                    "HoverStyle" : "DefaultButtonHoverStyle",
+                    "IconAlignment" : "left",
+                    "Id" : "button-3",
+                    "Label" : "Получить",
+                    "Left" : 30,
+                    "ResponsiveLayout" : false,
+                    "RoundedCorners" : true,
+                    "ShowDataLoading" : true,
+                    "SingleClickSelectOnTablets" : true,
+                    "Style" : "DefaultButtonStyle",
+                    "TabSequence" : 0,
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 30,
+                    "Type" : "button",
+                    "Visible" : true,
+                    "Width" : 150,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Button",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "Area" : "UI",
+                    "DateDelimiter" : "-",
+                    "DateDisplay" : "short",
+                    "DateFormat" : "yyyy-M-dd",
+                    "DateFormatToken" : "",
+                    "DateOnly" : true,
+                    "DateOrder" : "yy-mm-dd",
+                    "DecadeView" : false,
+                    "DisplayName" : "datetimepicker-4",
+                    "DisplaySeconds" : true,
+                    "Height" : 28,
+                    "Id" : "datetimepicker-4",
+                    "InitializeWithCurrentDateTime" : true,
+                    "Interval" : 0,
+                    "IntervalType" : "h",
+                    "Label" : "",
+                    "Left" : 205,
+                    "ResponsiveLayout" : false,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultTimePickerStyle",
+                    "TabSequence" : 0,
+                    "TimeFormat" : "hh:mm:ss",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 30,
+                    "Type" : "datetimepicker",
+                    "Visible" : true,
+                    "Width" : 100,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Date Time Picker",
+                    "__supportsLabel" : true,
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "Area" : "UI",
+                    "DateDelimiter" : "-",
+                    "DateDisplay" : "short",
+                    "DateFormat" : "yyyy-M-dd",
+                    "DateFormatToken" : "",
+                    "DateOnly" : true,
+                    "DateOrder" : "yy-mm-dd",
+                    "DecadeView" : false,
+                    "DisplayName" : "datetimepicker-6",
+                    "DisplaySeconds" : true,
+                    "Height" : 28,
+                    "Id" : "datetimepicker-6",
+                    "InitializeWithCurrentDateTime" : true,
+                    "Interval" : 0,
+                    "IntervalType" : "h",
+                    "Label" : "",
+                    "Left" : 325,
+                    "ResponsiveLayout" : false,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultTimePickerStyle",
+                    "TabSequence" : 0,
+                    "TimeFormat" : "hh:mm:ss",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 30,
+                    "Type" : "datetimepicker",
+                    "Visible" : true,
+                    "Width" : 100,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Date Time Picker",
+                    "__supportsLabel" : true,
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "AlignHeader" : false,
+                    "Area" : "UI",
+                    "AutoSelectFirstRow" : false,
+                    "CellTextWrapping" : false,
+                    "ColumnFormat" : {
+                      "formatInfo" : [ {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Signature",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Signature",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "IKP_Serial",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "IKP_Serial",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "DateTime",
+                        "FormatOptions" : {
+                          "FormatString" : "[[dateTimeFormat_Default]]",
+                          "renderer" : "DATETIME"
+                        },
+                        "Title" : "DateTime",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Series",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Series",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Section",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Section",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "WheelPair",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "WheelPair",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "Axle",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "Axle",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "Worker",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "Worker",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      } ]
+                    },
+                    "CurrentScrollTop" : 0,
+                    "DisplayName" : "dhxgrid-7",
+                    "FocusStyle" : "DefaultFocusStyle",
+                    "GridBackgroundStyle" : "DefaultGridBackgroundStyle",
+                    "GridEditableFieldStyle" : "DefaultGridEditableFieldStyle",
+                    "GridHeaderStyle" : "DefaultGridHeaderStyle",
+                    "GridHeaderTextCase" : "capitalize",
+                    "GridInvalidFieldStyle" : "DefaultGridInvalidFieldStyle",
+                    "Height" : 200,
+                    "Id" : "dhxgrid-7",
+                    "IsEditable" : false,
+                    "IsPrintLayout" : false,
+                    "Left" : 30,
+                    "MultiSelect" : false,
+                    "ResponsiveLayout" : false,
+                    "RowAlternateBackgroundStyle" : "DefaultRowAlternateBackgroundStyle",
+                    "RowBackgroundStyle" : "DefaultRowBackgroundStyle",
+                    "RowFormat_StateParameters" : [ ],
+                    "RowHeight" : 30,
+                    "RowHoverStyle" : "DefaultRowHoverStyle",
+                    "RowSelectedStyle" : "DefaultRowSelectedStyle",
+                    "ScrollTop" : 0,
+                    "ShowAllColumns" : false,
+                    "ShowDataLoading" : true,
+                    "TabSequence" : 0,
+                    "Top" : 85,
+                    "Type" : "dhxgrid",
+                    "Visible" : true,
+                    "Width" : 970,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Grid"
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "Alignment" : "left",
+                    "AllowEllipsis" : false,
+                    "Area" : "UI",
+                    "Description" : "",
+                    "DisplayName" : "RIFTEC",
+                    "Height" : 22,
+                    "Id" : "label-8",
+                    "Left" : 30,
+                    "ResponsiveLayout" : false,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultLabelStyle",
+                    "Text" : "RIFTEC",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 0,
+                    "Type" : "label",
+                    "Visible" : true,
+                    "Width" : 265,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Label",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "Alignment" : "left",
+                    "AllowEllipsis" : false,
+                    "Area" : "UI",
+                    "DisplayName" : "BrakeShoe",
+                    "Height" : 22,
+                    "Id" : "label-9",
+                    "Left" : 30,
+                    "ResponsiveLayout" : false,
+                    "ShowDataLoading" : true,
+                    "Style" : "DefaultLabelStyle",
+                    "Text" : "BrakeShoe",
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 320,
+                    "Type" : "label",
+                    "Visible" : true,
+                    "Width" : 75,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Label",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "ActiveStyle" : "DefaultButtonActiveStyle",
+                    "Area" : "UI",
+                    "CancelConfirmationButton" : "button2",
+                    "ConfirmationButton1Label" : "Yes",
+                    "ConfirmationButton2Label" : "No",
+                    "ConfirmationPrompt" : "Do Action?",
+                    "ConfirmationRequired" : false,
+                    "ConfirmationTitle" : "Confirm Action",
+                    "ContextId" : "",
+                    "DefaultConfirmationButton" : "button1",
+                    "Disabled" : false,
+                    "DisabledStyle" : "DefaultButtonDisabledStyle",
+                    "DisplayName" : "button-10",
+                    "FocusStyle" : "DefaultButtonFocusStyle",
+                    "Height" : 30,
+                    "HoverStyle" : "DefaultButtonHoverStyle",
+                    "IconAlignment" : "left",
+                    "Id" : "button-10",
+                    "Label" : "Получить",
+                    "Left" : 30,
+                    "ResponsiveLayout" : false,
+                    "RoundedCorners" : true,
+                    "ShowDataLoading" : true,
+                    "SingleClickSelectOnTablets" : true,
+                    "Style" : "DefaultButtonStyle",
+                    "TabSequence" : 0,
+                    "ToolTipField" : "",
+                    "ToolTipStyle" : "DefaultTooltipStyle",
+                    "Top" : 355,
+                    "Type" : "button",
+                    "Visible" : true,
+                    "Width" : 150,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Button",
+                    "__supportsTooltip" : true
+                  },
+                  "Widgets" : [ ]
+                }, {
+                  "Properties" : {
+                    "AlignHeader" : false,
+                    "Area" : "UI",
+                    "AutoSelectFirstRow" : false,
+                    "CellTextWrapping" : false,
+                    "ColumnFormat" : {
+                      "formatInfo" : [ {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "correlationId",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "correlationId",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "crack",
+                        "FormatOptions" : {
+                          "FormatString" : "checkbox",
+                          "renderer" : "BOOLEAN"
+                        },
+                        "Title" : "crack",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "eqId",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "eqId",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "humanSize",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "humanSize",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "imageUrl",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "imageUrl",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "mesTime",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "mesTime",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "padId",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "padId",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "padNum",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "padNum",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "padSize",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "padSize",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "padStatus",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "padStatus",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "replace",
+                        "FormatOptions" : {
+                          "FormatString" : "checkbox",
+                          "renderer" : "BOOLEAN"
+                        },
+                        "Title" : "replace",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "rimSize",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "rimSize",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "session_id",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "session_id",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "subnumSection",
+                        "FormatOptions" : {
+                          "FormatString" : "full",
+                          "renderer" : "STRING"
+                        },
+                        "Title" : "subnumSection",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "thinnes",
+                        "FormatOptions" : {
+                          "FormatString" : "checkbox",
+                          "renderer" : "BOOLEAN"
+                        },
+                        "Title" : "thinnes",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "left",
+                        "AllowEdit" : false,
+                        "FieldName" : "wedge",
+                        "FormatOptions" : {
+                          "FormatString" : "checkbox",
+                          "renderer" : "BOOLEAN"
+                        },
+                        "Title" : "wedge",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      }, {
+                        "Align" : "right",
+                        "AllowEdit" : false,
+                        "FieldName" : "wheelPairNum",
+                        "FormatOptions" : {
+                          "FormatString" : "0",
+                          "renderer" : "INTEGER"
+                        },
+                        "Title" : "wheelPairNum",
+                        "ValidationExpression" : "",
+                        "ValidationMessage" : "",
+                        "Width" : "auto"
+                      } ]
+                    },
+                    "CurrentScrollTop" : 0,
+                    "DisplayName" : "dhxgrid-11",
+                    "FocusStyle" : "DefaultFocusStyle",
+                    "GridBackgroundStyle" : "DefaultGridBackgroundStyle",
+                    "GridEditableFieldStyle" : "DefaultGridEditableFieldStyle",
+                    "GridHeaderStyle" : "DefaultGridHeaderStyle",
+                    "GridHeaderTextCase" : "capitalize",
+                    "GridInvalidFieldStyle" : "DefaultGridInvalidFieldStyle",
+                    "Height" : 200,
+                    "Id" : "dhxgrid-11",
+                    "IsEditable" : false,
+                    "IsPrintLayout" : false,
+                    "Left" : 30,
+                    "MultiSelect" : false,
+                    "ResponsiveLayout" : false,
+                    "RowAlternateBackgroundStyle" : "DefaultRowAlternateBackgroundStyle",
+                    "RowBackgroundStyle" : "DefaultRowBackgroundStyle",
+                    "RowFormat_StateParameters" : [ ],
+                    "RowHeight" : 30,
+                    "RowHoverStyle" : "DefaultRowHoverStyle",
+                    "RowSelectedStyle" : "DefaultRowSelectedStyle",
+                    "ScrollTop" : 0,
+                    "ShowAllColumns" : false,
+                    "ShowDataLoading" : true,
+                    "TabSequence" : 0,
+                    "Top" : 410,
+                    "Type" : "dhxgrid",
+                    "Visible" : true,
+                    "Width" : 970,
+                    "Z-index" : 10,
+                    "__TypeDisplayName" : "Grid"
+                  },
+                  "Widgets" : [ ]
+                } ]
+              },
+              "mashupType" : "mashup"
+            }
+            ]]>
+            </mashupContent>
+            <preview></preview>
+        </Mashup>
+    </Mashups>
+</Entities>
